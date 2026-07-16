@@ -1,0 +1,19 @@
+SPARTAN FORGE V4.5.3
+
+Alterações:
+- HIIT com seleção de 3 a 10 rondas;
+- protocolos 30/60 e 50/60 mantidos;
+- cálculo automático do tempo de trabalho;
+- cálculo automático do tempo de descanso;
+- cálculo automático do tempo total;
+- meta diária alterada para 1900 kcal.
+
+Mantido:
+- musculação;
+- cardio;
+- água;
+- calendário;
+- dados;
+- histórico;
+- importação/exportação;
+- visual.

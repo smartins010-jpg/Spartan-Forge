@@ -1,0 +1,26 @@
+SPARTAN FORGE V4.5.4 — HIIT ESSENCIAL
+
+HIIT:
+- 10 exercícios conhecidos, apenas com peso corporal;
+- seleção de 3 a 10 séries;
+- campos criados automaticamente conforme o número escolhido;
+- repetições por série;
+- Prancha registada em segundos;
+- evolução simples por exercício;
+- calorias e notas.
+
+Musculação:
+- HIIT deixa de aparecer na seleção;
+- sem recordes pessoais;
+- sem sugestões de carga;
+- sem volume visível;
+- apenas evolução simples.
+
+Mantidos:
+- meta de 1900 kcal;
+- cardio;
+- dados;
+- visual;
+- calendário;
+- histórico;
+- importação/exportação.

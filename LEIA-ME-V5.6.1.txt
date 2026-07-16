@@ -1,0 +1,6 @@
+SPARTAN FORGE V5.6.1
+
+Correção:
+- a data no separador HIIT aparece automaticamente;
+- ao abrir o HIIT, se o campo estiver vazio, assume a data de hoje;
+- restantes funções e dados preservados.

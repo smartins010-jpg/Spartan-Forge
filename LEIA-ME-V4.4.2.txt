@@ -1,0 +1,14 @@
+SPARTAN FORGE V4.4.2 — CALENDÁRIO AUTOMÁTICO
+
+Alterações:
+- o calendário abre automaticamente no mês atual;
+- o dia de hoje fica assinalado a dourado com a indicação HOJE;
+- ao voltar ao Painel, o calendário regressa ao mês atual;
+- os campos de data continuam a abrir automaticamente com a data de hoje;
+- mantém todos os menus, dados, musculação, água e visual anterior.
+
+Depois do deploy:
+1. Fecha completamente a aplicação.
+2. Abre pelo Chrome.
+3. Confirma que aparece V4.4.2 no cabeçalho.
+4. No Painel, o dia atual deve estar assinalado automaticamente.

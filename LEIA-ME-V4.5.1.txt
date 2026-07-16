@@ -1,0 +1,17 @@
+SPARTAN FORGE V4.5.1 — TREINOS, PARTE 2
+
+Acrescentado:
+- PR de carga;
+- PR de volume;
+- comparação com o treino anterior;
+- indicador de evolução;
+- aviso de novo recorde;
+- sugestão automática da próxima carga;
+- recomendação para subir, manter ou reduzir.
+
+Mantido:
+- aplicação existente;
+- temporizador;
+- volume atual;
+- memória do último treino;
+- dados, menus e visual.

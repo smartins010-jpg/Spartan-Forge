@@ -1,0 +1,16 @@
+SPARTAN FORGE V4.4.3 — CARTÕES PREMIUM
+
+Atualização exclusivamente visual:
+- cartões semelhantes ao conceito aprovado;
+- preto mate;
+- linha dourada no topo de cada cartão;
+- contornos laranja néon;
+- dourado metálico nos títulos e números;
+- guerreiro recuperado no cartão Índice Spartan;
+- elmo e ícone mantidos;
+- nenhuma alteração à lógica, menus ou dados.
+
+Depois do deploy:
+1. Fecha completamente a aplicação.
+2. Abre pelo Chrome.
+3. Confirma V4.4.3 no cabeçalho.

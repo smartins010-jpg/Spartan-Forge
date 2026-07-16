@@ -1,0 +1,18 @@
+SPARTAN FORGE V4.3 — VISUAL + ÁGUA
+
+Alterações:
+- fundo preto mate absoluto;
+- dourado brilhante apenas nos destaques;
+- contornos em laranja néon;
+- botões rápidos de água: 250, 500, 750 e 1000 ml;
+- barra de progresso para 3000 ml;
+- indicação do que falta beber;
+- botão desfazer;
+- botão repor a zero;
+- todos os restantes módulos e dados mantidos.
+
+Instalação:
+1. Faz deploy deste ZIP no mesmo site do Netlify.
+2. Abre no Chrome.
+3. Testa o Diário e os botões de água.
+4. Confirma depois os outros menus.

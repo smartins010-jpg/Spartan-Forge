@@ -1,0 +1,8 @@
+SPARTAN FORGE V4.5.5
+
+Correções:
+- HIIT removido definitivamente da lista da Musculação;
+- temporizador de descanso eliminado da Musculação;
+- mantido apenas o campo simples de descanso em segundos;
+- HIIT continua no separador próprio;
+- restantes funções e dados preservados.

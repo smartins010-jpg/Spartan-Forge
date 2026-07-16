@@ -1,0 +1,25 @@
+SANDRO PERFORMANCE — PARTE 3
+
+Atualização:
+- dashboard premium estilo Manager;
+- índice geral de desempenho;
+- ações rápidas;
+- volume total acumulado;
+- quilómetros acumulados;
+- dias com registo;
+- melhor mês;
+- leitura automática da evolução;
+- mantém todos os dados locais porque usa a mesma chave da versão anterior.
+
+COMO ATUALIZAR NO NETLIFY
+1. Guarda uma cópia: Histórico > Exportar dados.
+2. No Netlify, abre o site Sandro Performance.
+3. Faz novo deploy com este ficheiro ZIP.
+4. Abre novamente o endereço da aplicação.
+5. Fecha e volta a abrir o ícone no ecrã principal.
+6. Se não atualizar logo, fecha completamente a aplicação e abre novamente.
+
+FUTURAS ATUALIZAÇÕES
+Sim, podem ser feitas substituindo o deploy pelo novo ZIP.
+Quando a atualização mantém a mesma chave de dados e o mesmo endereço, os registos locais continuam no telemóvel.
+Mesmo assim, exporta sempre uma cópia antes de atualizar.

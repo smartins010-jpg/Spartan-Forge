@@ -1,0 +1,33 @@
+SPARTAN FORGE V4.5.2 — MÓDULOS ESSENCIAIS
+
+Separado:
+- Musculação;
+- HIIT;
+- Cardio.
+
+HIIT:
+- protocolos 30/60 e 50/60;
+- rondas;
+- calorias;
+- exercícios e notas;
+- histórico próprio.
+
+Cardio:
+- bicicleta de estrada;
+- spinning;
+- caminhada;
+- corrida;
+- km, tempo, calorias, intensidade e notas.
+
+Objetivo:
+- 20 sessões por mês por defeito;
+- conta musculação + HIIT + cardio.
+
+Mantidos:
+- dados existentes;
+- visual;
+- água;
+- calendário;
+- evolução;
+- histórico;
+- importação/exportação.

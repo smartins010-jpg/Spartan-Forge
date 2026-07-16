@@ -1,0 +1,10 @@
+SPARTAN FORGE V5.4 — CORREÇÃO REAL
+
+Corrigido:
+- erro JavaScript que interrompia a aplicação;
+- calendário novamente visível e funcional;
+- botão rápido Água +500 ml com ligação direta;
+- água atualiza no resumo e no Diário;
+- abertura dos dias do calendário corrigida;
+- tipografia Spartan mantida;
+- dados preservados.

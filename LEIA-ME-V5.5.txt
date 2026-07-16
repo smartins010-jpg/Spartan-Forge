@@ -1,0 +1,10 @@
+SPARTAN FORGE V5.5 — PAINEL FUNCIONAL
+
+Corrigido:
+- resumo diário usa as calorias ingeridas guardadas no Diário;
+- calorias gastas somam HIIT e Cardio do próprio dia;
+- saldo diário calcula meta - ingeridas + gastas;
+- água rápida adiciona 500 ml e grava imediatamente;
+- água aparece no resumo e no Diário;
+- calendário é renderizado por uma função independente;
+- cache antigo eliminado com novo service worker e cabeçalhos Cloudflare.

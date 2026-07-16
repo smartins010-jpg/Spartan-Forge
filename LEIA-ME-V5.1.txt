@@ -1,0 +1,10 @@
+SPARTAN FORGE V5.1
+
+Correções e melhorias:
+- mais espaço no fundo para o menu não esconder o conteúdo;
+- ícone de musculação alterado para braço musculado;
+- ícone de HIIT alterado para chama;
+- ação rápida Água +500 ml;
+- água contabilizada no resumo do dia em 0/3000 ml;
+- evolução e histórico por exercício removidos da Musculação;
+- novo gráfico de evolução até ao peso objetivo no painel principal.

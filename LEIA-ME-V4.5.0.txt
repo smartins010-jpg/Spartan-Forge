@@ -1,0 +1,18 @@
+SPARTAN FORGE V4.5.0 — TREINOS, PARTE 1
+
+Acrescentado:
+- temporizador de descanso de 60, 90 e 120 segundos;
+- vibração e aviso no fim do descanso;
+- botão para parar o temporizador;
+- cálculo automático do volume atual do exercício;
+- mantém memória do último treino, 4 séries e 4.ª série até à fadiga.
+
+Mantido:
+- visual atual;
+- Índice Spartan sem sombreado;
+- dados;
+- menus;
+- água;
+- calendário;
+- histórico;
+- exportação/importação.

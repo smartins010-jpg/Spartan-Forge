@@ -1,0 +1,13 @@
+SPARTAN FORGE V4.1.1
+
+Alterações:
+- preto mate verdadeiro;
+- dourado mais brilhante;
+- vermelho vivo nos contornos;
+- calendário agora é útil;
+- podes mudar de mês;
+- ao tocar num dia, abre o Diário nessa data;
+- legenda de Treino, Cardio, Treino + Cardio e Descanso;
+- todos os menus e dados da V3/V4.1 mantidos.
+
+No Netlify, faz deploy deste ZIP no mesmo site.

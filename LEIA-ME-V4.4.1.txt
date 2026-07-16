@@ -1,0 +1,17 @@
+SPARTAN FORGE V4.4.1
+
+Esta versão força visualmente:
+- preto mate absoluto;
+- dourado ouro mais brilhante;
+- laranja néon mais forte;
+- contornos com 2 px;
+- cartões e navegação com contraste reforçado;
+- etiqueta V4.4.1 no cabeçalho para confirmar que a atualização abriu.
+
+Mantém o elmo, a lógica, os dados e os seis menus.
+
+Depois do deploy:
+1. Fecha completamente a aplicação.
+2. Abre primeiro o endereço pelo Chrome.
+3. Confirma que aparece V4.4.1 no cabeçalho.
+4. Se continuar antiga, limpa apenas a cache do site ou reinstala o atalho.

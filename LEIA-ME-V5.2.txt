@@ -1,0 +1,11 @@
+SPARTAN FORGE V5.2
+
+Correções:
+- botão Painel corrigido;
+- toda a navegação revista;
+- espaços vazios eliminados;
+- separadores compactados;
+- estrutura da Musculação corrigida;
+- margens e alinhamentos uniformizados;
+- conteúdo deixa de ficar escondido no fundo;
+- restantes dados e funcionalidades preservados.

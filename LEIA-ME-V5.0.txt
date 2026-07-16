@@ -1,0 +1,10 @@
+SPARTAN FORGE V5.0
+
+Painel inicial reconstruído de raiz com base no design aprovado:
+- cabeçalho Spartan;
+- resumo diário de calorias;
+- Índice Spartan;
+- ações rápidas;
+- bloco de motivação;
+- calendário com raio integrado;
+- restantes módulos preservados.

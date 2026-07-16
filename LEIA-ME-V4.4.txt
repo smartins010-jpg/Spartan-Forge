@@ -1,0 +1,24 @@
+SPARTAN FORGE V4.4 — VISUAL APROVADO
+
+Mantido:
+- elmo/ícone atual;
+- todos os menus;
+- musculação PRO;
+- água;
+- calendário;
+- histórico;
+- mesma base de dados.
+
+Alterado:
+- preto mate mais profundo;
+- dourado mais metálico e brilhante;
+- contornos laranja néon;
+- cartões mais premium;
+- navegação inferior mais limpa;
+- brilho apenas nos elementos dourados e nos contornos.
+
+Instalação:
+1. Faz deploy deste ZIP no mesmo site do Netlify.
+2. Abre no Chrome.
+3. Testa os seis menus.
+4. Só depois reinstala o atalho, se quiseres atualizar o nome/cache.

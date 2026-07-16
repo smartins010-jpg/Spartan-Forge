@@ -1,0 +1,16 @@
+SPARTAN FORGE V4.2 — MUSCULAÇÃO PRO
+
+Alterações desta atualização:
+- máximo fixo de 4 séries;
+- 4.ª série automaticamente marcada até à fadiga na musculação;
+- HIIT não fica marcado como fadiga;
+- memória do último treino por exercício;
+- botão “Usar último treino”;
+- carrega carga, repetições e descanso anteriores;
+- histórico e gráfico do exercício mantidos;
+- todos os restantes menus e dados permanecem iguais.
+
+Instalação:
+1. Faz deploy deste ZIP no mesmo site do Netlify.
+2. Abre pelo Chrome e testa primeiro Treino.
+3. Confirma depois os outros menus.

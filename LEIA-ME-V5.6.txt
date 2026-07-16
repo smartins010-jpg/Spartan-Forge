@@ -1,0 +1,10 @@
+SPARTAN FORGE V5.6
+
+Correções:
+- botão rápido Água +500 ml integrado com Desfazer;
+- Repor a zero remove também a água guardada;
+- resumo e Diário atualizam imediatamente;
+- peso objetivo padrão definido em 75 kg;
+- peso objetivo continua totalmente personalizável;
+- nenhuma contabilização de massa muscular;
+- tipografia global alterada para um estilo Spartan mais visível.

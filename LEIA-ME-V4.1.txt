@@ -1,0 +1,28 @@
+SPARTAN FORGE V4.1 — ATUALIZAÇÃO SEGURA
+
+Esta primeira atualização foi construída diretamente sobre a V3 enviada pelo utilizador.
+
+O que mudou:
+- nome da aplicação para SPARTAN FORGE;
+- novo ícone com elmo espartano;
+- preto mate, dourado vivo e rebordos vermelhos;
+- novo texto de identidade;
+- nova versão de cache para o telemóvel receber a atualização.
+
+O que NÃO foi alterado:
+- navegação;
+- Painel;
+- Diário;
+- Treino;
+- Cardio;
+- Evolução;
+- Histórico;
+- estrutura e chave dos dados;
+- exportação/importação.
+
+Como testar:
+1. Faz deploy deste ZIP no mesmo site do Netlify.
+2. Abre primeiro o endereço no Chrome.
+3. Testa todos os seis botões inferiores.
+4. Só depois remove o atalho antigo e instala novamente, caso pretendas atualizar o ícone.
+5. Se o Chrome mostrar a versão antiga, fecha completamente a aplicação e volta a abrir.

@@ -1,0 +1,9 @@
+SPARTAN FORGE V5.3
+
+Correções:
+- calendário reposto no painel principal;
+- calendário volta a renderizar ao abrir o Painel;
+- botão rápido Água +500 ml corrigido;
+- água atualiza imediatamente no resumo diário;
+- tipografia global alterada para um estilo Spartan;
+- dados e restantes módulos preservados.
