@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v571-boneco';
+const CACHE='spartan-forge-v572-emoji';
 const APP_SHELL=[
   './',
   './index.html',
