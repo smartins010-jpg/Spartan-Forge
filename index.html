@@ -263,7 +263,7 @@ input:focus,select:focus,textarea:focus{
   border-color:#555!important;
 }
 
-/* V5.7.2 GITHUB — alteração visual forçada e inequívoca */
+/* V5.8.0A GITHUB — alteração visual forçada e inequívoca */
 html body{
   background:#000000!important;
   background-image:none!important;
@@ -376,7 +376,7 @@ body .bar i{
   box-shadow:0 0 8px rgba(255,122,0,.35);
 }
 
-/* V5.7.2 GITHUB — calendário automático */
+/* V5.8.0A GITHUB — calendário automático */
 .day.today{
   position:relative;
   color:#050505!important;
@@ -403,7 +403,7 @@ body .bar i{
   font-weight:800;
 }
 
-/* V5.7.2 GITHUB — cartões premium, sem alterações funcionais */
+/* V5.8.0A GITHUB — cartões premium, sem alterações funcionais */
 html,body{background:#000!important;background-image:none!important}
 body .wrap{background:#000!important}
 
@@ -620,7 +620,7 @@ body .spartan-index-card .performance-sub{
   text-shadow:none!important;
 }
 
-/* V5.7.2 GITHUB — correção real do Índice Spartan */
+/* V5.8.0A GITHUB — correção real do Índice Spartan */
 body .spartan-index-card{
   position:relative!important;
   overflow:hidden!important;
@@ -659,7 +659,7 @@ body .spartan-index-card .performance-sub{
   }
 }
 
-/* V5.7.2 GITHUB — Treinos, parte 1 */
+/* V5.8.0A GITHUB — Treinos, parte 1 */
 @media(max-width:720px){
 
 .training-progress-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
@@ -669,12 +669,12 @@ body .spartan-index-card .performance-sub{
 .record-notice{margin-top:10px;padding:11px 12px;border-radius:15px;background:#171100;color:#ffd700;border:1.3px solid #ffd700;font-weight:1000;text-align:center}
 .trend-up{color:#4dd39a!important}.trend-flat{color:#ffd700!important}.trend-down{color:#ff8b4d!important}
 
-/* V5.7.2 GITHUB — módulos essenciais separados */
+/* V5.8.0A GITHUB — módulos essenciais separados */
 @media(max-width:720px){
   .nav{grid-template-columns:repeat(4,1fr)!important}
 }
 
-/* V5.7.2 GITHUB — HIIT + meta 1900 kcal */
+/* V5.8.0A GITHUB — HIIT + meta 1900 kcal */
 .hiit-time-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -703,7 +703,7 @@ body .spartan-index-card .performance-sub{
   .hiit-time-grid{grid-template-columns:1fr}
 }
 
-/* V5.7.2 GITHUB — HIIT essencial */
+/* V5.8.0A GITHUB — HIIT essencial */
 #hiitSeriesFields{margin:12px 0}
 #hiitSeriesFields .series-card{min-height:105px}
 #hiitSeriesFields .series-card b{color:#ffd700}
@@ -1041,7 +1041,7 @@ input,select,textarea{
 }
 
 
-/* V5.7.2 — barra superior redundante removida */
+/* V5.8.0A — barra superior redundante removida */
 .v5-dashboard{padding-top:0!important}
 .v5-welcome{padding-top:14px!important}
 .v5-header{display:none!important}
@@ -1411,6 +1411,76 @@ input,select,textarea{
   to{transform:translateY(-10px) scale(1.05) rotate(2deg)}
 }
 
+
+/* V5.8A — Fichas HIIT */
+.exercise-card-button{
+  width:100%;
+  margin-top:9px;
+  padding:11px 14px;
+  border:1px solid #6b5520;
+  border-radius:11px;
+  background:linear-gradient(180deg,#2b2415,#17140e);
+  color:#f4e5b3;
+  font-family:var(--spartan-title)!important;
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.exercise-card-button:disabled{
+  opacity:.48;
+  cursor:not-allowed;
+}
+.exercise-sheet-panel{
+  width:min(620px,100%);
+}
+.exercise-sheet-image{
+  overflow:hidden;
+  border:1px solid #3a3f43;
+  border-radius:14px;
+  background:#0d1013;
+}
+.exercise-sheet-image svg{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.exercise-sheet-content{
+  margin-top:14px;
+  display:grid;
+  gap:10px;
+}
+.exercise-sheet-block{
+  padding:12px;
+  border:1px solid #30353a;
+  border-radius:11px;
+  background:#171b1f;
+}
+.exercise-sheet-block h3{
+  margin:0 0 5px;
+  color:#e1b13d;
+  font-size:13px;
+}
+.exercise-sheet-block p{
+  margin:0;
+  color:#ece8df;
+  line-height:1.46;
+}
+.exercise-sheet-level{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:11px 12px;
+  border:1px solid #5b4720;
+  border-radius:11px;
+  background:#211b0f;
+}
+.exercise-sheet-level span{
+  color:#cfc8ba;
+}
+.exercise-sheet-level strong{
+  color:#e1b13d;
+  letter-spacing:2px;
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1419,7 +1489,7 @@ input,select,textarea{
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.7.2 GITHUB</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.8.0A GITHUB</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
@@ -1612,11 +1682,6 @@ input,select,textarea{
 <label>Exercício</label>
 <select id="tExercise"></select>
 
-<button class="emoji-demo-button" id="openTrainingGuide" type="button" aria-label="Ver demonstração do exercício de musculação">
-  <span class="emoji-demo-icon" aria-hidden="true">🏋️‍♂️</span>
-  <span class="emoji-demo-text">Ver movimento</span>
-</button>
-
 <div class="last-session" id="lastSessionBox">
   <strong>Último treino</strong>
   <div id="lastSessionText" class="small">Ainda não existem registos deste exercício.</div>
@@ -1689,9 +1754,8 @@ input,select,textarea{
   <option>V-Ups</option>
 </select>
 
-<button class="emoji-demo-button" id="openHiitGuide" type="button" aria-label="Ver demonstração do exercício HIIT">
-  <span class="emoji-demo-icon" id="hiitDemoEmoji" aria-hidden="true">🤸‍♂️</span>
-  <span class="emoji-demo-text">Ver movimento</span>
+<button class="exercise-card-button" id="openHiitGuide" type="button">
+  <span>Ver ficha do exercício</span>
 </button>
 
 
@@ -1714,26 +1778,34 @@ input,select,textarea{
 
 
 
+
 <div id="hiitGuideModal" class="hiit-guide-modal" aria-hidden="true">
-  <div class="hiit-guide-panel hiit-demo-panel" role="dialog" aria-modal="true" aria-labelledby="hiitGuideTitle">
+  <div class="hiit-guide-panel exercise-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="hiitGuideTitle">
     <button id="closeHiitGuide" class="hiit-guide-close" type="button" aria-label="Fechar">×</button>
     <h2 id="hiitGuideTitle">Exercício</h2>
-    <div class="emoji-stage">
-      <div id="hiitGuideEmoji" class="large-exercise-emoji" aria-label="Demonstração animada do exercício">🤸‍♂️</div>
+    <div id="exerciseSheetImage" class="exercise-sheet-image"></div>
+    <div class="exercise-sheet-content">
+      <div class="exercise-sheet-block">
+        <h3>Trabalha</h3>
+        <p id="exerciseSheetMuscles"></p>
+      </div>
+      <div class="exercise-sheet-block">
+        <h3>Como executar</h3>
+        <p id="exerciseSheetHow"></p>
+      </div>
+      <div class="exercise-sheet-block">
+        <h3>Erros a evitar</h3>
+        <p id="exerciseSheetErrors"></p>
+      </div>
+      <div class="exercise-sheet-level">
+        <span>Dificuldade</span>
+        <strong id="exerciseSheetLevel"></strong>
+      </div>
     </div>
   </div>
 </div>
 
-
-
-<div id="trainingGuideModal" class="hiit-guide-modal" aria-hidden="true">
-  <div class="hiit-guide-panel emoji-demo-panel" role="dialog" aria-modal="true" aria-labelledby="trainingGuideTitle">
-    <button id="closeTrainingGuide" class="hiit-guide-close" type="button" aria-label="Fechar">×</button>
-    <h2 id="trainingGuideTitle">Exercício</h2>
-    <div class="emoji-stage">
-      <div id="trainingGuideEmoji" class="large-exercise-emoji" aria-label="Demonstração animada do exercício">🏋️‍♂️</div>
-    </div>
-  </div>
+</div>
 </div>
 
 <section id="cardio" class="page">
@@ -2117,54 +2189,103 @@ $('saveTraining').onclick=()=>{
 };
 
 
-const HIIT_EMOJI_FRAMES={
-  'Burpees':['🧍‍♂️','🤸‍♂️','🧎‍♂️','⬆️'],
-  'Jumping Jacks':['🧍‍♂️','🙆‍♂️'],
-  'Mountain Climbers':['🤸‍♂️','🏃‍♂️'],
-  'High Knees':['🏃‍♂️','🕺'],
-  'Agachamentos':['🧍‍♂️','🧎‍♂️'],
-  'Jump Squats':['🧎‍♂️','⬆️'],
-  'Flexões':['🤸‍♂️','🧎‍♂️'],
-  'Prancha':['🤸‍♂️','🧘‍♂️'],
-  'Prancha lateral':['🧘‍♂️','🤸‍♂️'],
-  'Abdominais':['🛌','🙆‍♂️'],
-  'Afundos':['🧍‍♂️','🧎‍♂️'],
-  'Afundos com salto':['🧎‍♂️','⬆️'],
-  'Bear Crawl':['🐻','🤸‍♂️'],
-  'Crab Walk':['🦀','🧘‍♂️'],
-  'Superman':['🛌','🦸‍♂️'],
-  'Hollow Hold':['🛌','🧘‍♂️'],
-  'Elevação de pernas':['🛌','🦵'],
-  'V-Ups':['🛌','🙆‍♂️']
-};
 
-const TRAINING_GROUP_EMOJI={
-  'Peito':['🏋️‍♂️','💪'],
-  'Costas':['🏋️‍♂️','🦾'],
-  'Ombros':['🏋️‍♂️','🙆‍♂️'],
-  'Bíceps':['💪','🏋️‍♂️'],
-  'Tríceps':['🦾','💪'],
-  'Pernas':['🏋️‍♂️','🦵'],
-  'Glúteos':['🏋️‍♂️','🦵'],
-  'Core':['🧘‍♂️','💪']
-};
 
-let exerciseEmojiTimer=null;
 
-function startEmojiFrames(target,frames){
-  clearInterval(exerciseEmojiTimer);
-  let index=0;
-  target.textContent=frames[0]||'🏋️‍♂️';
-  exerciseEmojiTimer=setInterval(()=>{
-    index=(index+1)%frames.length;
-    target.textContent=frames[index];
-  },700);
+const HIIT_SHEETS={"Burpees": {"muscles": "Corpo inteiro: pernas, glúteos, peito, ombros, tríceps e zona abdominal.", "how": "Começa de pé, agacha e apoia as mãos. Leva os pés para trás até à prancha, regressa com os pés junto das mãos e termina com um salto vertical.", "errors": "Deixar a lombar cair na prancha, aterrar com os joelhos rígidos ou perder o controlo entre as fases.", "level": "★★★☆☆", "poses": ["stand", "squat", "plank", "jump"]}, "Jumping Jacks": {"muscles": "Pernas, gémeos, glúteos, ombros e resistência cardiovascular.", "how": "Parte com os pés juntos e braços ao lado do corpo. Salta abrindo as pernas e elevando os braços acima da cabeça. Regressa à posição inicial.", "errors": "Aterrar com impacto excessivo, perder o ritmo ou deixar os joelhos cair para dentro.", "level": "★☆☆☆☆", "poses": ["stand", "jack"]}, "Mountain Climbers": {"muscles": "Zona abdominal, ombros, peito, flexores da anca e pernas.", "how": "Mantém uma prancha alta. Leva alternadamente cada joelho em direção ao peito, mantendo os ombros sobre as mãos e a anca estável.", "errors": "Levantar demasiado a anca, encurtar o movimento ou balançar o tronco.", "level": "★★☆☆☆", "poses": ["plank", "mountain"]}, "High Knees": {"muscles": "Quadríceps, gémeos, flexores da anca, zona abdominal e capacidade cardiovascular.", "how": "Corre no mesmo lugar, elevando alternadamente os joelhos até perto da linha da cintura. Mantém o tronco direito e usa os braços para dar ritmo.", "errors": "Inclinar o tronco para trás, apoiar o pé com demasiada força ou baixar progressivamente os joelhos.", "level": "★★☆☆☆", "poses": ["high1", "high2"]}, "Agachamentos": {"muscles": "Quadríceps, glúteos, posteriores da coxa e zona abdominal.", "how": "Afasta os pés à largura dos ombros. Leva a anca para trás e para baixo, mantém o peito aberto e sobe empurrando o chão.", "errors": "Levantar os calcanhares, arredondar as costas ou deixar os joelhos cair para dentro.", "level": "★★☆☆☆", "poses": ["stand", "squat"]}, "Jump Squats": {"muscles": "Quadríceps, glúteos, gémeos, posteriores da coxa e potência explosiva.", "how": "Desce num agachamento e impulsiona o corpo para um salto vertical. Aterra suavemente e entra logo no agachamento seguinte.", "errors": "Aterrar com as pernas rígidas, perder o alinhamento dos joelhos ou sacrificar a profundidade.", "level": "★★★☆☆", "poses": ["squat", "jump"]}, "Flexões": {"muscles": "Peito, tríceps, ombros e zona abdominal.", "how": "Em prancha alta, mantém o corpo alinhado. Dobra os cotovelos, aproxima o peito do chão e empurra até estender os braços.", "errors": "Deixar a anca cair, abrir demasiado os cotovelos ou fazer apenas metade do movimento.", "level": "★★★☆☆", "poses": ["pushTop", "pushBottom"]}, "Prancha": {"muscles": "Abdominais, lombar, glúteos e estabilizadores dos ombros.", "how": "Apoia os antebraços e as pontas dos pés. Mantém cabeça, costas, anca e pernas numa linha reta, contraindo o abdómen.", "errors": "Levantar ou deixar cair a anca, prender a respiração ou perder o alinhamento da cabeça.", "level": "★★☆☆☆", "poses": ["forearm"]}, "Prancha lateral": {"muscles": "Abdominais oblíquos, glúteos, quadrado lombar e ombros.", "how": "Apoia um antebraço no chão, empilha os pés e eleva a anca até formar uma linha reta. Mantém o peito virado para a frente.", "errors": "Deixar a anca cair, rodar o peito para o chão ou apoiar o ombro fora do alinhamento.", "level": "★★★☆☆", "poses": ["side"]}, "Abdominais": {"muscles": "Reto abdominal e flexores da anca.", "how": "Deita-te com os joelhos dobrados e os pés apoiados. Eleva o tronco usando a zona abdominal e regressa de forma controlada.", "errors": "Puxar o pescoço com as mãos, usar balanço ou descolar os pés do chão.", "level": "★★☆☆☆", "poses": ["sitDown", "sitUp"]}};
+
+function poseSvg(type,x){
+  const skin='#f1d2b6', body='#e1b13d', dark='#25292d', line='#f4f0e8';
+  const head=(cx,cy)=>`<circle cx="${x+cx}" cy="${cy}" r="13" fill="${skin}" stroke="${dark}" stroke-width="3"/>`;
+  const limb=(x1,y1,x2,y2,w=11)=>`<line x1="${x+x1}" y1="${y1}" x2="${x+x2}" y2="${y2}" stroke="${line}" stroke-width="${w}" stroke-linecap="round"/>`;
+  const torso=(x1,y1,x2,y2,w=18)=>`<line x1="${x+x1}" y1="${y1}" x2="${x+x2}" y2="${y2}" stroke="${body}" stroke-width="${w}" stroke-linecap="round"/>`;
+  let s='';
+
+  switch(type){
+    case 'stand':
+      s=head(75,38)+torso(75,55,75,113)+limb(75,70,42,101)+limb(75,70,108,101)+limb(75,113,50,158)+limb(75,113,100,158); break;
+    case 'jump':
+      s=head(75,26)+torso(75,43,75,99)+limb(75,60,34,25)+limb(75,60,116,25)+limb(75,99,42,151)+limb(75,99,108,151); break;
+    case 'jack':
+      s=head(75,35)+torso(75,52,75,105)+limb(75,64,24,24)+limb(75,64,126,24)+limb(75,105,30,160)+limb(75,105,120,160); break;
+    case 'squat':
+      s=head(78,52)+torso(76,68,61,112)+limb(70,82,31,105)+limb(70,82,111,102)+limb(61,112,104,124)+limb(104,124,124,164)+limb(61,112,30,158); break;
+    case 'plank':
+      s=head(34,89)+torso(52,93,111,111)+limb(64,97,51,153)+limb(86,104,78,156)+limb(111,111,144,149); break;
+    case 'mountain':
+      s=head(34,88)+torso(52,92,108,110)+limb(62,96,49,153)+limb(84,103,101,146)+limb(108,110,77,147); break;
+    case 'high1':
+      s=head(75,39)+torso(75,56,75,111)+limb(75,70,43,94)+limb(75,70,108,91)+limb(75,111,39,115)+limb(39,115,55,156)+limb(75,111,99,158); break;
+    case 'high2':
+      s=head(75,39)+torso(75,56,75,111)+limb(75,70,43,91)+limb(75,70,108,94)+limb(75,111,111,115)+limb(111,115,95,156)+limb(75,111,51,158); break;
+    case 'pushTop':
+      s=head(31,91)+torso(49,96,112,112)+limb(61,99,50,157)+limb(84,105,76,158)+limb(112,112,145,151); break;
+    case 'pushBottom':
+      s=head(31,119)+torso(49,119,112,124)+limb(61,120,43,153)+limb(84,122,64,156)+limb(112,124,145,151); break;
+    case 'forearm':
+      s=head(31,103)+torso(49,106,112,116)+limb(62,108,40,148)+limb(40,148,72,148)+limb(112,116,146,150); break;
+    case 'side':
+      s=head(40,99)+torso(57,104,111,119)+limb(69,107,51,150)+limb(51,150,83,150)+limb(80,111,78,52)+limb(111,119,147,150); break;
+    case 'sitDown':
+      s=head(32,136)+torso(50,139,98,142)+limb(98,142,125,111)+limb(125,111,151,148)+limb(60,139,83,113); break;
+    case 'sitUp':
+      s=head(53,72)+torso(65,88,97,135)+limb(97,135,125,111)+limb(125,111,151,148)+limb(71,94,104,75); break;
+    default:
+      s=head(75,38)+torso(75,55,75,113)+limb(75,70,42,101)+limb(75,70,108,101)+limb(75,113,50,158)+limb(75,113,100,158);
+  }
+  return `<g>${s}<line x1="${x+5}" y1="171" x2="${x+150}" y2="171" stroke="#42474c" stroke-width="3"/></g>`;
 }
 
-function stopEmojiFrames(){
-  clearInterval(exerciseEmojiTimer);
-  exerciseEmojiTimer=null;
+function exerciseImageSvg(sheet){
+  const poses=sheet.poses||['stand'];
+  const width=Math.max(330,poses.length*165);
+  const figures=poses.map((pose,index)=>poseSvg(pose,index*165+5)).join('');
+  const labels=poses.map((_,index)=>`<text x="${index*165+82}" y="198" text-anchor="middle" fill="#e1b13d" font-size="13" font-family="Arial" font-weight="700">FASE ${index+1}</text>`).join('');
+  return `<svg viewBox="0 0 ${width} 215" xmlns="http://www.w3.org/2000/svg" role="img">
+    <rect width="100%" height="100%" fill="#111519"/>
+    ${figures}
+    ${labels}
+  </svg>`;
 }
+
+function refreshHiitSheetButton(){
+  const button=$('openHiitGuide');
+  if(!button)return;
+  const available=Boolean(HIIT_SHEETS[$('hExercise').value]);
+  button.disabled=!available;
+  button.querySelector('span').textContent=available?'Ver ficha do exercício':'Ficha disponível numa próxima atualização';
+}
+
+function openHiitGuide(){
+  const exercise=$('hExercise').value;
+  const sheet=HIIT_SHEETS[exercise];
+  if(!sheet)return;
+
+  $('hiitGuideTitle').textContent=exercise;
+  $('exerciseSheetImage').innerHTML=exerciseImageSvg(sheet);
+  $('exerciseSheetMuscles').textContent=sheet.muscles;
+  $('exerciseSheetHow').textContent=sheet.how;
+  $('exerciseSheetErrors').textContent=sheet.errors;
+  $('exerciseSheetLevel').textContent=sheet.level;
+
+  $('hiitGuideModal').classList.add('on');
+  $('hiitGuideModal').setAttribute('aria-hidden','false');
+}
+
+function closeHiitGuide(){
+  $('hiitGuideModal').classList.remove('on');
+  $('hiitGuideModal').setAttribute('aria-hidden','true');
+}
+
+
+$('openHiitGuide').onclick=openHiitGuide;
+$('closeHiitGuide').onclick=closeHiitGuide;
+$('hiitGuideModal').addEventListener('click',event=>{
+  if(event.target===$('hiitGuideModal'))closeHiitGuide();
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape' && $('hiitGuideModal').classList.contains('on'))closeHiitGuide();
+});
 
 const HIIT_TIME_EXERCISES=['Prancha','Prancha lateral','Bear Crawl','Crab Walk','Superman','Hollow Hold'];
 
@@ -2368,54 +2489,15 @@ function renderHiitGuideVisual(poses){
   </svg>`;
 }
 
-function openHiitGuide(){
-  const exercise=$('hExercise').value;
-  const frames=HIIT_EMOJI_FRAMES[exercise]||['🤸‍♂️','💪'];
-  $('hiitGuideTitle').textContent=exercise;
-  startEmojiFrames($('hiitGuideEmoji'),frames);
-  $('hiitGuideModal').classList.add('on');
-  $('hiitGuideModal').setAttribute('aria-hidden','false');
-}
 
-function closeHiitGuide(){
-  stopEmojiFrames();
-  $('hiitGuideModal').classList.remove('on');
-  $('hiitGuideModal').setAttribute('aria-hidden','true');
-}
 
-$('openHiitGuide').onclick=openHiitGuide;
-$('closeHiitGuide').onclick=closeHiitGuide;
-$('hiitGuideModal').addEventListener('click',event=>{
-  if(event.target===$('hiitGuideModal'))closeHiitGuide();
-});
+
+
 document.addEventListener('keydown',event=>{
   if(event.key==='Escape' && $('hiitGuideModal').classList.contains('on'))closeHiitGuide();
 });
 
-function openTrainingGuide(){
-  const group=$('tGroup').value;
-  const exercise=$('tExercise').value;
-  const frames=TRAINING_GROUP_EMOJI[group]||['🏋️‍♂️','💪'];
-  $('trainingGuideTitle').textContent=exercise;
-  startEmojiFrames($('trainingGuideEmoji'),frames);
-  $('trainingGuideModal').classList.add('on');
-  $('trainingGuideModal').setAttribute('aria-hidden','false');
-}
 
-function closeTrainingGuide(){
-  stopEmojiFrames();
-  $('trainingGuideModal').classList.remove('on');
-  $('trainingGuideModal').setAttribute('aria-hidden','true');
-}
-
-$('openTrainingGuide').onclick=openTrainingGuide;
-$('closeTrainingGuide').onclick=closeTrainingGuide;
-$('trainingGuideModal').addEventListener('click',event=>{
-  if(event.target===$('trainingGuideModal'))closeTrainingGuide();
-});
-document.addEventListener('keydown',event=>{
-  if(event.key==='Escape' && $('trainingGuideModal').classList.contains('on'))closeTrainingGuide();
-});
 
 
 
@@ -2457,14 +2539,9 @@ function getHiitExerciseRecords(){
 $('hRounds').addEventListener('change',renderHiitSeries);
 $('hExercise').addEventListener('change',()=>{
   renderHiitSeries();
+refreshHiitSheetButton();
   hiitStats();
-  const figure=$('hiitDemoFigure');
-  if(figure){
-    figure.style.animationDuration=
-      ['Prancha','Prancha lateral','Hollow Hold','Superman'].includes($('hExercise').value)
-        ? '1.8s'
-        : '.9s';
-  }
+  refreshHiitSheetButton();
 });
 renderHiitSeries();
 

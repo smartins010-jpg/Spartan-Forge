@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v572-emoji';
+const CACHE='spartan-forge-v580a-hiit';
 const APP_SHELL=[
   './',
   './index.html',
