@@ -1,8 +1,8 @@
 {
-  "name": "Spartan Forge",
+  "name": "Spartan Forge V5.6.7",
   "short_name": "Spartan Forge",
   "description": "Aplicação de treino, alimentação, água, cardio e evolução de peso.",
-  "start_url": "./",
+  "start_url": "./?v=567",
   "scope": "./",
   "display": "standalone",
   "background_color": "#050505",

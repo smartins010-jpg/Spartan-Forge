@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-github-v565-pwa';
+const CACHE='spartan-forge-github-v567-pwa';
 const CORE=[
   './',
   './index.html',
