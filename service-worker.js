@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v569-profile';
+const CACHE='spartan-forge-v570-hiit-guide';
 const APP_SHELL=[
   './',
   './index.html',

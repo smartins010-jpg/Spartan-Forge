@@ -263,7 +263,7 @@ input:focus,select:focus,textarea:focus{
   border-color:#555!important;
 }
 
-/* V5.6.9 GITHUB — alteração visual forçada e inequívoca */
+/* V5.7.0 GITHUB — alteração visual forçada e inequívoca */
 html body{
   background:#000000!important;
   background-image:none!important;
@@ -376,7 +376,7 @@ body .bar i{
   box-shadow:0 0 8px rgba(255,122,0,.35);
 }
 
-/* V5.6.9 GITHUB — calendário automático */
+/* V5.7.0 GITHUB — calendário automático */
 .day.today{
   position:relative;
   color:#050505!important;
@@ -403,7 +403,7 @@ body .bar i{
   font-weight:800;
 }
 
-/* V5.6.9 GITHUB — cartões premium, sem alterações funcionais */
+/* V5.7.0 GITHUB — cartões premium, sem alterações funcionais */
 html,body{background:#000!important;background-image:none!important}
 body .wrap{background:#000!important}
 
@@ -620,7 +620,7 @@ body .spartan-index-card .performance-sub{
   text-shadow:none!important;
 }
 
-/* V5.6.9 GITHUB — correção real do Índice Spartan */
+/* V5.7.0 GITHUB — correção real do Índice Spartan */
 body .spartan-index-card{
   position:relative!important;
   overflow:hidden!important;
@@ -659,7 +659,7 @@ body .spartan-index-card .performance-sub{
   }
 }
 
-/* V5.6.9 GITHUB — Treinos, parte 1 */
+/* V5.7.0 GITHUB — Treinos, parte 1 */
 @media(max-width:720px){
 
 .training-progress-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
@@ -669,12 +669,12 @@ body .spartan-index-card .performance-sub{
 .record-notice{margin-top:10px;padding:11px 12px;border-radius:15px;background:#171100;color:#ffd700;border:1.3px solid #ffd700;font-weight:1000;text-align:center}
 .trend-up{color:#4dd39a!important}.trend-flat{color:#ffd700!important}.trend-down{color:#ff8b4d!important}
 
-/* V5.6.9 GITHUB — módulos essenciais separados */
+/* V5.7.0 GITHUB — módulos essenciais separados */
 @media(max-width:720px){
   .nav{grid-template-columns:repeat(4,1fr)!important}
 }
 
-/* V5.6.9 GITHUB — HIIT + meta 1900 kcal */
+/* V5.7.0 GITHUB — HIIT + meta 1900 kcal */
 .hiit-time-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -703,7 +703,7 @@ body .spartan-index-card .performance-sub{
   .hiit-time-grid{grid-template-columns:1fr}
 }
 
-/* V5.6.9 GITHUB — HIIT essencial */
+/* V5.7.0 GITHUB — HIIT essencial */
 #hiitSeriesFields{margin:12px 0}
 #hiitSeriesFields .series-card{min-height:105px}
 #hiitSeriesFields .series-card b{color:#ffd700}
@@ -1041,7 +1041,7 @@ input,select,textarea{
 }
 
 
-/* V5.6.9 — barra superior redundante removida */
+/* V5.7.0 — barra superior redundante removida */
 .v5-dashboard{padding-top:0!important}
 .v5-welcome{padding-top:14px!important}
 .v5-header{display:none!important}
@@ -1123,6 +1123,77 @@ input,select,textarea{
   .profile-weight-grid{grid-template-columns:repeat(2,1fr)}
 }
 
+
+/* Guia visual HIIT */
+.hiit-guide-button{margin-top:8px}
+.hiit-guide-modal{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  background:rgba(0,0,0,.82);
+}
+.hiit-guide-modal.on{display:flex}
+.hiit-guide-panel{
+  position:relative;
+  width:min(620px,100%);
+  max-height:90vh;
+  overflow:auto;
+  padding:18px;
+  border:1px solid #5a4a22;
+  border-radius:14px;
+  background:#101316;
+  box-shadow:0 22px 60px rgba(0,0,0,.55);
+}
+.hiit-guide-panel h2{
+  margin:0 36px 14px 0;
+  color:#e1b13d;
+}
+.hiit-guide-close{
+  position:absolute;
+  top:8px;
+  right:10px;
+  width:38px;
+  height:38px;
+  border:0;
+  border-radius:50%;
+  background:#23272b;
+  color:#fff;
+  font-size:27px;
+  line-height:1;
+}
+.hiit-guide-visual{
+  overflow:hidden;
+  border:1px solid #34393e;
+  border-radius:12px;
+  background:linear-gradient(180deg,#171b1f,#0d1013);
+}
+.hiit-guide-visual svg{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.hiit-guide-info h3{
+  margin:15px 0 4px;
+  color:#e1b13d;
+  font-size:14px;
+}
+.hiit-guide-info p{
+  margin:0;
+  color:#dedbd3;
+  line-height:1.5;
+}
+.hiit-pose-label{
+  font-family:var(--spartan-title);
+  font-size:11px;
+  font-weight:800;
+  fill:#e1b13d;
+  letter-spacing:.5px;
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1131,7 +1202,7 @@ input,select,textarea{
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.9 GITHUB</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.7.0 GITHUB</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
@@ -1384,9 +1455,18 @@ input,select,textarea{
   <option>Jump Squats</option>
   <option>Flexões</option>
   <option>Prancha</option>
+  <option>Prancha lateral</option>
   <option>Abdominais</option>
   <option>Afundos</option>
+  <option>Afundos com salto</option>
+  <option>Bear Crawl</option>
+  <option>Crab Walk</option>
+  <option>Superman</option>
+  <option>Hollow Hold</option>
+  <option>Elevação de pernas</option>
+  <option>V-Ups</option>
 </select>
+<button class="btn dark full hiit-guide-button" id="openHiitGuide" type="button">📖 Ver como fazer este exercício</button>
 
 <div id="hiitSeriesFields" class="series-grid"></div>
 
@@ -1404,6 +1484,23 @@ input,select,textarea{
 <div class="canvas" style="margin-top:10px"><canvas id="hiitChart"></canvas></div>
 </div>
 </section>
+
+
+<div id="hiitGuideModal" class="hiit-guide-modal" aria-hidden="true">
+  <div class="hiit-guide-panel" role="dialog" aria-modal="true" aria-labelledby="hiitGuideTitle">
+    <button id="closeHiitGuide" class="hiit-guide-close" type="button" aria-label="Fechar">×</button>
+    <h2 id="hiitGuideTitle">Guia do exercício</h2>
+    <div id="hiitGuideVisual" class="hiit-guide-visual"></div>
+    <div class="hiit-guide-info">
+      <h3>Como fazer</h3>
+      <p id="hiitGuideSteps"></p>
+      <h3>Trabalha principalmente</h3>
+      <p id="hiitGuideMuscles"></p>
+      <h3>Evita</h3>
+      <p id="hiitGuideErrors"></p>
+    </div>
+  </div>
+</div>
 
 <section id="cardio" class="page">
 <div class="card"><h2>Cardio</h2>
@@ -1785,7 +1882,236 @@ $('saveTraining').onclick=()=>{
   alert('Exercício guardado. A 4.ª série ficou registada até à fadiga.');
 };
 
-const HIIT_TIME_EXERCISES=['Prancha'];
+const HIIT_TIME_EXERCISES=['Prancha','Prancha lateral','Bear Crawl','Crab Walk','Superman','Hollow Hold'];
+
+
+const HIIT_GUIDE={
+  'Burpees':{
+    steps:'Começa de pé. Agacha, coloca as mãos no chão, leva os pés para trás até à prancha, regressa com os pés junto das mãos e termina com um salto.',
+    muscles:'Corpo inteiro, sobretudo pernas, peito, ombros e zona abdominal.',
+    errors:'Deixar a lombar cair na prancha ou aterrar com os joelhos rígidos.',
+    poses:['standing','squatHands','plank','jump']
+  },
+  'Jumping Jacks':{
+    steps:'Começa com os pés juntos e braços ao lado do corpo. Salta abrindo as pernas enquanto elevas os braços. Volta à posição inicial.',
+    muscles:'Pernas, ombros e resistência cardiovascular.',
+    errors:'Aterrar com impacto excessivo ou deixar os joelhos colapsarem para dentro.',
+    poses:['standing','jackOpen']
+  },
+  'Mountain Climbers':{
+    steps:'Mantém uma prancha alta e leva alternadamente cada joelho em direção ao peito, sem levantar demasiado a anca.',
+    muscles:'Zona abdominal, ombros, peito e pernas.',
+    errors:'Balançar a anca, encurtar demasiado o movimento ou perder o alinhamento dos ombros.',
+    poses:['plank','mountain']
+  },
+  'High Knees':{
+    steps:'Corre no mesmo lugar, elevando alternadamente os joelhos até perto da linha da cintura e mantendo o tronco direito.',
+    muscles:'Pernas, zona abdominal e resistência cardiovascular.',
+    errors:'Inclinar o tronco para trás ou apoiar o pé com demasiada força.',
+    poses:['highKneeLeft','highKneeRight']
+  },
+  'Agachamentos':{
+    steps:'Afasta os pés aproximadamente à largura dos ombros. Leva a anca para trás e para baixo, mantém o peito aberto e volta a subir.',
+    muscles:'Coxas, glúteos e zona abdominal.',
+    errors:'Levantar os calcanhares, curvar as costas ou deixar os joelhos cair para dentro.',
+    poses:['standing','squat']
+  },
+  'Jump Squats':{
+    steps:'Faz um agachamento e, ao subir, impulsiona o corpo num salto. Aterra suavemente e entra logo no agachamento seguinte.',
+    muscles:'Coxas, glúteos, gémeos e potência.',
+    errors:'Aterrar com pernas rígidas ou perder o alinhamento dos joelhos.',
+    poses:['squat','jump']
+  },
+  'Flexões':{
+    steps:'Em prancha alta, mantém o corpo alinhado. Dobra os cotovelos, aproxima o peito do chão e empurra novamente para cima.',
+    muscles:'Peito, ombros, tríceps e zona abdominal.',
+    errors:'Deixar a anca cair, abrir demasiado os cotovelos ou encurtar o movimento.',
+    poses:['pushupTop','pushupBottom']
+  },
+  'Prancha':{
+    steps:'Apoia os antebraços e as pontas dos pés. Mantém cabeça, costas, anca e pernas numa linha reta.',
+    muscles:'Zona abdominal, lombar, glúteos e ombros.',
+    errors:'Levantar ou deixar cair a anca e prender a respiração.',
+    poses:['forearmPlank']
+  },
+  'Prancha lateral':{
+    steps:'Apoia um antebraço no chão, empilha os pés e eleva a anca até formar uma linha reta. Repete do outro lado.',
+    muscles:'Abdominais laterais, glúteos e ombros.',
+    errors:'Deixar a anca cair ou rodar o peito para o chão.',
+    poses:['sidePlank']
+  },
+  'Abdominais':{
+    steps:'Deita-te com joelhos dobrados e pés apoiados. Eleva o tronco usando a zona abdominal e desce de forma controlada.',
+    muscles:'Abdominais.',
+    errors:'Puxar o pescoço com as mãos ou ganhar balanço.',
+    poses:['situpDown','situpUp']
+  },
+  'Afundos':{
+    steps:'Dá um passo em frente e baixa o corpo até ambos os joelhos ficarem dobrados. Empurra o chão para regressar.',
+    muscles:'Coxas, glúteos e equilíbrio.',
+    errors:'Deixar o joelho da frente cair para dentro ou inclinar demasiado o tronco.',
+    poses:['standing','lunge']
+  },
+  'Afundos com salto':{
+    steps:'Parte da posição de afundo. Salta verticalmente, troca as pernas no ar e aterra suavemente no afundo oposto.',
+    muscles:'Coxas, glúteos, gémeos e potência.',
+    errors:'Aterrar com impacto excessivo ou perder o alinhamento dos joelhos.',
+    poses:['lunge','jumpLunge']
+  },
+  'Bear Crawl':{
+    steps:'Fica apoiado nas mãos e pontas dos pés, com os joelhos ligeiramente afastados do chão. Avança alternando mão e pé opostos.',
+    muscles:'Ombros, braços, zona abdominal e pernas.',
+    errors:'Levantar demasiado a anca ou avançar mão e pé do mesmo lado sem controlo.',
+    poses:['bearLeft','bearRight']
+  },
+  'Crab Walk':{
+    steps:'Senta-te, apoia mãos e pés no chão e eleva a anca. Desloca-te mantendo o peito aberto e a anca elevada.',
+    muscles:'Tríceps, ombros, glúteos e zona abdominal.',
+    errors:'Deixar a anca tocar no chão ou forçar os pulsos.',
+    poses:['crabLeft','crabRight']
+  },
+  'Superman':{
+    steps:'Deita-te de barriga para baixo. Eleva simultaneamente braços, peito e pernas, mantém por instantes e desce devagar.',
+    muscles:'Lombar, glúteos e parte posterior dos ombros.',
+    errors:'Forçar demasiado o pescoço ou fazer o movimento com balanço.',
+    poses:['supermanDown','supermanUp']
+  },
+  'Hollow Hold':{
+    steps:'Deita-te de costas, aproxima a lombar do chão e eleva braços e pernas sem perder esse contacto.',
+    muscles:'Zona abdominal profunda.',
+    errors:'Arquear a lombar ou baixar demasiado as pernas.',
+    poses:['hollow']
+  },
+  'Elevação de pernas':{
+    steps:'Deita-te de costas com as pernas estendidas. Eleva-as de forma controlada e desce sem deixar a lombar arquear.',
+    muscles:'Abdominais inferiores e flexores da anca.',
+    errors:'Bater com as pernas no chão ou levantar a lombar.',
+    poses:['legRaiseDown','legRaiseUp']
+  },
+  'V-Ups':{
+    steps:'Deita-te com braços e pernas estendidos. Eleva simultaneamente tronco e pernas, aproximando as mãos dos pés, e regressa devagar.',
+    muscles:'Toda a zona abdominal.',
+    errors:'Ganhar balanço ou curvar excessivamente o pescoço.',
+    poses:['vupDown','vupUp']
+  }
+};
+
+function svgLine(x1,y1,x2,y2,extra=''){
+  return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" ${extra}/>`;
+}
+function svgCircle(cx,cy,r){
+  return `<circle cx="${cx}" cy="${cy}" r="${r}"/>`;
+}
+
+function drawHiitPose(type,x,label){
+  const s='#f2f0e9', g='#6d7378';
+  let body='';
+
+  const line=(a,b,c,d,w=7)=>svgLine(x+a,b,x+c,d,`stroke="${s}" stroke-width="${w}" stroke-linecap="round"`);
+  const head=(a,b)=>`<circle cx="${x+a}" cy="${b}" r="10" fill="none" stroke="${s}" stroke-width="6"/>`;
+
+  switch(type){
+    case 'standing':
+      body=head(50,35)+line(50,48,50,92)+line(50,60,28,82)+line(50,60,72,82)+line(50,92,35,125)+line(50,92,65,125); break;
+    case 'jump':
+      body=head(50,24)+line(50,37,50,78)+line(50,52,22,30)+line(50,52,78,30)+line(50,78,28,112)+line(50,78,72,112); break;
+    case 'jackOpen':
+      body=head(50,34)+line(50,47,50,88)+line(50,58,15,28)+line(50,58,85,28)+line(50,88,18,125)+line(50,88,82,125); break;
+    case 'squat':
+      body=head(52,47)+line(50,59,40,88)+line(40,88,68,96)+line(68,96,84,125)+line(40,88,20,120)+line(48,68,20,87)+line(48,68,75,83); break;
+    case 'squatHands':
+      body=head(52,48)+line(50,60,39,87)+line(39,87,68,96)+line(68,96,83,125)+line(39,87,20,120)+line(48,67,23,107)+line(48,67,69,108); break;
+    case 'plank':
+    case 'pushupTop':
+      body=head(23,69)+line(34,73,82,86)+line(82,86,110,101)+line(52,79,45,116)+line(70,84,65,118)+line(110,101,128,119); break;
+    case 'pushupBottom':
+      body=head(25,92)+line(36,94,84,98)+line(84,98,112,108)+line(51,96,34,117)+line(70,98,57,119)+line(112,108,128,119); break;
+    case 'mountain':
+      body=head(25,69)+line(36,73,82,86)+line(82,86,111,104)+line(52,79,45,116)+line(69,83,79,112)+line(82,86,60,111); break;
+    case 'highKneeLeft':
+      body=head(50,35)+line(50,48,50,91)+line(50,60,28,79)+line(50,60,72,78)+line(50,91,27,92)+line(27,92,38,117)+line(50,91,66,125); break;
+    case 'highKneeRight':
+      body=head(50,35)+line(50,48,50,91)+line(50,60,28,78)+line(50,60,72,79)+line(50,91,73,92)+line(73,92,62,117)+line(50,91,34,125); break;
+    case 'forearmPlank':
+      body=head(24,78)+line(35,81,84,88)+line(84,88,116,105)+line(48,83,30,111)+line(30,111,57,111)+line(116,105,132,119); break;
+    case 'sidePlank':
+      body=head(35,77)+line(46,80,87,92)+line(87,92,119,109)+line(55,83,42,113)+line(42,113,66,113)+line(63,85,61,39)+line(119,109,135,119); break;
+    case 'situpDown':
+      body=head(28,103)+line(39,105,78,108)+line(78,108,101,83)+line(101,83,123,112)+line(45,106,65,84); break;
+    case 'situpUp':
+      body=head(46,59)+line(52,70,73,103)+line(73,103,101,83)+line(101,83,123,112)+line(57,75,80,60); break;
+    case 'lunge':
+    case 'jumpLunge':
+      body=head(50,type==='jumpLunge'?27:39)+line(50,type==='jumpLunge'?40:52,50,type==='jumpLunge'?78:88)+line(50,60,26,82)+line(50,60,74,82)+line(50,type==='jumpLunge'?78:88,25,type==='jumpLunge'?98:101)+line(25,type==='jumpLunge'?98:101,12,124)+line(50,type==='jumpLunge'?78:88,82,type==='jumpLunge'?99:101)+line(82,type==='jumpLunge'?99:101,104,121); break;
+    case 'bearLeft':
+    case 'bearRight':
+      body=head(25,73)+line(36,76,77,84)+line(77,84,108,91)+line(49,78,type==='bearLeft'?37:59,116)+line(70,83,type==='bearLeft'?84:60,117)+line(108,91,type==='bearLeft'?125:94,118); break;
+    case 'crabLeft':
+    case 'crabRight':
+      body=head(31,67)+line(41,73,70,91)+line(70,91,105,91)+line(48,77,type==='crabLeft'?31:57,116)+line(78,91,type==='crabLeft'?91:68,119)+line(105,91,type==='crabLeft'?127:94,118); break;
+    case 'supermanDown':
+      body=head(23,98)+line(34,100,78,102)+line(78,102,119,105)+line(42,100,10,105)+line(118,105,137,113); break;
+    case 'supermanUp':
+      body=head(23,82)+line(34,89,78,101)+line(78,101,119,88)+line(42,91,10,69)+line(118,88,137,67); break;
+    case 'hollow':
+      body=head(36,93)+line(47,96,79,99)+line(79,99,116,78)+line(50,95,19,73)+line(116,78,137,63); break;
+    case 'legRaiseDown':
+      body=head(25,103)+line(36,105,76,106)+line(76,106,125,107)+line(44,105,62,88); break;
+    case 'legRaiseUp':
+      body=head(25,103)+line(36,105,76,106)+line(76,106,83,55)+line(83,55,86,20)+line(44,105,62,88); break;
+    case 'vupDown':
+      body=head(25,103)+line(36,105,76,106)+line(76,106,125,107)+line(44,105,18,91); break;
+    case 'vupUp':
+      body=head(50,52)+line(57,64,76,95)+line(76,95,105,61)+line(105,61,119,31)+line(58,67,89,45); break;
+    default:
+      body=head(50,35)+line(50,48,50,92)+line(50,60,28,82)+line(50,60,72,82)+line(50,92,35,125)+line(50,92,65,125);
+  }
+
+  return `<g>
+    <line x1="${x+5}" y1="128" x2="${x+140}" y2="128" stroke="${g}" stroke-width="2"/>
+    ${body}
+    <text x="${x+70}" y="149" text-anchor="middle" class="hiit-pose-label">${label}</text>
+  </g>`;
+}
+
+function renderHiitGuideVisual(poses){
+  const width=Math.max(310,poses.length*160);
+  const labels=poses.length===1?['POSIÇÃO']:poses.map((_,i)=>`FASE ${i+1}`);
+  const figures=poses.map((pose,i)=>drawHiitPose(pose,10+i*160,labels[i])).join('');
+  return `<svg viewBox="0 0 ${width} 165" xmlns="http://www.w3.org/2000/svg" aria-label="Ilustração do exercício">
+    <rect width="100%" height="100%" fill="#111519"/>
+    ${figures}
+  </svg>`;
+}
+
+function openHiitGuide(){
+  const exercise=$('hExercise').value;
+  const guide=HIIT_GUIDE[exercise];
+  if(!guide)return;
+
+  $('hiitGuideTitle').textContent=exercise;
+  $('hiitGuideVisual').innerHTML=renderHiitGuideVisual(guide.poses);
+  $('hiitGuideSteps').textContent=guide.steps;
+  $('hiitGuideMuscles').textContent=guide.muscles;
+  $('hiitGuideErrors').textContent=guide.errors;
+  $('hiitGuideModal').classList.add('on');
+  $('hiitGuideModal').setAttribute('aria-hidden','false');
+}
+
+function closeHiitGuide(){
+  $('hiitGuideModal').classList.remove('on');
+  $('hiitGuideModal').setAttribute('aria-hidden','true');
+}
+
+$('openHiitGuide').onclick=openHiitGuide;
+$('closeHiitGuide').onclick=closeHiitGuide;
+$('hiitGuideModal').addEventListener('click',event=>{
+  if(event.target===$('hiitGuideModal'))closeHiitGuide();
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape' && $('hiitGuideModal').classList.contains('on'))closeHiitGuide();
+});
+
 
 function hiitUsesTime(){
   return HIIT_TIME_EXERCISES.includes($('hExercise').value);
