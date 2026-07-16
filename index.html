@@ -263,7 +263,7 @@ input:focus,select:focus,textarea:focus{
   border-color:#555!important;
 }
 
-/* V5.6.4 GITHUB — alteração visual forçada e inequívoca */
+/* V5.6.5 GITHUB — alteração visual forçada e inequívoca */
 html body{
   background:#000000!important;
   background-image:none!important;
@@ -376,7 +376,7 @@ body .bar i{
   box-shadow:0 0 8px rgba(255,122,0,.35);
 }
 
-/* V5.6.4 GITHUB — calendário automático */
+/* V5.6.5 GITHUB — calendário automático */
 .day.today{
   position:relative;
   color:#050505!important;
@@ -403,7 +403,7 @@ body .bar i{
   font-weight:800;
 }
 
-/* V5.6.4 GITHUB — cartões premium, sem alterações funcionais */
+/* V5.6.5 GITHUB — cartões premium, sem alterações funcionais */
 html,body{background:#000!important;background-image:none!important}
 body .wrap{background:#000!important}
 
@@ -620,7 +620,7 @@ body .spartan-index-card .performance-sub{
   text-shadow:none!important;
 }
 
-/* V5.6.4 GITHUB — correção real do Índice Spartan */
+/* V5.6.5 GITHUB — correção real do Índice Spartan */
 body .spartan-index-card{
   position:relative!important;
   overflow:hidden!important;
@@ -659,7 +659,7 @@ body .spartan-index-card .performance-sub{
   }
 }
 
-/* V5.6.4 GITHUB — Treinos, parte 1 */
+/* V5.6.5 GITHUB — Treinos, parte 1 */
 @media(max-width:720px){
 
 .training-progress-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
@@ -669,12 +669,12 @@ body .spartan-index-card .performance-sub{
 .record-notice{margin-top:10px;padding:11px 12px;border-radius:15px;background:#171100;color:#ffd700;border:1.3px solid #ffd700;font-weight:1000;text-align:center}
 .trend-up{color:#4dd39a!important}.trend-flat{color:#ffd700!important}.trend-down{color:#ff8b4d!important}
 
-/* V5.6.4 GITHUB — módulos essenciais separados */
+/* V5.6.5 GITHUB — módulos essenciais separados */
 @media(max-width:720px){
   .nav{grid-template-columns:repeat(4,1fr)!important}
 }
 
-/* V5.6.4 GITHUB — HIIT + meta 1900 kcal */
+/* V5.6.5 GITHUB — HIIT + meta 1900 kcal */
 .hiit-time-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -703,7 +703,7 @@ body .spartan-index-card .performance-sub{
   .hiit-time-grid{grid-template-columns:1fr}
 }
 
-/* V5.6.4 GITHUB — HIIT essencial */
+/* V5.6.5 GITHUB — HIIT essencial */
 #hiitSeriesFields{margin:12px 0}
 #hiitSeriesFields .series-card{min-height:105px}
 #hiitSeriesFields .series-card b{color:#ffd700}
@@ -1001,9 +1001,51 @@ input,select,textarea{
   font-weight:700!important;
 }
 
-</style></head>
+
+.v5-weight-summary{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  margin:10px 0 12px;
+}
+.v5-weight-summary>div{
+  background:#15191d;
+  border:1px solid #34393e;
+  border-radius:9px;
+  padding:10px;
+}
+.v5-weight-summary span{
+  display:block;
+  font-size:10px;
+  color:#aaa;
+}
+.v5-weight-summary strong{
+  display:block;
+  margin-top:4px;
+  color:#e4b43c;
+  font-size:17px;
+}
+.v5-weight-goal-edit{
+  margin:8px 0 12px;
+}
+.v5-goal-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:8px;
+  align-items:end;
+}
+.v5-goal-row input{margin:0!important}
+@media(max-width:560px){
+  .v5-weight-summary{grid-template-columns:repeat(2,1fr)}
+  .v5-goal-row{grid-template-columns:1fr}
+}
+
+</style><link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#050505">
+<link rel="apple-touch-icon" href="./icon-192.png">
+</head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.4 GITHUB</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.5 GITHUB</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button></div>
 
 <section id="dash" class="page on">
@@ -1118,8 +1160,24 @@ input,select,textarea{
     <article class="v5-card v5-goal-progress-card">
       <div class="v5-title-row">
         <h3>EVOLUÇÃO ATÉ AO OBJETIVO</h3>
-        <span id="v5GoalProgressText">Define um peso alvo</span>
+        <span id="v5GoalProgressText">Objetivo: 75,0 kg</span>
       </div>
+
+      <div class="v5-weight-summary">
+        <div><span>PESO INICIAL</span><strong id="v5StartWeight">—</strong></div>
+        <div><span>PESO ATUAL</span><strong id="v5CurrentWeight">—</strong></div>
+        <div><span>OBJETIVO</span><strong id="v5TargetWeight">75,0 kg</strong></div>
+        <div><span>FALTAM</span><strong id="v5WeightRemaining">—</strong></div>
+      </div>
+
+      <div class="v5-weight-goal-edit">
+        <label for="v5GoalWeightInput">Alterar objetivo de peso</label>
+        <div class="v5-goal-row">
+          <input id="v5GoalWeightInput" type="number" step="0.1" value="75">
+          <button type="button" class="btn gold" id="v5SaveWeightGoal">Guardar objetivo</button>
+        </div>
+      </div>
+
       <div class="canvas"><canvas id="v5GoalProgressChart"></canvas></div>
     </article>
 
@@ -1683,7 +1741,32 @@ function hiitStats(){
 }
 
 $('saveCardio').onclick=()=>{db.cardio.push({id:crypto.randomUUID(),date:$('cDate').value,type:$('cType').value,distance:num($('cDistance').value),duration:num($('cDuration').value),calories:num($('cCalories').value),intensity:$('cIntensity').value,notes:$('cNotes').value});save();alert('Cardio guardado')};
-$('saveWeight').onclick=()=>{db.weights.push({id:crypto.randomUUID(),date:$('pDate').value,weight:num($('pWeight').value)});db.weights.sort((a,b)=>a.date.localeCompare(b.date));save();drawGoalProgressChart();alert('Peso guardado')};
+$('saveWeight').onclick=()=>{
+  const date=$('pDate').value||today();
+  const weight=num($('pWeight').value);
+
+  if(!weight||weight<=0){
+    alert('Indica um peso válido.');
+    return;
+  }
+
+  const index=db.weights.findIndex(x=>x.date===date);
+  const record={
+    id:index>=0?(db.weights[index].id||crypto.randomUUID()):crypto.randomUUID(),
+    date,
+    weight
+  };
+
+  if(index>=0)db.weights[index]=record;
+  else db.weights.push(record);
+
+  db.weights.sort((a,b)=>a.date.localeCompare(b.date));
+  localStorage.setItem(K,JSON.stringify(db));
+  render();
+  refreshV5Dashboard();
+  drawGoalProgressChart();
+  alert('Peso guardado');
+};
 $('saveMeasure').onclick=()=>{db.measures.push({id:crypto.randomUUID(),date:$('mDate').value,waist:num($('mWaist').value),belly:num($('mBelly').value),chest:num($('mChest').value),armR:num($('mArmR').value),armL:num($('mArmL').value),thighR:num($('mThighR').value),thighL:num($('mThighL').value)});save();alert('Medições guardadas')};
 $('savePhoto').onclick=()=>{let f=$('photoFile').files[0];if(!f)return alert('Escolhe uma fotografia');let r=new FileReader();r.onload=()=>{db.photos.push({id:crypto.randomUUID(),date:$('photoDate').value,type:$('photoType').value,data:r.result});save();alert('Fotografia guardada')};r.readAsDataURL(f)};
 $('saveGoals').onclick=()=>{db.goals={train:num($('goalTrain').value)||20,water:num($('goalWater').value)||3000,weight:num($('goalWeight').value)};save();drawGoalProgressChart();alert('Objetivos guardados')};
@@ -1899,41 +1982,78 @@ function totalKm(){
 }
 function managerDashboard(){
   const month=today().slice(0,7);
-  const d=db.daily.find(x=>x.date===today());
-  const trainGoal=db.goals.train||20, waterGoal=db.goals.water||3000;
-  const monthSessions=db.training.filter(x=>x.date.startsWith(month)).length;
-  const trainScore=Math.min(1,monthSessions/trainGoal);
-  const waterScore=d?Math.min(1,(d.water||0)/waterGoal):0;
-  const kcalScore=d?Math.max(0,1-Math.abs((d.total||0)-(d.goal||1900))/Math.max(d.goal||1900,1)):0;
-  const dataScore=Math.min(1,uniqueActiveDays()/14);
-  const score=Math.round((trainScore*.4+waterScore*.2+kcalScore*.2+dataScore*.2)*100);
+  const todayRecord=db.daily.find(x=>x.date===today());
 
-  const scoreEl=document.getElementById('managerScore');
-  if(scoreEl){
-    scoreEl.textContent=score;
-    document.getElementById('managerScoreBar').style.width=score+'%';
-    document.getElementById('managerScoreText').textContent=
+  const meaningfulDaily=db.daily.some(x=>
+    num(x.water)>0 ||
+    num(x.breakfast)>0 ||
+    num(x.lunch)>0 ||
+    num(x.snack)>0 ||
+    num(x.dinner)>0
+  );
+
+  const hasRealRecords=
+    db.training.length>0 ||
+    (db.hiit||[]).length>0 ||
+    (db.cardio||[]).length>0 ||
+    db.weights.length>0 ||
+    db.measures.length>0 ||
+    meaningfulDaily;
+
+  let score=0;
+
+  if(hasRealRecords){
+    const trainGoal=num(db.goals.train)||20;
+    const waterGoal=num(db.goals.water)||3000;
+    const monthSessions=
+      db.training.filter(x=>x.date.startsWith(month)).length +
+      (db.hiit||[]).filter(x=>x.date.startsWith(month)).length +
+      (db.cardio||[]).filter(x=>x.date.startsWith(month)).length;
+
+    const trainScore=Math.min(1,monthSessions/trainGoal);
+    const waterScore=todayRecord?Math.min(1,num(todayRecord.water)/waterGoal):0;
+
+    const hasFood=todayRecord && (
+      num(todayRecord.breakfast)+num(todayRecord.lunch)+
+      num(todayRecord.snack)+num(todayRecord.dinner)
+    )>0;
+
+    const kcalScore=hasFood
+      ?Math.max(0,1-Math.abs(num(todayRecord.total)-(num(todayRecord.goal)||1900))/Math.max(num(todayRecord.goal)||1900,1))
+      :0;
+
+    const dataScore=Math.min(1,uniqueActiveDays()/14);
+    score=Math.round((trainScore*.45+waterScore*.20+kcalScore*.20+dataScore*.15)*100);
+  }
+
+  const scoreEl=$('managerScore');
+  if(scoreEl)scoreEl.textContent=score;
+  if($('managerScoreBar'))$('managerScoreBar').style.width=score+'%';
+  if($('managerScoreText')){
+    $('managerScoreText').textContent=
       score>=85?'Nível de consistência excelente':
       score>=65?'Boa evolução — mantém o ritmo':
       score>=40?'Base criada — ainda há margem':
       'Começa a registar para criar tendência';
-    document.getElementById('streakValue').textContent=uniqueActiveDays();
-    document.getElementById('bestMonthValue').textContent=bestMonth();
-    document.getElementById('totalVolumeValue').textContent=totalVolume().toLocaleString('pt-PT');
-    document.getElementById('totalKmValue').textContent=totalKm().toFixed(1);
   }
 
-  const insight=document.getElementById('smartInsight');
-  if(!insight) return;
-  const lastWeights=[...db.weights].sort((a,b)=>a.date.localeCompare(b.date));
-  if(lastWeights.length>=2){
-    const diff=lastWeights[lastWeights.length-1].weight-lastWeights[0].weight;
+  if($('streakValue'))$('streakValue').textContent=hasRealRecords?uniqueActiveDays():0;
+  if($('bestMonthValue'))$('bestMonthValue').textContent=hasRealRecords?bestMonth():0;
+  if($('totalVolumeValue'))$('totalVolumeValue').textContent=hasRealRecords?totalVolume().toLocaleString('pt-PT'):'0';
+  if($('totalKmValue'))$('totalKmValue').textContent=hasRealRecords?totalKm().toFixed(1):'0.0';
+
+  const insight=$('smartInsight');
+  if(!insight)return;
+
+  const weights=[...db.weights].sort((a,b)=>a.date.localeCompare(b.date));
+  if(weights.length>=2){
+    const diff=num(weights[weights.length-1].weight)-num(weights[0].weight);
     const trend=diff<0?`desceste ${Math.abs(diff).toFixed(1)} kg`:`subiste ${diff.toFixed(1)} kg`;
-    insight.textContent=`Desde o primeiro registo de peso, ${trend}. Este mês tens ${monthSessions} exercícios registados e ${totalKm().toFixed(1)} km de cardio acumulados.`;
-  } else if(db.training.length){
-    insight.textContent=`Já tens ${db.training.length} exercícios registados. O teu volume acumulado é ${totalVolume().toLocaleString('pt-PT')} kg. Regista o peso semanal para cruzarmos força e composição corporal.`;
-  } else {
-    insight.textContent='Regista o primeiro treino, a água e as calorias. Depois o painel começa a comparar consistência, volume e evolução.';
+    insight.textContent=`Desde o primeiro registo de peso, ${trend}.`;
+  }else if(weights.length===1){
+    insight.textContent='Primeiro peso registado. As próximas pesagens vão mostrar a evolução.';
+  }else{
+    insight.textContent='Regista o primeiro peso para começar a acompanhar a evolução até ao objetivo.';
   }
 }
 document.addEventListener('click',e=>{
@@ -2039,32 +2159,53 @@ function drawGoalProgressChart(){
   const height=220;
   ctx.clearRect(0,0,width,height);
 
-  const weights=[...db.weights].sort((a,b)=>a.date.localeCompare(b.date));
-  const goal=num(db.goals.weight);
+  const weights=[...db.weights]
+    .filter(x=>num(x.weight)>0)
+    .sort((a,b)=>a.date.localeCompare(b.date));
 
-  if(!weights.length||!goal){
+  const goal=num(db.goals.weight)||75;
+
+  if($('v5GoalWeightInput'))$('v5GoalWeightInput').value=goal;
+  if($('v5TargetWeight'))$('v5TargetWeight').textContent=`${goal.toFixed(1)} kg`;
+
+  if(!weights.length){
+    if($('v5StartWeight'))$('v5StartWeight').textContent='—';
+    if($('v5CurrentWeight'))$('v5CurrentWeight').textContent='—';
+    if($('v5WeightRemaining'))$('v5WeightRemaining').textContent='—';
+    if($('v5GoalProgressText'))$('v5GoalProgressText').textContent=`Objetivo: ${goal.toFixed(1)} kg`;
+
     ctx.fillStyle='#aaa';
     ctx.font='14px sans-serif';
     ctx.textAlign='center';
-    ctx.fillText('Regista o peso e define o objetivo para acompanhar a evolução.',width/2,height/2);
-    if($('v5GoalProgressText'))$('v5GoalProgressText').textContent='Define um peso alvo';
+    ctx.fillText('Regista a primeira pesagem para iniciar a evolução.',width/2,height/2);
     return;
   }
 
   const first=num(weights[0].weight);
   const latest=num(weights[weights.length-1].weight);
   const totalDistance=Math.abs(first-goal);
-  const travelled=Math.abs(first-latest);
-  const progress=totalDistance?Math.max(0,Math.min(100,travelled/totalDistance*100)):100;
+  const currentDistance=Math.abs(latest-goal);
+  const progress=totalDistance===0
+    ?100
+    :Math.max(0,Math.min(100,(1-currentDistance/totalDistance)*100));
+  const remaining=Math.abs(latest-goal);
+
+  if($('v5StartWeight'))$('v5StartWeight').textContent=`${first.toFixed(1)} kg`;
+  if($('v5CurrentWeight'))$('v5CurrentWeight').textContent=`${latest.toFixed(1)} kg`;
+  if($('v5WeightRemaining'))$('v5WeightRemaining').textContent=
+    remaining<0.05?'Objetivo atingido':`${remaining.toFixed(1)} kg`;
 
   if($('v5GoalProgressText')){
-    $('v5GoalProgressText').textContent=`${latest} kg → objetivo ${goal} kg · ${Math.round(progress)}%`;
+    $('v5GoalProgressText').textContent=
+      `${latest.toFixed(1)} kg → ${goal.toFixed(1)} kg · ${Math.round(progress)}%`;
   }
 
   const values=weights.map(x=>num(x.weight)).concat([goal]);
-  const min=Math.min(...values)-1;
-  const max=Math.max(...values)+1;
-  const pad={l:38,r:18,t:20,b:34};
+  let min=Math.min(...values)-1;
+  let max=Math.max(...values)+1;
+  if(max-min<2){max+=1;min-=1}
+
+  const pad={l:42,r:18,t:20,b:34};
   const chartW=width-pad.l-pad.r;
   const chartH=height-pad.t-pad.b;
 
@@ -2079,22 +2220,22 @@ function drawGoalProgressChart(){
   }
 
   const xFor=i=>pad.l+(weights.length===1?chartW/2:(chartW*i/(weights.length-1)));
-  const yFor=v=>pad.t+(max-v)/(max-min)*chartH;
+  const yFor=value=>pad.t+(max-value)/(max-min)*chartH;
 
   ctx.strokeStyle='#d7a62f';
   ctx.lineWidth=3;
   ctx.beginPath();
-  weights.forEach((item,i)=>{
-    const x=xFor(i),y=yFor(num(item.weight));
-    i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+  weights.forEach((item,index)=>{
+    const x=xFor(index);
+    const y=yFor(num(item.weight));
+    index===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
   });
   ctx.stroke();
 
   ctx.fillStyle='#d7a62f';
-  weights.forEach((item,i)=>{
-    const x=xFor(i),y=yFor(num(item.weight));
+  weights.forEach((item,index)=>{
     ctx.beginPath();
-    ctx.arc(x,y,4,0,Math.PI*2);
+    ctx.arc(xFor(index),yFor(num(item.weight)),4,0,Math.PI*2);
     ctx.fill();
   });
 
@@ -2110,7 +2251,7 @@ function drawGoalProgressChart(){
   ctx.fillStyle='#4aa9ff';
   ctx.font='12px sans-serif';
   ctx.textAlign='right';
-  ctx.fillText(`Objetivo ${goal} kg`,width-pad.r,goalY-6);
+  ctx.fillText(`Objetivo ${goal.toFixed(1)} kg`,width-pad.r,goalY-6);
 }
 
 window.addEventListener('resize',drawGoalProgressChart);
@@ -2249,8 +2390,36 @@ function renderMainCalendar(){
   });
 }
 
+
+const v5SaveWeightGoal=$('v5SaveWeightGoal');
+if(v5SaveWeightGoal){
+  v5SaveWeightGoal.onclick=()=>{
+    const goal=num($('v5GoalWeightInput').value);
+    if(!goal||goal<=0){
+      alert('Indica um objetivo de peso válido.');
+      return;
+    }
+
+    db.goals.weight=goal;
+    if($('goalWeight'))$('goalWeight').value=goal;
+    localStorage.setItem(K,JSON.stringify(db));
+    drawGoalProgressChart();
+    alert('Objetivo atualizado');
+  };
+}
+
 </script>
 
 
+
+
+<script>
+window.addEventListener('load',()=>{
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('./service-worker.js')
+      .catch(()=>{});
+  }
+});
+</script>
 
 </body></html>

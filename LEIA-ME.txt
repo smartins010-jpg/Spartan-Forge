@@ -1,0 +1,14 @@
+SPARTAN FORGE — PACOTE PWA PARA GITHUB PAGES
+
+Carrega estes ficheiros na raiz do repositório:
+- index.html
+- manifest.webmanifest
+- service-worker.js
+- icon-192.png
+- icon-512.png
+- icon-maskable-512.png
+
+Depois de o GitHub Pages atualizar:
+1. Abre o site no Chrome.
+2. Menu do Chrome.
+3. Escolhe "Instalar aplicação" ou "Adicionar ao ecrã principal".
