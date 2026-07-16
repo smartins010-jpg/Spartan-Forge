@@ -1,11 +1,16 @@
-const CACHE='spartan-forge-v580a-hiit';
+const CACHE='spartan-forge-v581-static';
 const APP_SHELL=[
   './',
   './index.html',
   './manifest.webmanifest',
   './icon-192.png',
   './icon-512.png',
-  './icon-maskable-512.png'
+  './icon-maskable-512.png',
+  './exercise-flexoes.jpg',
+  './exercise-agachamento.jpg',
+  './exercise-burpees.jpg',
+  './exercise-mountain-climbers.jpg',
+  './exercise-prancha.jpg'
 ];
 
 self.addEventListener('install', event => {

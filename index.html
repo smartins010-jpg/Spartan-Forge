@@ -263,7 +263,7 @@ input:focus,select:focus,textarea:focus{
   border-color:#555!important;
 }
 
-/* V5.8.0A GITHUB — alteração visual forçada e inequívoca */
+/* V5.8.1 GITHUB — alteração visual forçada e inequívoca */
 html body{
   background:#000000!important;
   background-image:none!important;
@@ -376,7 +376,7 @@ body .bar i{
   box-shadow:0 0 8px rgba(255,122,0,.35);
 }
 
-/* V5.8.0A GITHUB — calendário automático */
+/* V5.8.1 GITHUB — calendário automático */
 .day.today{
   position:relative;
   color:#050505!important;
@@ -403,7 +403,7 @@ body .bar i{
   font-weight:800;
 }
 
-/* V5.8.0A GITHUB — cartões premium, sem alterações funcionais */
+/* V5.8.1 GITHUB — cartões premium, sem alterações funcionais */
 html,body{background:#000!important;background-image:none!important}
 body .wrap{background:#000!important}
 
@@ -620,7 +620,7 @@ body .spartan-index-card .performance-sub{
   text-shadow:none!important;
 }
 
-/* V5.8.0A GITHUB — correção real do Índice Spartan */
+/* V5.8.1 GITHUB — correção real do Índice Spartan */
 body .spartan-index-card{
   position:relative!important;
   overflow:hidden!important;
@@ -659,7 +659,7 @@ body .spartan-index-card .performance-sub{
   }
 }
 
-/* V5.8.0A GITHUB — Treinos, parte 1 */
+/* V5.8.1 GITHUB — Treinos, parte 1 */
 @media(max-width:720px){
 
 .training-progress-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
@@ -669,12 +669,12 @@ body .spartan-index-card .performance-sub{
 .record-notice{margin-top:10px;padding:11px 12px;border-radius:15px;background:#171100;color:#ffd700;border:1.3px solid #ffd700;font-weight:1000;text-align:center}
 .trend-up{color:#4dd39a!important}.trend-flat{color:#ffd700!important}.trend-down{color:#ff8b4d!important}
 
-/* V5.8.0A GITHUB — módulos essenciais separados */
+/* V5.8.1 GITHUB — módulos essenciais separados */
 @media(max-width:720px){
   .nav{grid-template-columns:repeat(4,1fr)!important}
 }
 
-/* V5.8.0A GITHUB — HIIT + meta 1900 kcal */
+/* V5.8.1 GITHUB — HIIT + meta 1900 kcal */
 .hiit-time-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -703,7 +703,7 @@ body .spartan-index-card .performance-sub{
   .hiit-time-grid{grid-template-columns:1fr}
 }
 
-/* V5.8.0A GITHUB — HIIT essencial */
+/* V5.8.1 GITHUB — HIIT essencial */
 #hiitSeriesFields{margin:12px 0}
 #hiitSeriesFields .series-card{min-height:105px}
 #hiitSeriesFields .series-card b{color:#ffd700}
@@ -1041,7 +1041,7 @@ input,select,textarea{
 }
 
 
-/* V5.8.0A — barra superior redundante removida */
+/* V5.8.1 — barra superior redundante removida */
 .v5-dashboard{padding-top:0!important}
 .v5-welcome{padding-top:14px!important}
 .v5-header{display:none!important}
@@ -1481,6 +1481,15 @@ input,select,textarea{
   letter-spacing:2px;
 }
 
+
+.exercise-sheet-image img{
+  display:block;
+  width:100%;
+  max-height:310px;
+  object-fit:contain;
+  background:#f4f4f4;
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1489,7 +1498,7 @@ input,select,textarea{
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.8.0A GITHUB</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.8.1 GITHUB</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
@@ -1682,6 +1691,12 @@ input,select,textarea{
 <label>Exercício</label>
 <select id="tExercise"></select>
 
+<div id="trainingMusclesCard" class="last-session" style="margin-top:9px">
+  <strong>Trabalha</strong>
+  <div id="trainingMusclesText" class="small">Seleciona um exercício.</div>
+</div>
+
+
 <div class="last-session" id="lastSessionBox">
   <strong>Último treino</strong>
   <div id="lastSessionText" class="small">Ainda não existem registos deste exercício.</div>
@@ -1788,18 +1803,6 @@ input,select,textarea{
       <div class="exercise-sheet-block">
         <h3>Trabalha</h3>
         <p id="exerciseSheetMuscles"></p>
-      </div>
-      <div class="exercise-sheet-block">
-        <h3>Como executar</h3>
-        <p id="exerciseSheetHow"></p>
-      </div>
-      <div class="exercise-sheet-block">
-        <h3>Erros a evitar</h3>
-        <p id="exerciseSheetErrors"></p>
-      </div>
-      <div class="exercise-sheet-level">
-        <span>Dificuldade</span>
-        <strong id="exerciseSheetLevel"></strong>
       </div>
     </div>
   </div>
@@ -2104,6 +2107,26 @@ $('saveDaily').onclick=()=>{
   renderMainCalendar();
   alert('Dia guardado');
 };
+
+const TRAINING_MUSCLES={
+  'Peito':'Peitoral, tríceps e ombros anteriores.',
+  'Costas':'Dorsais, trapézio, romboides, bíceps e lombar.',
+  'Ombros':'Deltoides, trapézio e estabilizadores do ombro.',
+  'Bíceps':'Bíceps, braquial e antebraço.',
+  'Tríceps':'Tríceps e estabilizadores do ombro.',
+  'Pernas':'Quadríceps, posteriores da coxa, glúteos e gémeos.',
+  'Glúteos':'Glúteos, posteriores da coxa e zona abdominal.',
+  'Core':'Abdominais, oblíquos, lombar e estabilizadores.'
+};
+
+function refreshTrainingMuscles(){
+  const group=$('tGroup').value;
+  const exercise=$('tExercise').value;
+  const target=$('trainingMusclesText');
+  if(!target)return;
+  target.textContent=`${exercise}: ${TRAINING_MUSCLES[group]||'Grupo muscular principal do exercício selecionado.'}`;
+}
+
 const groups=[...new Set(EX.filter(x=>x.group!=='HIIT').map(x=>x.group))];$('tGroup').innerHTML=groups.map(x=>`<option>${x}</option>`).join('');
 let lastExerciseRecord=null;
 function getLastExerciseRecord(){
@@ -2146,9 +2169,10 @@ function fillEx(){
   updateTrainingMode();
   showLastExercise();
   exerciseAnalysis();
+  refreshTrainingMuscles();
 }
 $('tGroup').onchange=fillEx;
-$('tExercise').onchange=()=>{showLastExercise();exerciseAnalysis()};
+$('tExercise').onchange=()=>{showLastExercise();exerciseAnalysis();refreshTrainingMuscles()};
 $('copyLastTraining').onclick=copyLastExercise;
 fillEx();
 
@@ -2192,7 +2216,7 @@ $('saveTraining').onclick=()=>{
 
 
 
-const HIIT_SHEETS={"Burpees": {"muscles": "Corpo inteiro: pernas, glúteos, peito, ombros, tríceps e zona abdominal.", "how": "Começa de pé, agacha e apoia as mãos. Leva os pés para trás até à prancha, regressa com os pés junto das mãos e termina com um salto vertical.", "errors": "Deixar a lombar cair na prancha, aterrar com os joelhos rígidos ou perder o controlo entre as fases.", "level": "★★★☆☆", "poses": ["stand", "squat", "plank", "jump"]}, "Jumping Jacks": {"muscles": "Pernas, gémeos, glúteos, ombros e resistência cardiovascular.", "how": "Parte com os pés juntos e braços ao lado do corpo. Salta abrindo as pernas e elevando os braços acima da cabeça. Regressa à posição inicial.", "errors": "Aterrar com impacto excessivo, perder o ritmo ou deixar os joelhos cair para dentro.", "level": "★☆☆☆☆", "poses": ["stand", "jack"]}, "Mountain Climbers": {"muscles": "Zona abdominal, ombros, peito, flexores da anca e pernas.", "how": "Mantém uma prancha alta. Leva alternadamente cada joelho em direção ao peito, mantendo os ombros sobre as mãos e a anca estável.", "errors": "Levantar demasiado a anca, encurtar o movimento ou balançar o tronco.", "level": "★★☆☆☆", "poses": ["plank", "mountain"]}, "High Knees": {"muscles": "Quadríceps, gémeos, flexores da anca, zona abdominal e capacidade cardiovascular.", "how": "Corre no mesmo lugar, elevando alternadamente os joelhos até perto da linha da cintura. Mantém o tronco direito e usa os braços para dar ritmo.", "errors": "Inclinar o tronco para trás, apoiar o pé com demasiada força ou baixar progressivamente os joelhos.", "level": "★★☆☆☆", "poses": ["high1", "high2"]}, "Agachamentos": {"muscles": "Quadríceps, glúteos, posteriores da coxa e zona abdominal.", "how": "Afasta os pés à largura dos ombros. Leva a anca para trás e para baixo, mantém o peito aberto e sobe empurrando o chão.", "errors": "Levantar os calcanhares, arredondar as costas ou deixar os joelhos cair para dentro.", "level": "★★☆☆☆", "poses": ["stand", "squat"]}, "Jump Squats": {"muscles": "Quadríceps, glúteos, gémeos, posteriores da coxa e potência explosiva.", "how": "Desce num agachamento e impulsiona o corpo para um salto vertical. Aterra suavemente e entra logo no agachamento seguinte.", "errors": "Aterrar com as pernas rígidas, perder o alinhamento dos joelhos ou sacrificar a profundidade.", "level": "★★★☆☆", "poses": ["squat", "jump"]}, "Flexões": {"muscles": "Peito, tríceps, ombros e zona abdominal.", "how": "Em prancha alta, mantém o corpo alinhado. Dobra os cotovelos, aproxima o peito do chão e empurra até estender os braços.", "errors": "Deixar a anca cair, abrir demasiado os cotovelos ou fazer apenas metade do movimento.", "level": "★★★☆☆", "poses": ["pushTop", "pushBottom"]}, "Prancha": {"muscles": "Abdominais, lombar, glúteos e estabilizadores dos ombros.", "how": "Apoia os antebraços e as pontas dos pés. Mantém cabeça, costas, anca e pernas numa linha reta, contraindo o abdómen.", "errors": "Levantar ou deixar cair a anca, prender a respiração ou perder o alinhamento da cabeça.", "level": "★★☆☆☆", "poses": ["forearm"]}, "Prancha lateral": {"muscles": "Abdominais oblíquos, glúteos, quadrado lombar e ombros.", "how": "Apoia um antebraço no chão, empilha os pés e eleva a anca até formar uma linha reta. Mantém o peito virado para a frente.", "errors": "Deixar a anca cair, rodar o peito para o chão ou apoiar o ombro fora do alinhamento.", "level": "★★★☆☆", "poses": ["side"]}, "Abdominais": {"muscles": "Reto abdominal e flexores da anca.", "how": "Deita-te com os joelhos dobrados e os pés apoiados. Eleva o tronco usando a zona abdominal e regressa de forma controlada.", "errors": "Puxar o pescoço com as mãos, usar balanço ou descolar os pés do chão.", "level": "★★☆☆☆", "poses": ["sitDown", "sitUp"]}};
+const HIIT_SHEETS={"Flexões": {"image": "./exercise-flexoes.jpg", "muscles": "Peitoral, tríceps, ombros e zona abdominal."}, "Agachamentos": {"image": "./exercise-agachamento.jpg", "muscles": "Quadríceps, glúteos, posteriores da coxa e zona abdominal."}, "Burpees": {"image": "./exercise-burpees.jpg", "muscles": "Corpo inteiro: pernas, glúteos, peito, ombros, tríceps e zona abdominal."}, "Mountain Climbers": {"image": "./exercise-mountain-climbers.jpg", "muscles": "Zona abdominal, ombros, peito, flexores da anca e pernas."}, "Prancha": {"image": "./exercise-prancha.jpg", "muscles": "Abdominais, lombar, glúteos e estabilizadores dos ombros."}};
 
 function poseSvg(type,x){
   const skin='#f1d2b6', body='#e1b13d', dark='#25292d', line='#f4f0e8';
@@ -2262,11 +2286,9 @@ function openHiitGuide(){
   if(!sheet)return;
 
   $('hiitGuideTitle').textContent=exercise;
-  $('exerciseSheetImage').innerHTML=exerciseImageSvg(sheet);
+  $('exerciseSheetImage').innerHTML=
+    `<img src="${sheet.image}" alt="Exemplo do exercício ${exercise}" loading="eager">`;
   $('exerciseSheetMuscles').textContent=sheet.muscles;
-  $('exerciseSheetHow').textContent=sheet.how;
-  $('exerciseSheetErrors').textContent=sheet.errors;
-  $('exerciseSheetLevel').textContent=sheet.level;
 
   $('hiitGuideModal').classList.add('on');
   $('hiitGuideModal').setAttribute('aria-hidden','false');
