@@ -263,7 +263,7 @@ input:focus,select:focus,textarea:focus{
   border-color:#555!important;
 }
 
-/* V5.6.5 GITHUB — alteração visual forçada e inequívoca */
+/* V5.6.6 GITHUB — alteração visual forçada e inequívoca */
 html body{
   background:#000000!important;
   background-image:none!important;
@@ -376,7 +376,7 @@ body .bar i{
   box-shadow:0 0 8px rgba(255,122,0,.35);
 }
 
-/* V5.6.5 GITHUB — calendário automático */
+/* V5.6.6 GITHUB — calendário automático */
 .day.today{
   position:relative;
   color:#050505!important;
@@ -403,7 +403,7 @@ body .bar i{
   font-weight:800;
 }
 
-/* V5.6.5 GITHUB — cartões premium, sem alterações funcionais */
+/* V5.6.6 GITHUB — cartões premium, sem alterações funcionais */
 html,body{background:#000!important;background-image:none!important}
 body .wrap{background:#000!important}
 
@@ -620,7 +620,7 @@ body .spartan-index-card .performance-sub{
   text-shadow:none!important;
 }
 
-/* V5.6.5 GITHUB — correção real do Índice Spartan */
+/* V5.6.6 GITHUB — correção real do Índice Spartan */
 body .spartan-index-card{
   position:relative!important;
   overflow:hidden!important;
@@ -659,7 +659,7 @@ body .spartan-index-card .performance-sub{
   }
 }
 
-/* V5.6.5 GITHUB — Treinos, parte 1 */
+/* V5.6.6 GITHUB — Treinos, parte 1 */
 @media(max-width:720px){
 
 .training-progress-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
@@ -669,12 +669,12 @@ body .spartan-index-card .performance-sub{
 .record-notice{margin-top:10px;padding:11px 12px;border-radius:15px;background:#171100;color:#ffd700;border:1.3px solid #ffd700;font-weight:1000;text-align:center}
 .trend-up{color:#4dd39a!important}.trend-flat{color:#ffd700!important}.trend-down{color:#ff8b4d!important}
 
-/* V5.6.5 GITHUB — módulos essenciais separados */
+/* V5.6.6 GITHUB — módulos essenciais separados */
 @media(max-width:720px){
   .nav{grid-template-columns:repeat(4,1fr)!important}
 }
 
-/* V5.6.5 GITHUB — HIIT + meta 1900 kcal */
+/* V5.6.6 GITHUB — HIIT + meta 1900 kcal */
 .hiit-time-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -703,7 +703,7 @@ body .spartan-index-card .performance-sub{
   .hiit-time-grid{grid-template-columns:1fr}
 }
 
-/* V5.6.5 GITHUB — HIIT essencial */
+/* V5.6.6 GITHUB — HIIT essencial */
 #hiitSeriesFields{margin:12px 0}
 #hiitSeriesFields .series-card{min-height:105px}
 #hiitSeriesFields .series-card b{color:#ffd700}
@@ -1040,12 +1040,9 @@ input,select,textarea{
   .v5-goal-row{grid-template-columns:1fr}
 }
 
-</style><link rel="manifest" href="./manifest.webmanifest">
-<meta name="theme-color" content="#050505">
-<link rel="apple-touch-icon" href="./icon-192.png">
-</head>
+</style></head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.5 GITHUB</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.6 GITHUB</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button></div>
 
 <section id="dash" class="page on">
@@ -1352,7 +1349,17 @@ input,select,textarea{
 </section>
 
 <section id="progress" class="page">
-<div class="card"><h2>Peso semanal</h2><div class="grid2"><div><label>Data</label><input id="pDate" type="date"></div><div><label>Peso kg</label><input id="pWeight" type="number" step=".1"></div></div><button class="btn gold full" id="saveWeight">Guardar peso</button><div class="canvas" style="margin-top:10px"><canvas id="weightChart"></canvas></div></div>
+<div class="card"><h2>Peso semanal</h2>
+<div class="grid2">
+  <div><label>Data</label><input id="pDate" type="date"></div>
+  <div><label>Peso kg</label><input id="pWeight" type="number" step=".1"></div>
+</div>
+<div class="rowbtn" style="margin-top:10px">
+  <button class="btn gold" id="saveWeight" type="button">Guardar peso</button>
+  <button class="btn dark" id="resetWeight" type="button">Apagar peso desta data</button>
+</div>
+<div class="canvas" style="margin-top:10px"><canvas id="weightChart"></canvas></div>
+</div>
 <div class="card"><h2>Medições mensais</h2><div class="grid2"><div><label>Data</label><input id="mDate" type="date"></div><div><label>Cintura</label><input id="mWaist" type="number" step=".1"></div><div><label>Barriga</label><input id="mBelly" type="number" step=".1"></div><div><label>Peito</label><input id="mChest" type="number" step=".1"></div><div><label>Braço direito</label><input id="mArmR" type="number" step=".1"></div><div><label>Braço esquerdo</label><input id="mArmL" type="number" step=".1"></div><div><label>Coxa direita</label><input id="mThighR" type="number" step=".1"></div><div><label>Coxa esquerda</label><input id="mThighL" type="number" step=".1"></div></div><button class="btn gold full" id="saveMeasure">Guardar medições</button><div id="measureCompare" class="small" style="margin-top:10px"></div></div>
 <div class="card"><h2>Fotografias mensais</h2><div class="grid2"><div><label>Data</label><input id="photoDate" type="date"></div><div><label>Tipo</label><select id="photoType"><option>Frente</option><option>Perfil</option><option>Costas</option></select></div></div><label>Fotografia</label><input id="photoFile" type="file" accept="image/*"><button class="btn gold full" id="savePhoto">Guardar fotografia</button><div class="photos" id="photoList" style="margin-top:10px"></div></div>
 </section>
@@ -1767,6 +1774,33 @@ $('saveWeight').onclick=()=>{
   drawGoalProgressChart();
   alert('Peso guardado');
 };
+
+$('resetWeight').onclick=()=>{
+  const date=$('pDate').value||today();
+  const index=db.weights.findIndex(x=>x.date===date);
+
+  if(index<0){
+    $('pWeight').value='';
+    alert('Não existe peso registado nesta data.');
+    return;
+  }
+
+  db.weights.splice(index,1);
+  $('pWeight').value='';
+
+  localStorage.setItem(K,JSON.stringify(db));
+  render();
+  refreshV5Dashboard();
+  drawGoalProgressChart();
+  alert('Peso desta data apagado');
+};
+
+
+$('pDate').addEventListener('change',()=>{
+  const record=db.weights.find(x=>x.date===$('pDate').value);
+  $('pWeight').value=record?record.weight:'';
+});
+
 $('saveMeasure').onclick=()=>{db.measures.push({id:crypto.randomUUID(),date:$('mDate').value,waist:num($('mWaist').value),belly:num($('mBelly').value),chest:num($('mChest').value),armR:num($('mArmR').value),armL:num($('mArmL').value),thighR:num($('mThighR').value),thighL:num($('mThighL').value)});save();alert('Medições guardadas')};
 $('savePhoto').onclick=()=>{let f=$('photoFile').files[0];if(!f)return alert('Escolhe uma fotografia');let r=new FileReader();r.onload=()=>{db.photos.push({id:crypto.randomUUID(),date:$('photoDate').value,type:$('photoType').value,data:r.result});save();alert('Fotografia guardada')};r.readAsDataURL(f)};
 $('saveGoals').onclick=()=>{db.goals={train:num($('goalTrain').value)||20,water:num($('goalWater').value)||3000,weight:num($('goalWeight').value)};save();drawGoalProgressChart();alert('Objetivos guardados')};
@@ -2411,15 +2445,5 @@ if(v5SaveWeightGoal){
 </script>
 
 
-
-
-<script>
-window.addEventListener('load',()=>{
-  if('serviceWorker' in navigator){
-    navigator.serviceWorker.register('./service-worker.js')
-      .catch(()=>{});
-  }
-});
-</script>
 
 </body></html>
