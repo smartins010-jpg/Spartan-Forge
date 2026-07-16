@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v570-hiit-guide';
+const CACHE='spartan-forge-v571-boneco';
 const APP_SHELL=[
   './',
   './index.html',
