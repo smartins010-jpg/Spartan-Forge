@@ -263,7 +263,7 @@ input:focus,select:focus,textarea:focus{
   border-color:#555!important;
 }
 
-/* V5.6.7 GITHUB — alteração visual forçada e inequívoca */
+/* V5.6.8 GITHUB — alteração visual forçada e inequívoca */
 html body{
   background:#000000!important;
   background-image:none!important;
@@ -376,7 +376,7 @@ body .bar i{
   box-shadow:0 0 8px rgba(255,122,0,.35);
 }
 
-/* V5.6.7 GITHUB — calendário automático */
+/* V5.6.8 GITHUB — calendário automático */
 .day.today{
   position:relative;
   color:#050505!important;
@@ -403,7 +403,7 @@ body .bar i{
   font-weight:800;
 }
 
-/* V5.6.7 GITHUB — cartões premium, sem alterações funcionais */
+/* V5.6.8 GITHUB — cartões premium, sem alterações funcionais */
 html,body{background:#000!important;background-image:none!important}
 body .wrap{background:#000!important}
 
@@ -620,7 +620,7 @@ body .spartan-index-card .performance-sub{
   text-shadow:none!important;
 }
 
-/* V5.6.7 GITHUB — correção real do Índice Spartan */
+/* V5.6.8 GITHUB — correção real do Índice Spartan */
 body .spartan-index-card{
   position:relative!important;
   overflow:hidden!important;
@@ -659,7 +659,7 @@ body .spartan-index-card .performance-sub{
   }
 }
 
-/* V5.6.7 GITHUB — Treinos, parte 1 */
+/* V5.6.8 GITHUB — Treinos, parte 1 */
 @media(max-width:720px){
 
 .training-progress-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
@@ -669,12 +669,12 @@ body .spartan-index-card .performance-sub{
 .record-notice{margin-top:10px;padding:11px 12px;border-radius:15px;background:#171100;color:#ffd700;border:1.3px solid #ffd700;font-weight:1000;text-align:center}
 .trend-up{color:#4dd39a!important}.trend-flat{color:#ffd700!important}.trend-down{color:#ff8b4d!important}
 
-/* V5.6.7 GITHUB — módulos essenciais separados */
+/* V5.6.8 GITHUB — módulos essenciais separados */
 @media(max-width:720px){
   .nav{grid-template-columns:repeat(4,1fr)!important}
 }
 
-/* V5.6.7 GITHUB — HIIT + meta 1900 kcal */
+/* V5.6.8 GITHUB — HIIT + meta 1900 kcal */
 .hiit-time-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -703,7 +703,7 @@ body .spartan-index-card .performance-sub{
   .hiit-time-grid{grid-template-columns:1fr}
 }
 
-/* V5.6.7 GITHUB — HIIT essencial */
+/* V5.6.8 GITHUB — HIIT essencial */
 #hiitSeriesFields{margin:12px 0}
 #hiitSeriesFields .series-card{min-height:105px}
 #hiitSeriesFields .series-card b{color:#ffd700}
@@ -1041,14 +1041,60 @@ input,select,textarea{
 }
 
 
-/* V5.6.7 — barra superior redundante removida */
+/* V5.6.8 — barra superior redundante removida */
 .v5-dashboard{padding-top:0!important}
 .v5-welcome{padding-top:14px!important}
 .v5-header{display:none!important}
 
-</style></head>
+
+/* Tipografia Spartan */
+:root{
+  --spartan-title:"Cinzel","Times New Roman",serif;
+  --spartan-text:"Roboto Condensed","Arial Narrow",Arial,sans-serif;
+}
+
+html,body,.app,input,select,textarea,label,p,span,small{
+  font-family:var(--spartan-text)!important;
+}
+
+h1,h2,h3,h4,
+.v5-brand,
+.v5-welcome h2,
+.v5-card h3,
+.card h2,
+.nav button,
+.btn,
+.v5-actions strong,
+.v5-title-row,
+.calendar-title,
+.performance-title,
+#managerScore,
+.v5-weight-summary strong{
+  font-family:var(--spartan-title)!important;
+  font-weight:800!important;
+  letter-spacing:.8px!important;
+}
+
+button{
+  font-family:var(--spartan-title)!important;
+  font-weight:700!important;
+  letter-spacing:.45px!important;
+}
+
+input,select,textarea{
+  font-family:var(--spartan-text)!important;
+  font-weight:600!important;
+}
+
+</style><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#050505">
+<link rel="apple-touch-icon" href="./icon-192.png">
+</head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.7 GITHUB</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.8 GITHUB</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button></div>
 
 <section id="dash" class="page on">
@@ -2444,5 +2490,15 @@ if(v5SaveWeightGoal){
 </script>
 
 
+
+
+<script>
+window.addEventListener('load', function(){
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js', {scope:'./'})
+      .catch(function(){});
+  }
+});
+</script>
 
 </body></html>
