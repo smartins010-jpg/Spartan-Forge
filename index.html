@@ -263,7 +263,7 @@ input:focus,select:focus,textarea:focus{
   border-color:#555!important;
 }
 
-/* V5.6.1 GITHUB — alteração visual forçada e inequívoca */
+/* V5.6.3 GITHUB — alteração visual forçada e inequívoca */
 html body{
   background:#000000!important;
   background-image:none!important;
@@ -376,7 +376,7 @@ body .bar i{
   box-shadow:0 0 8px rgba(255,122,0,.35);
 }
 
-/* V5.6.1 GITHUB — calendário automático */
+/* V5.6.3 GITHUB — calendário automático */
 .day.today{
   position:relative;
   color:#050505!important;
@@ -403,7 +403,7 @@ body .bar i{
   font-weight:800;
 }
 
-/* V5.6.1 GITHUB — cartões premium, sem alterações funcionais */
+/* V5.6.3 GITHUB — cartões premium, sem alterações funcionais */
 html,body{background:#000!important;background-image:none!important}
 body .wrap{background:#000!important}
 
@@ -620,7 +620,7 @@ body .spartan-index-card .performance-sub{
   text-shadow:none!important;
 }
 
-/* V5.6.1 GITHUB — correção real do Índice Spartan */
+/* V5.6.3 GITHUB — correção real do Índice Spartan */
 body .spartan-index-card{
   position:relative!important;
   overflow:hidden!important;
@@ -659,7 +659,7 @@ body .spartan-index-card .performance-sub{
   }
 }
 
-/* V5.6.1 GITHUB — Treinos, parte 1 */
+/* V5.6.3 GITHUB — Treinos, parte 1 */
 @media(max-width:720px){
 
 .training-progress-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
@@ -669,12 +669,12 @@ body .spartan-index-card .performance-sub{
 .record-notice{margin-top:10px;padding:11px 12px;border-radius:15px;background:#171100;color:#ffd700;border:1.3px solid #ffd700;font-weight:1000;text-align:center}
 .trend-up{color:#4dd39a!important}.trend-flat{color:#ffd700!important}.trend-down{color:#ff8b4d!important}
 
-/* V5.6.1 GITHUB — módulos essenciais separados */
+/* V5.6.3 GITHUB — módulos essenciais separados */
 @media(max-width:720px){
   .nav{grid-template-columns:repeat(4,1fr)!important}
 }
 
-/* V5.6.1 GITHUB — HIIT + meta 1900 kcal */
+/* V5.6.3 GITHUB — HIIT + meta 1900 kcal */
 .hiit-time-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -703,7 +703,7 @@ body .spartan-index-card .performance-sub{
   .hiit-time-grid{grid-template-columns:1fr}
 }
 
-/* V5.6.1 GITHUB — HIIT essencial */
+/* V5.6.3 GITHUB — HIIT essencial */
 #hiitSeriesFields{margin:12px 0}
 #hiitSeriesFields .series-card{min-height:105px}
 #hiitSeriesFields .series-card b{color:#ffd700}
@@ -1003,7 +1003,7 @@ input,select,textarea{
 
 </style></head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.1 GITHUB</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.3 GITHUB</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button></div>
 
 <section id="dash" class="page on">
@@ -1335,9 +1335,31 @@ function save(){
   render();
   refreshV5Dashboard();
 }
-function totalDaily(){return ['dBreakfast','dLunch','dSnack','dDinner'].reduce((s,x)=>s+num($(x).value),0)}
-function live(){let t=totalDaily(),g=num($('dGoal').value);$('dSum').textContent=`Consumidas: ${t} · Restantes: ${g-t}`;$('dBar').style.width=Math.min(100,g?t/g*100:0)+'%'}
-['dBreakfast','dLunch','dSnack','dDinner','dGoal'].forEach(x=>$(x).oninput=live);live();
+function totalDaily(){
+  return ['dBreakfast','dLunch','dSnack','dDinner']
+    .reduce((sum,id)=>{
+      const field=$(id);
+      return sum+(field?num(field.value):0);
+    },0);
+}
+
+function live(){
+  const consumed=totalDaily();
+  const goal=num($('dGoal')?.value)||1900;
+  const remaining=goal-consumed;
+
+  if($('dSum'))$('dSum').textContent=`Consumidas: ${consumed} · Restantes: ${remaining}`;
+  if($('dBar'))$('dBar').style.width=Math.min(100,goal?consumed/goal*100:0)+'%';
+}
+
+['dBreakfast','dLunch','dSnack','dDinner','dGoal'].forEach(id=>{
+  const field=$(id);
+  if(field){
+    field.addEventListener('input',live);
+    field.addEventListener('change',live);
+  }
+});
+live();
 
 let waterHistory=[];
 function waterGoalValue(){
@@ -1405,7 +1427,38 @@ $('resetWater').onclick=()=>{
 $('dWater').addEventListener('input',refreshWaterQuick);
 
 refreshWaterQuick();
-$('saveDaily').onclick=()=>{let r={id:crypto.randomUUID(),date:$('dDate').value,type:$('dType').value,water:num($('dWater').value),goal:num($('dGoal').value)||1900,breakfast:num($('dBreakfast').value),lunch:num($('dLunch').value),snack:num($('dSnack').value),dinner:num($('dDinner').value),total:totalDaily(),creatine:$('dCreatine').checked,omega:$('dOmega').checked,whey:$('dWhey').checked,carnitine:$('dCarnitine').checked,notes:$('dNotes').value};let i=db.daily.findIndex(x=>x.date===r.date);i>=0?db.daily[i]=r:db.daily.push(r);save();alert('Dia guardado')};
+$('saveDaily').onclick=()=>{
+  const date=$('dDate').value;
+  const existingIndex=db.daily.findIndex(x=>x.date===date);
+  const previous=existingIndex>=0?db.daily[existingIndex]:null;
+
+  const record={
+    id:previous?.id||crypto.randomUUID(),
+    date,
+    type:$('dType').value,
+    water:num($('dWater').value),
+    goal:num($('dGoal').value)||1900,
+    breakfast:num($('dBreakfast').value),
+    lunch:num($('dLunch').value),
+    snack:num($('dSnack').value),
+    dinner:num($('dDinner').value),
+    total:totalDaily(),
+    creatine:$('dCreatine').checked,
+    omega:$('dOmega').checked,
+    whey:$('dWhey').checked,
+    carnitine:$('dCarnitine').checked,
+    notes:$('dNotes').value
+  };
+
+  if(existingIndex>=0)db.daily[existingIndex]=record;
+  else db.daily.push(record);
+
+  localStorage.setItem(K,JSON.stringify(db));
+  live();
+  refreshV5Dashboard();
+  renderMainCalendar();
+  alert('Dia guardado');
+};
 const groups=[...new Set(EX.filter(x=>x.group!=='HIIT').map(x=>x.group))];$('tGroup').innerHTML=groups.map(x=>`<option>${x}</option>`).join('');
 let lastExerciseRecord=null;
 function getLastExerciseRecord(){
