@@ -263,7 +263,7 @@ input:focus,select:focus,textarea:focus{
   border-color:#555!important;
 }
 
-/* V5.6.8 GITHUB — alteração visual forçada e inequívoca */
+/* V5.6.9 GITHUB — alteração visual forçada e inequívoca */
 html body{
   background:#000000!important;
   background-image:none!important;
@@ -376,7 +376,7 @@ body .bar i{
   box-shadow:0 0 8px rgba(255,122,0,.35);
 }
 
-/* V5.6.8 GITHUB — calendário automático */
+/* V5.6.9 GITHUB — calendário automático */
 .day.today{
   position:relative;
   color:#050505!important;
@@ -403,7 +403,7 @@ body .bar i{
   font-weight:800;
 }
 
-/* V5.6.8 GITHUB — cartões premium, sem alterações funcionais */
+/* V5.6.9 GITHUB — cartões premium, sem alterações funcionais */
 html,body{background:#000!important;background-image:none!important}
 body .wrap{background:#000!important}
 
@@ -620,7 +620,7 @@ body .spartan-index-card .performance-sub{
   text-shadow:none!important;
 }
 
-/* V5.6.8 GITHUB — correção real do Índice Spartan */
+/* V5.6.9 GITHUB — correção real do Índice Spartan */
 body .spartan-index-card{
   position:relative!important;
   overflow:hidden!important;
@@ -659,7 +659,7 @@ body .spartan-index-card .performance-sub{
   }
 }
 
-/* V5.6.8 GITHUB — Treinos, parte 1 */
+/* V5.6.9 GITHUB — Treinos, parte 1 */
 @media(max-width:720px){
 
 .training-progress-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
@@ -669,12 +669,12 @@ body .spartan-index-card .performance-sub{
 .record-notice{margin-top:10px;padding:11px 12px;border-radius:15px;background:#171100;color:#ffd700;border:1.3px solid #ffd700;font-weight:1000;text-align:center}
 .trend-up{color:#4dd39a!important}.trend-flat{color:#ffd700!important}.trend-down{color:#ff8b4d!important}
 
-/* V5.6.8 GITHUB — módulos essenciais separados */
+/* V5.6.9 GITHUB — módulos essenciais separados */
 @media(max-width:720px){
   .nav{grid-template-columns:repeat(4,1fr)!important}
 }
 
-/* V5.6.8 GITHUB — HIIT + meta 1900 kcal */
+/* V5.6.9 GITHUB — HIIT + meta 1900 kcal */
 .hiit-time-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -703,7 +703,7 @@ body .spartan-index-card .performance-sub{
   .hiit-time-grid{grid-template-columns:1fr}
 }
 
-/* V5.6.8 GITHUB — HIIT essencial */
+/* V5.6.9 GITHUB — HIIT essencial */
 #hiitSeriesFields{margin:12px 0}
 #hiitSeriesFields .series-card{min-height:105px}
 #hiitSeriesFields .series-card b{color:#ffd700}
@@ -1041,7 +1041,7 @@ input,select,textarea{
 }
 
 
-/* V5.6.8 — barra superior redundante removida */
+/* V5.6.9 — barra superior redundante removida */
 .v5-dashboard{padding-top:0!important}
 .v5-welcome{padding-top:14px!important}
 .v5-header{display:none!important}
@@ -1086,6 +1086,43 @@ input,select,textarea{
   font-weight:600!important;
 }
 
+
+/* Perfil Spartan */
+.spartan-profile-card h2{
+  color:#d9ad3a;
+}
+.profile-weight-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  margin-top:10px;
+}
+.profile-weight-grid>div{
+  background:#15191d;
+  border:1px solid #34393e;
+  border-radius:9px;
+  padding:12px;
+}
+.profile-weight-grid span{
+  display:block;
+  color:#bdb7aa;
+  font-size:11px;
+  text-transform:uppercase;
+}
+.profile-weight-grid strong{
+  display:block;
+  margin-top:5px;
+  color:#e2b43d;
+  font-family:var(--spartan-title)!important;
+  font-size:18px;
+}
+.profile-note{
+  margin-top:10px;
+}
+@media(max-width:560px){
+  .profile-weight-grid{grid-template-columns:repeat(2,1fr)}
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1094,8 +1131,8 @@ input,select,textarea{
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.8 GITHUB</span></div><div class="logo">SP</div></div></div>
-<div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.9 GITHUB</span></div><div class="logo">SP</div></div></div>
+<div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
   <div class="v5-dashboard">
@@ -1409,6 +1446,65 @@ input,select,textarea{
 <div class="card"><h2>Fotografias mensais</h2><div class="grid2"><div><label>Data</label><input id="photoDate" type="date"></div><div><label>Tipo</label><select id="photoType"><option>Frente</option><option>Perfil</option><option>Costas</option></select></div></div><label>Fotografia</label><input id="photoFile" type="file" accept="image/*"><button class="btn gold full" id="savePhoto">Guardar fotografia</button><div class="photos" id="photoList" style="margin-top:10px"></div></div>
 </section>
 
+
+<section id="profile" class="page">
+  <div class="card spartan-profile-card">
+    <h2>⚔ Perfil Spartan</h2>
+
+    <div class="grid2">
+      <div>
+        <label>Nome</label>
+        <input id="profileName" type="text" placeholder="O teu nome">
+      </div>
+      <div>
+        <label>Data de nascimento</label>
+        <input id="profileBirthDate" type="date">
+      </div>
+      <div>
+        <label>Idade</label>
+        <input id="profileAge" type="text" readonly placeholder="Calculada automaticamente">
+      </div>
+      <div>
+        <label>Altura (cm)</label>
+        <input id="profileHeight" type="number" min="0" step="1">
+      </div>
+      <div>
+        <label>Início da jornada</label>
+        <input id="profileStartDate" type="date">
+      </div>
+    </div>
+
+    <button class="btn gold full" id="saveProfile" type="button">Guardar Perfil Spartan</button>
+  </div>
+
+  <div class="card spartan-profile-card">
+    <h2>Progressão de peso</h2>
+
+    <div class="profile-weight-grid">
+      <div>
+        <span>Peso inicial</span>
+        <strong id="profileStartWeight">—</strong>
+      </div>
+      <div>
+        <span>Peso atual</span>
+        <strong id="profileCurrentWeight">—</strong>
+      </div>
+      <div>
+        <span>Objetivo</span>
+        <strong id="profileGoalWeight">75,0 kg</strong>
+      </div>
+      <div>
+        <span>Progresso</span>
+        <strong id="profileWeightProgress">—</strong>
+      </div>
+    </div>
+
+    <p class="small profile-note">
+      O peso inicial corresponde à primeira pesagem e o peso atual à pesagem mais recente.
+    </p>
+  </div>
+</section>
+
 <section id="history" class="page"><div class="card"><h2>Histórico completo</h2><input id="searchHistory" placeholder="Pesquisar por exercício, grupo ou cardio..."><div id="historyList"></div></div><div class="card"><h2>Cópia de segurança</h2><div class="rowbtn"><button class="btn dark" id="exportBtn">Exportar dados</button><button class="btn danger" id="clearBtn">Apagar tudo</button></div><label>Importar cópia</label><input id="importFile" type="file" accept=".json,application/json"></div></section>
 </div>
 
@@ -1417,6 +1513,7 @@ const EX=[{"group": "Peito", "name": "Press de peito na máquina", "equipment": 
 const K='sandro_performance_v1'; // mantém compatibilidade com a primeira versão
 let db=JSON.parse(localStorage.getItem(K)||'{"daily":[],"training":[],"hiit":[],"cardio":[],"weights":[],"measures":[],"photos":[],"goals":{}}');
 db.hiit=db.hiit||[];
+db.profile=db.profile||{};
 db.goals=db.goals||{};
 if(db.goals.weight===undefined||db.goals.weight===null||db.goals.weight==='')db.goals.weight=75;
 db.goals=db.goals||{};
@@ -1438,6 +1535,8 @@ function openPage(pageId){
     resetCalendarToToday();
     refreshV5Dashboard();
   }
+
+  if(pageId==='profile')renderProfile();
 
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -2144,6 +2243,91 @@ document.addEventListener('click',e=>{
   window.scrollTo({top:0,behavior:'smooth'});
 });
 
+
+function calculateProfileAge(birthDate){
+  if(!birthDate)return '';
+  const birth=new Date(birthDate+'T00:00:00');
+  if(Number.isNaN(birth.getTime()))return '';
+
+  const now=new Date();
+  let age=now.getFullYear()-birth.getFullYear();
+  const monthDifference=now.getMonth()-birth.getMonth();
+
+  if(monthDifference<0 || (monthDifference===0 && now.getDate()<birth.getDate())){
+    age--;
+  }
+
+  return age>=0?`${age} anos`:'';
+}
+
+function renderProfile(){
+  const profile=db.profile||{};
+
+  if($('profileName'))$('profileName').value=profile.name||'';
+  if($('profileBirthDate'))$('profileBirthDate').value=profile.birthDate||'';
+  if($('profileAge'))$('profileAge').value=calculateProfileAge(profile.birthDate);
+  if($('profileHeight'))$('profileHeight').value=profile.height||'';
+  if($('profileStartDate'))$('profileStartDate').value=profile.startDate||'';
+
+  const weights=[...db.weights]
+    .filter(item=>num(item.weight)>0)
+    .sort((a,b)=>a.date.localeCompare(b.date));
+
+  const goal=num(db.goals.weight)||75;
+
+  if($('profileGoalWeight')){
+    $('profileGoalWeight').textContent=`${goal.toFixed(1)} kg`;
+  }
+
+  if(!weights.length){
+    if($('profileStartWeight'))$('profileStartWeight').textContent='—';
+    if($('profileCurrentWeight'))$('profileCurrentWeight').textContent='—';
+    if($('profileWeightProgress'))$('profileWeightProgress').textContent='—';
+    return;
+  }
+
+  const first=num(weights[0].weight);
+  const current=num(weights[weights.length-1].weight);
+  const change=current-first;
+  const remaining=Math.abs(current-goal);
+
+  if($('profileStartWeight'))$('profileStartWeight').textContent=`${first.toFixed(1)} kg`;
+  if($('profileCurrentWeight'))$('profileCurrentWeight').textContent=`${current.toFixed(1)} kg`;
+
+  if($('profileWeightProgress')){
+    if(remaining<0.05){
+      $('profileWeightProgress').textContent='Objetivo atingido';
+    }else if(change<0){
+      $('profileWeightProgress').textContent=`-${Math.abs(change).toFixed(1)} kg · faltam ${remaining.toFixed(1)} kg`;
+    }else if(change>0){
+      $('profileWeightProgress').textContent=`+${change.toFixed(1)} kg · faltam ${remaining.toFixed(1)} kg`;
+    }else{
+      $('profileWeightProgress').textContent=`Sem alteração · faltam ${remaining.toFixed(1)} kg`;
+    }
+  }
+}
+
+if($('profileBirthDate')){
+  $('profileBirthDate').addEventListener('change',()=>{
+    $('profileAge').value=calculateProfileAge($('profileBirthDate').value);
+  });
+}
+
+if($('saveProfile')){
+  $('saveProfile').onclick=()=>{
+    db.profile={
+      name:$('profileName').value.trim(),
+      birthDate:$('profileBirthDate').value,
+      height:num($('profileHeight').value)||'',
+      startDate:$('profileStartDate').value
+    };
+
+    localStorage.setItem(K,JSON.stringify(db));
+    renderProfile();
+    alert('Perfil Spartan guardado');
+  };
+}
+
 function render(){
   managerDashboard();
   dashboard();
@@ -2166,7 +2350,9 @@ function render(){
 
   renderMainCalendar();
   refreshWaterQuickButton();
+  renderProfile();
 }
+renderProfile();
 render();
 refreshV5Dashboard();
 $('exportBtn').onclick=()=>{let b=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='sandro-performance-backup.json';a.click()};
