@@ -263,7 +263,7 @@ input:focus,select:focus,textarea:focus{
   border-color:#555!important;
 }
 
-/* V5.6.3 GITHUB — alteração visual forçada e inequívoca */
+/* V5.6.4 GITHUB — alteração visual forçada e inequívoca */
 html body{
   background:#000000!important;
   background-image:none!important;
@@ -376,7 +376,7 @@ body .bar i{
   box-shadow:0 0 8px rgba(255,122,0,.35);
 }
 
-/* V5.6.3 GITHUB — calendário automático */
+/* V5.6.4 GITHUB — calendário automático */
 .day.today{
   position:relative;
   color:#050505!important;
@@ -403,7 +403,7 @@ body .bar i{
   font-weight:800;
 }
 
-/* V5.6.3 GITHUB — cartões premium, sem alterações funcionais */
+/* V5.6.4 GITHUB — cartões premium, sem alterações funcionais */
 html,body{background:#000!important;background-image:none!important}
 body .wrap{background:#000!important}
 
@@ -620,7 +620,7 @@ body .spartan-index-card .performance-sub{
   text-shadow:none!important;
 }
 
-/* V5.6.3 GITHUB — correção real do Índice Spartan */
+/* V5.6.4 GITHUB — correção real do Índice Spartan */
 body .spartan-index-card{
   position:relative!important;
   overflow:hidden!important;
@@ -659,7 +659,7 @@ body .spartan-index-card .performance-sub{
   }
 }
 
-/* V5.6.3 GITHUB — Treinos, parte 1 */
+/* V5.6.4 GITHUB — Treinos, parte 1 */
 @media(max-width:720px){
 
 .training-progress-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
@@ -669,12 +669,12 @@ body .spartan-index-card .performance-sub{
 .record-notice{margin-top:10px;padding:11px 12px;border-radius:15px;background:#171100;color:#ffd700;border:1.3px solid #ffd700;font-weight:1000;text-align:center}
 .trend-up{color:#4dd39a!important}.trend-flat{color:#ffd700!important}.trend-down{color:#ff8b4d!important}
 
-/* V5.6.3 GITHUB — módulos essenciais separados */
+/* V5.6.4 GITHUB — módulos essenciais separados */
 @media(max-width:720px){
   .nav{grid-template-columns:repeat(4,1fr)!important}
 }
 
-/* V5.6.3 GITHUB — HIIT + meta 1900 kcal */
+/* V5.6.4 GITHUB — HIIT + meta 1900 kcal */
 .hiit-time-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -703,7 +703,7 @@ body .spartan-index-card .performance-sub{
   .hiit-time-grid{grid-template-columns:1fr}
 }
 
-/* V5.6.3 GITHUB — HIIT essencial */
+/* V5.6.4 GITHUB — HIIT essencial */
 #hiitSeriesFields{margin:12px 0}
 #hiitSeriesFields .series-card{min-height:105px}
 #hiitSeriesFields .series-card b{color:#ffd700}
@@ -1003,7 +1003,7 @@ input,select,textarea{
 
 </style></head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.3 GITHUB</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.6.4 GITHUB</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button></div>
 
 <section id="dash" class="page on">
@@ -1164,7 +1164,16 @@ input,select,textarea{
 <div class="grid2"><div><label>Água ml</label><input id="dWater" type="number" value="0"></div><div><label>Meta kcal</label><input id="dGoal" type="number" value="1900"></div></div>
 <div class="grid2"><div><label>Pequeno-almoço</label><input id="dBreakfast" type="number" value="0"></div><div><label>Almoço</label><input id="dLunch" type="number" value="0"></div><div><label>Snack</label><input id="dSnack" type="number" value="0"></div><div><label>Jantar</label><input id="dDinner" type="number" value="0"></div></div>
 <div class="checks"><label class="check"><input id="dCreatine" type="checkbox">Creatina</label><label class="check"><input id="dOmega" type="checkbox">Ómega-3</label><label class="check"><input id="dWhey" type="checkbox">Whey</label><label class="check"><input id="dCarnitine" type="checkbox">L-Carnitina</label></div>
-<p class="small" id="dSum"></p><div class="bar"><i id="dBar"></i></div><label>Notas</label><textarea id="dNotes"></textarea><button class="btn gold full" id="saveDaily">Guardar dia</button></div>
+<p class="small" id="dSum"></p>
+<div class="bar"><i id="dBar"></i></div>
+
+<div class="rowbtn" style="margin-top:10px">
+  <button type="button" class="btn dark" id="resetCalories">Repor calorias a zero</button>
+</div>
+
+<label>Notas</label>
+<textarea id="dNotes"></textarea>
+<button class="btn gold full" id="saveDaily">Guardar dia</button></div>
 </section>
 
 <section id="training" class="page">
@@ -1427,6 +1436,30 @@ $('resetWater').onclick=()=>{
 $('dWater').addEventListener('input',refreshWaterQuick);
 
 refreshWaterQuick();
+
+$('resetCalories').onclick=()=>{
+  ['dBreakfast','dLunch','dSnack','dDinner'].forEach(id=>{
+    const field=$(id);
+    if(field)field.value=0;
+  });
+
+  const date=$('dDate').value||today();
+  const record=db.daily.find(x=>x.date===date);
+
+  if(record){
+    record.breakfast=0;
+    record.lunch=0;
+    record.snack=0;
+    record.dinner=0;
+    record.total=0;
+    localStorage.setItem(K,JSON.stringify(db));
+  }
+
+  live();
+  refreshV5Dashboard();
+  renderMainCalendar();
+};
+
 $('saveDaily').onclick=()=>{
   const date=$('dDate').value;
   const existingIndex=db.daily.findIndex(x=>x.date===date);
@@ -1974,7 +2007,10 @@ function refreshV5Dashboard(){
   set('v5Muscle',db.training.filter(x=>x.date.startsWith(month)).length);
   set('v5Hiit',(db.hiit||[]).filter(x=>x.date.startsWith(month)).length);
   set('v5Cardio',(db.cardio||[]).filter(x=>x.date.startsWith(month)).length);
-  set('v5Food',db.daily.filter(x=>x.date.startsWith(month)&&num(x.total)>0).length);
+  set('v5Food',db.daily.filter(x=>
+    x.date.startsWith(month) &&
+    (num(x.breakfast)+num(x.lunch)+num(x.snack)+num(x.dinner))>0
+  ).length);
   set('v5Measures',db.measures.filter(x=>x.date.startsWith(month)).length);
 
   refreshWaterQuickButton();
