@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v581-static';
+const CACHE='spartan-forge-v582-five-more';
 const APP_SHELL=[
   './',
   './index.html',
@@ -10,7 +10,12 @@ const APP_SHELL=[
   './exercise-agachamento.jpg',
   './exercise-burpees.jpg',
   './exercise-mountain-climbers.jpg',
-  './exercise-prancha.jpg'
+  './exercise-prancha.jpg',
+  './exercise-prancha-lateral.jpg',
+  './exercise-afundos.jpg',
+  './exercise-jump-squats.jpg',
+  './exercise-superman.jpg',
+  './exercise-hollow-hold.jpg'
 ];
 
 self.addEventListener('install', event => {
