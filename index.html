@@ -1541,6 +1541,53 @@ input,select,textarea{
 .record-row small{display:block;color:#999;margin-top:4px}.record-date{white-space:nowrap;color:#ff334d;font-size:11px}
 .history-month-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-bottom:12px;text-align:center}.history-month-nav strong{text-transform:capitalize;color:#ffd84a}
 
+
+
+/* SPARTAN FORGE V6.1 — compactação visual e ícones das ações rápidas */
+.v5-actions{
+  gap:6px!important;
+  align-items:stretch!important;
+}
+.v5-actions button{
+  min-height:84px!important; /* cerca de 22% menor que 108px */
+  padding:7px 4px!important;
+  border-radius:9px!important;
+}
+.v5-actions em,
+.v5-actions .v61-icon{
+  display:block!important;
+  width:27px!important;
+  height:27px!important;
+  margin:0 auto 5px!important;
+  color:#d7a62f!important;
+  line-height:1!important;
+  font-size:22px!important;
+}
+.v5-actions .v61-icon svg{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  filter:drop-shadow(0 0 4px rgba(215,166,47,.34));
+}
+.v5-actions strong{font-size:10px!important;line-height:1.1!important}
+.v5-actions small{font-size:8px!important;line-height:1.15!important;margin-top:2px!important}
+
+/* Menos espaços vazios: apenas layout, sem alterar lógica ou dados */
+.v5-dashboard{gap:8px!important;padding-bottom:10px!important}
+.v5-grid-top,.v5-grid-middle,.v5-grid-bottom{gap:8px!important}
+.v5-card{padding:11px!important}
+.v5-card h3{margin-top:0!important;margin-bottom:8px!important}
+.page .card{margin-bottom:9px!important}
+.grid,.row,.stats,.quick-grid,.summary-grid,.training-progress-grid,.hiit-time-grid,.profile-weight-grid,.v5-weight-summary{gap:7px!important}
+.item,.goal,.series-card,.mini-stat,.quick-action,.last-session,.water-main,.performance-card{margin-top:7px!important;margin-bottom:7px!important}
+.table-wrap,table{margin-top:7px!important;margin-bottom:7px!important}
+section.page{padding-top:8px!important;padding-bottom:10px!important}
+@media(max-width:720px){
+  .v5-actions{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}
+  .v5-actions button{min-height:82px!important;padding:6px 3px!important}
+  .v5-card{padding:10px!important}
+  .v5-dashboard{gap:7px!important}
+}
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1549,7 +1596,7 @@ input,select,textarea{
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.8.6 CAFÉ + CALENDÁRIO + MÚSCULOS</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.1</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
@@ -1616,11 +1663,11 @@ input,select,textarea{
       <article class="v5-card">
         <h3>AÇÕES RÁPIDAS</h3>
         <div class="v5-actions">
-          <button data-go="training"><em>💪</em><strong>MUSCULAÇÃO</strong><small>Registar treino</small></button>
+          <button data-go="training"><em class="v61-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 24v16M16 18v28M48 18v28M55 24v16M16 32h32"/><path d="M5 27v10M59 27v10"/></g></svg></em><strong>MUSCULAÇÃO</strong><small>Registar treino</small></button>
           <button data-go="hiit"><em>🔥</em><strong>HIIT</strong><small>Registar treino</small></button>
-          <button data-go="cardio"><em>♡</em><strong>CARDIO</strong><small>Registar treino</small></button>
-          <button data-go="daily"><em>🍎</em><strong>DIÁRIO</strong><small>Registar dia</small></button>
-          <button data-go="progress"><em>📏</em><strong>MEDIÇÕES</strong><small>Registar medidas</small></button>
+          <button data-go="cardio"><em class="v61-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 54S9 41 9 23c0-8 6-14 14-14 5 0 8 3 9 6 2-3 5-6 10-6 8 0 14 6 14 14 0 18-24 31-24 31Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M5 32h13l5-10 8 20 7-14 5 4h16" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></em><strong>CARDIO</strong><small>Registar treino</small></button>
+          <button data-go="daily"><em class="v61-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 34c2 14 11 21 22 21s20-7 22-21H10Z"/><path d="M19 31c2-8 9-13 17-13 7 0 13 4 16 11"/><path d="M29 26c-1-7 3-12 9-15M36 20c5-4 10-3 14 1"/><path d="M18 40h28"/></g></svg></em><strong>DIÁRIO</strong><small>Registar dia</small></button>
+          <button data-go="progress"><em class="v61-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M12 21c0-6 5-10 11-10h25c5 0 9 4 9 9v18c0 8-6 14-14 14H22c-6 0-10-4-10-10V21Z" fill="none" stroke="currentColor" stroke-width="4"/><path d="M20 17v10m7-10v6m7-6v10m7-10v6m7-6v10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M18 37c9-5 20-5 31 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></em><strong>MEDIÇÕES</strong><small>Registar medidas</small></button>
           <button id="v5WaterQuick" type="button" onclick="addQuickWater()"><em>💧</em><strong>ÁGUA +500 ML</strong><small>Adicionar ingestão</small></button>
           <button id="v5CoffeeQuick" type="button" onclick="addQuickCoffee()"><em>☕</em><strong>CAFÉ +1</strong><small>0 cafés hoje</small></button>
         </div>
