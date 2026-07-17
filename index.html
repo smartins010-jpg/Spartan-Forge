@@ -1520,6 +1520,27 @@ input,select,textarea{
 }
 #v5CalendarCard .day.today{outline:1px solid #fff;outline-offset:2px}
 
+
+/* V6 — chama dourada real e recordes Spartan */
+#v5CalendarCard .day{position:relative;isolation:isolate;overflow:visible}
+#v5CalendarCard .day.train::before{
+  content:"";position:absolute;z-index:-2;inset:-7px;border-radius:15px;
+  background:conic-gradient(from 0deg,#ff7a00,#ffd84a 12%,#ff3d00 23%,#ffd84a 37%,#ff8a00 51%,#fff1a0 62%,#ff5100 76%,#ffd84a 89%,#ff7a00);
+  clip-path:polygon(50% 0%,58% 12%,68% 3%,73% 17%,87% 10%,86% 25%,100% 27%,90% 40%,100% 50%,89% 59%,98% 73%,82% 74%,84% 91%,69% 83%,61% 100%,50% 88%,39% 100%,31% 83%,16% 92%,18% 74%,2% 72%,11% 59%,0% 50%,10% 39%,0% 27%,15% 24%,13% 9%,28% 17%,33% 3%,42% 12%);
+  filter:blur(1.2px) drop-shadow(0 0 5px #ffd84a) drop-shadow(0 0 11px #ff8a00);
+  animation:spartanFlame 1.8s ease-in-out infinite alternate;
+}
+#v5CalendarCard .day.train::after{
+  content:"";position:absolute;z-index:-1;inset:-3px;border-radius:13px;border:2px solid #ffd84a;
+  box-shadow:0 0 8px #ffd84a,0 0 17px #ff8a00,inset 0 0 9px rgba(255,180,0,.3);
+}
+@keyframes spartanFlame{0%{transform:scale(.96) rotate(-1deg);opacity:.78}100%{transform:scale(1.05) rotate(1deg);opacity:1}}
+.record-hall h3{margin:20px 0 8px;color:#ffd84a;text-shadow:0 0 9px rgba(255,180,0,.5)}
+.record-row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #292929}
+.record-row>div{min-width:0}.record-row strong{display:block;color:#f2f2f2}.record-row span{display:block;color:#ffd84a;font-weight:900;margin-top:3px;text-shadow:0 0 8px rgba(255,180,0,.4)}
+.record-row small{display:block;color:#999;margin-top:4px}.record-date{white-space:nowrap;color:#ff334d;font-size:11px}
+.history-month-nav{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:8px;margin-bottom:12px;text-align:center}.history-month-nav strong{text-transform:capitalize;color:#ffd84a}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1950,7 +1971,26 @@ input,select,textarea{
   </div>
 </section>
 
-<section id="history" class="page"><div class="card"><h2>Histórico completo</h2><input id="searchHistory" placeholder="Pesquisar por exercício, grupo ou cardio..."><div id="historyList"></div></div><div class="card"><h2>Cópia de segurança</h2><div class="rowbtn"><button class="btn dark" id="exportBtn">Exportar dados</button><button class="btn danger" id="clearBtn">Apagar tudo</button></div><label>Importar cópia</label><input id="importFile" type="file" accept=".json,application/json"></div></section>
+<section id="history" class="page">
+  <div class="card record-hall">
+    <h2>🏆 Recordes Spartan</h2>
+    <div id="recordMusculation"></div>
+    <div id="recordHiit"></div>
+    <div id="recordCardio"></div>
+    <div id="recordGeneral"></div>
+  </div>
+  <div class="card intensity-card">
+    <h2>📈 Evolução da intensidade</h2>
+    <div class="history-month-nav">
+      <button class="btn dark" id="intensityPrev" type="button">‹</button>
+      <strong id="intensityMonth"></strong>
+      <button class="btn dark" id="intensityNext" type="button">›</button>
+    </div>
+    <div class="canvas"><canvas id="intensityChart"></canvas></div>
+    <p class="small">O gráfico compara apenas os dias de treino. Quanto maior a prestação, mais alto fica o ponto.</p>
+  </div>
+  <div class="card"><h2>Cópia de segurança</h2><div class="rowbtn"><button class="btn dark" id="exportBtn">Exportar dados</button><button class="btn danger" id="clearBtn">Apagar tudo</button></div><label>Importar cópia</label><input id="importFile" type="file" accept=".json,application/json"></div>
+</section>
 </div>
 
 <script>
@@ -2918,23 +2958,86 @@ function cardioStats(){
     (types?`<br><br>${types}`:'');
 }
 function measures(){let a=[...db.measures].sort((x,y)=>x.date.localeCompare(y.date));if(a.length<2){$('measureCompare').textContent='Regista duas medições mensais para comparar.';return}let f=a[0],l=a[a.length-1];$('measureCompare').innerHTML=`Desde ${f.date}: cintura <b>${(l.waist-f.waist).toFixed(1)} cm</b> · barriga <b>${(l.belly-f.belly).toFixed(1)} cm</b> · peito <b>${(l.chest-f.chest).toFixed(1)} cm</b>`}
-function history(){
-  let q=$('searchHistory').value.toLowerCase(),
-      a=[
-        ...db.training.map(x=>({k:'training',id:x.id,date:x.date,t:x.exercise,s:`${x.group} · ${x.load} kg · ${x.reps.join('/')}`})),
-        ...(db.hiit||[]).map(x=>({k:'hiit',id:x.id,date:x.date,t:`HIIT · ${x.exercise||'Exercício'}`,s:`${x.seriesCount||x.rounds||0} séries · ${(x.values||[]).join('/')} ${x.mode==='seconds'?'s':'reps'} · ${x.calories||0} kcal`})),
-        ...db.cardio.map(x=>({k:'cardio',id:x.id,date:x.date,t:x.type,s:`${x.distance} km · ${x.duration} min · ${x.calories||0} kcal`})),
-        ...db.weights.map(x=>({k:'weights',id:x.id,date:x.date,t:'Peso',s:`${x.weight} kg`})),
-        ...db.measures.map(x=>({k:'measures',id:x.id,date:x.date,t:'Medições',s:`Cintura ${x.waist} · Barriga ${x.belly} · Peito ${x.chest}`}))
-      ].sort((a,b)=>b.date.localeCompare(a.date));
-
-  if(q)a=a.filter(x=>(x.t+' '+x.s).toLowerCase().includes(q));
-
-  $('historyList').innerHTML=a.length
-    ?a.map(x=>`<div class="item"><strong>${x.t}</strong> <span class="badge">${x.date}</span><br><span class="small">${x.s}</span><br><button class="btn danger" onclick="del('${x.k}','${x.id}')">Apagar</button></div>`).join('')
-    :'<p class="small">Ainda sem registos.</p>';
+let intensityCursor=new Date();
+function bestBy(list,score){
+  return list.reduce((best,item)=>!best||score(item)>score(best)?item:best,null);
 }
-$('searchHistory').oninput=history;
+function recordItem(title,main,date,target=''){
+  return `<div class="record-row"><div><strong>${title}</strong><span>${main}</span>${target?`<small>Próximo objetivo: ${target}</small>`:''}</div><b class="record-date">${date||'—'}</b></div>`;
+}
+function history(){
+  const trBy={};
+  db.training.forEach(x=>{
+    const key=x.exercise||'Exercício';
+    const score=num(x.load)*100000+num(x.total);
+    if(!trBy[key]||score>trBy[key]._score)trBy[key]={...x,_score:score};
+  });
+  const tr=Object.values(trBy).sort((a,b)=>a.exercise.localeCompare(b.exercise,'pt'));
+  $('recordMusculation').innerHTML=`<h3>💪 Musculação</h3>`+(tr.length?tr.map(x=>recordItem(x.exercise,`${num(x.load)} kg · ${num(x.total)} repetições`,x.date,`${num(x.load)+1} kg ou mais repetições`)).join(''):'<p class="small">Ainda sem recordes.</p>');
+
+  const hiBy={};
+  (db.hiit||[]).forEach(x=>{
+    const key=x.exercise||'Exercício HIIT';
+    const score=num(x.total)*1000+num(x.calories);
+    if(!hiBy[key]||score>hiBy[key]._score)hiBy[key]={...x,_score:score};
+  });
+  const hi=Object.values(hiBy).sort((a,b)=>(a.exercise||'').localeCompare(b.exercise||'','pt'));
+  $('recordHiit').innerHTML=`<h3>🔥 HIIT</h3>`+(hi.length?hi.map(x=>{
+    const unit=x.mode==='seconds'?'segundos':'repetições';
+    return recordItem(x.exercise||'Exercício',`${num(x.total)} ${unit} · ${num(x.calories)} kcal`,x.date,`${num(x.total)+1} ${unit}`);
+  }).join(''):'<p class="small">Ainda sem recordes.</p>');
+
+  const caBy={};
+  (db.cardio||[]).forEach(x=>{
+    const key=x.type||'Cardio';
+    const score=num(x.distance)*100000+num(x.calories)*10+num(x.duration);
+    if(!caBy[key]||score>caBy[key]._score)caBy[key]={...x,_score:score};
+  });
+  const ca=Object.values(caBy).sort((a,b)=>(a.type||'').localeCompare(b.type||'','pt'));
+  $('recordCardio').innerHTML=`<h3>🚴 Cardio</h3>`+(ca.length?ca.map(x=>recordItem(x.type||'Cardio',`${num(x.distance).toFixed(1)} km · ${num(x.duration)} min · ${num(x.calories)} kcal`,x.date,`${(num(x.distance)+1).toFixed(1)} km`)).join(''):'<p class="small">Ainda sem recordes.</p>');
+
+  const bestTraining=bestBy(db.training,x=>num(x.load)*num(x.total));
+  const bestHiit=bestBy(db.hiit||[],x=>num(x.calories));
+  const bestCardio=bestBy(db.cardio||[],x=>num(x.calories));
+  const general=[];
+  if(bestTraining)general.push(recordItem('Maior volume de musculação',`${Math.round(num(bestTraining.load)*num(bestTraining.total))} kg · ${bestTraining.exercise}`,bestTraining.date));
+  if(bestHiit)general.push(recordItem('Mais calorias em HIIT',`${num(bestHiit.calories)} kcal · ${bestHiit.exercise||'HIIT'}`,bestHiit.date,`${num(bestHiit.calories)+1} kcal`));
+  if(bestCardio)general.push(recordItem('Mais calorias em cardio',`${num(bestCardio.calories)} kcal · ${bestCardio.type||'Cardio'}`,bestCardio.date,`${num(bestCardio.calories)+1} kcal`));
+  $('recordGeneral').innerHTML='<h3>⚔ Recordes gerais</h3>'+(general.length?general.join(''):'<p class="small">Ainda sem recordes.</p>');
+  drawIntensityChart();
+}
+function dailyIntensityData(){
+  const ym=`${intensityCursor.getFullYear()}-${String(intensityCursor.getMonth()+1).padStart(2,'0')}`;
+  const raw={};
+  db.training.filter(x=>x.date.startsWith(ym)).forEach(x=>raw[x.date]=(raw[x.date]||0)+num(x.load)*num(x.total));
+  (db.hiit||[]).filter(x=>x.date.startsWith(ym)).forEach(x=>raw[x.date]=(raw[x.date]||0)+num(x.total)*2+num(x.calories)*3);
+  (db.cardio||[]).filter(x=>x.date.startsWith(ym)).forEach(x=>raw[x.date]=(raw[x.date]||0)+num(x.distance)*35+num(x.duration)*2+num(x.calories)*2);
+  const rows=Object.entries(raw).sort((a,b)=>a[0].localeCompare(b[0]));
+  const max=Math.max(1,...rows.map(x=>x[1]));
+  return rows.map(([date,value])=>({date,value:Math.max(8,Math.round(value/max*100))}));
+}
+function drawIntensityChart(){
+  const title=$('intensityMonth');
+  const canvas=$('intensityChart');
+  if(!title||!canvas)return;
+  title.textContent=new Intl.DateTimeFormat('pt-PT',{month:'long',year:'numeric'}).format(intensityCursor);
+  const data=dailyIntensityData();
+  const ctx=canvas.getContext('2d');
+  const dpr=window.devicePixelRatio||1;
+  const w=canvas.clientWidth||320,h=canvas.clientHeight||230;
+  canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.clearRect(0,0,w,h);
+  if(!data.length){ctx.fillStyle='#888';ctx.font='13px sans-serif';ctx.textAlign='center';ctx.fillText('Sem treinos neste mês.',w/2,h/2);return;}
+  const pad={l:34,r:14,t:18,b:34},cw=w-pad.l-pad.r,ch=h-pad.t-pad.b;
+  ctx.strokeStyle='rgba(255,255,255,.10)';ctx.lineWidth=1;
+  [0,25,50,75,100].forEach(v=>{const y=pad.t+ch-(v/100)*ch;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke();});
+  const x=i=>data.length===1?pad.l+cw/2:pad.l+i*cw/(data.length-1);
+  const y=v=>pad.t+ch-(v/100)*ch;
+  const grad=ctx.createLinearGradient(0,pad.t,0,pad.t+ch);grad.addColorStop(0,'#ffd84a');grad.addColorStop(1,'#ff5a00');
+  ctx.strokeStyle=grad;ctx.lineWidth=3;ctx.shadowColor='#ffb000';ctx.shadowBlur=10;ctx.beginPath();data.forEach((p,i)=>i?ctx.lineTo(x(i),y(p.value)):ctx.moveTo(x(i),y(p.value)));ctx.stroke();ctx.shadowBlur=0;
+  data.forEach((p,i)=>{ctx.fillStyle='#ff263f';ctx.beginPath();ctx.arc(x(i),y(p.value),4,0,Math.PI*2);ctx.fill();ctx.fillStyle='#aaa';ctx.font='10px sans-serif';ctx.textAlign='center';ctx.fillText(String(Number(p.date.slice(8))),x(i),h-12);});
+}
+
 function photos(){$('photoList').innerHTML=db.photos.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(x=>`<div><img src="${x.data}"><div class="small">${x.type} · ${x.date}</div><button class="btn danger full" onclick="del('photos','${x.id}')">Apagar</button></div>`).join('')}
 
 function uniqueActiveDays(){
@@ -3090,6 +3193,9 @@ if($('saveProfile')){
     alert('Perfil Spartan guardado');
   };
 }
+
+if($('intensityPrev'))$('intensityPrev').onclick=()=>{intensityCursor=new Date(intensityCursor.getFullYear(),intensityCursor.getMonth()-1,1);drawIntensityChart()};
+if($('intensityNext'))$('intensityNext').onclick=()=>{intensityCursor=new Date(intensityCursor.getFullYear(),intensityCursor.getMonth()+1,1);drawIntensityChart()};
 
 function render(){
   managerDashboard();
