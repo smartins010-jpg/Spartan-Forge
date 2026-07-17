@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+<defs>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#4b2811"/>
+    <stop offset=".16" stop-color="#a96828"/>
+    <stop offset=".33" stop-color="#ffd88b"/>
+    <stop offset=".48" stop-color="#b46e29"/>
+    <stop offset=".68" stop-color="#edb862"/>
+    <stop offset=".84" stop-color="#8b4e1d"/>
+    <stop offset="1" stop-color="#3e210f"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="1" x2="1" y2="0">
+    <stop offset="0" stop-color="#6a3514"/>
+    <stop offset=".5" stop-color="#ffe3a2"/>
+    <stop offset="1" stop-color="#9b5a23"/>
+  </linearGradient>
+  <filter id="shadow" x="-35%" y="-35%" width="170%" height="170%">
+    <feDropShadow dx="0" dy="3" stdDeviation="2.2" flood-color="#000" flood-opacity=".9"/>
+    <feDropShadow dx="0" dy="0" stdDeviation="1.8" flood-color="#d58a2b" flood-opacity=".35"/>
+  </filter>
+</defs>
+<g fill="url(#metal)" stroke="url(#edge)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" filter="url(#shadow)">
+
+<rect x="9" y="14" width="52" height="48" rx="7"/>
+<path d="M19 7v15M51 7v15M9 27h52" class="detail"/>
+<path d="M19 35h8v8h-8zM31 35h8v8h-8zM43 35h8v8h-8zM19 47h8v8h-8zM31 47h8v8h-8zM43 47h8v8h-8z" class="cut"/>
+
+</g>
+<style>
+.cut{fill:#090a0c;stroke:#d49a4b;stroke-width:1.8}
+.detail{fill:none;stroke:#ffe1a0;stroke-width:2;opacity:.8}
+</style>
+</svg>

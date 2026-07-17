@@ -3724,6 +3724,83 @@ body .nav button:active .premium-nav-icon{transform:scale(.96) translateY(2px)!i
   }
 }
 
+
+/* ==========================================================
+   SPARTAN FORGE V8.15 — ÍCONES METÁLICOS PREMIUM
+   Apenas acabamento visual dos ícones da secção Missão
+   ========================================================== */
+.mission-weight-card .sf-icon{
+  -webkit-mask:none!important;
+  mask:none!important;
+  background-color:transparent!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-size:contain!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+  filter:
+    drop-shadow(0 2px 2px rgba(0,0,0,.92))
+    drop-shadow(0 0 4px rgba(206,127,35,.38))!important;
+}
+.mission-weight-card .icon-helmet{background-image:url("./mission-icons/helmet.svg")!important}
+.mission-weight-card .icon-trophy{background-image:url("./mission-icons/trophy.svg")!important}
+.mission-weight-card .icon-shield{background-image:url("./mission-icons/shield.svg")!important}
+.mission-weight-card .icon-bolt{background-image:url("./mission-icons/bolt.svg")!important}
+.mission-weight-card .icon-target{background-image:url("./mission-icons/target.svg")!important}
+.mission-weight-card .icon-swords{background-image:url("./mission-icons/swords.svg")!important}
+.mission-weight-card .icon-medal{background-image:url("./mission-icons/medal.svg")!important}
+.mission-weight-card .icon-calendar{background-image:url("./mission-icons/calendar.svg")!important}
+.mission-weight-card .icon-chart{background-image:url("./mission-icons/chart.svg")!important}
+.mission-weight-card .icon-flag{background-image:url("./mission-icons/flag.svg")!important}
+
+.mission-weight-card .mission-helmet{
+  width:40px!important;
+  height:44px!important;
+}
+.mission-weight-card .mission-final-badge .sf-icon{
+  width:25px!important;
+  height:25px!important;
+}
+.mission-weight-card .mission-stat .mission-icon{
+  width:31px!important;
+  height:31px!important;
+  min-width:31px!important;
+}
+.mission-weight-card .mission-target-icon{
+  width:34px!important;
+  height:34px!important;
+}
+.mission-weight-card .mission-path-grid>div>span.sf-icon{
+  width:21px!important;
+  height:21px!important;
+}
+.mission-weight-card .tiny-icon{
+  width:14px!important;
+  height:14px!important;
+  vertical-align:-3px!important;
+}
+.mission-save-goal{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+}
+.mission-button-icon{
+  width:23px!important;
+  height:23px!important;
+  flex:0 0 23px!important;
+}
+
+@media(max-width:420px){
+  .mission-weight-card .mission-helmet{width:34px!important;height:38px!important}
+  .mission-weight-card .mission-stat .mission-icon{
+    width:27px!important;height:27px!important;min-width:27px!important;
+  }
+  .mission-weight-card .mission-target-icon{width:30px!important;height:30px!important}
+  .mission-weight-card .mission-path-grid>div>span.sf-icon{width:19px!important;height:19px!important}
+  .mission-button-icon{width:21px!important;height:21px!important;flex-basis:21px!important}
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -3906,7 +3983,7 @@ body .nav button:active .premium-nav-icon{transform:scale(.96) translateY(2px)!i
         <div class="mission-goal-tip">ⓘ Define o peso que queres atingir e mantém o foco.</div>
       </div>
 
-      <button type="button" class="btn gold mission-save-goal" id="v5SaveWeightGoal">DEFINIR MISSÃO</button>
+      <button type="button" class="btn gold mission-save-goal" id="v5SaveWeightGoal"><span class="sf-icon icon-helmet mission-button-icon"></span>DEFINIR MISSÃO</button>
 
       <div class="mission-path-panel">
         <div class="mission-path-info">
