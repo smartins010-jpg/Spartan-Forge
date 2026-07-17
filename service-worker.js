@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v582-diario-persistente-v3';
+const CACHE='spartan-forge-v5-8-6';
 const APP_SHELL=[
   './',
   './index.html',
@@ -6,16 +6,6 @@ const APP_SHELL=[
   './icon-192.png',
   './icon-512.png',
   './icon-maskable-512.png',
-  './exercise-flexoes.jpg',
-  './exercise-agachamento.jpg',
-  './exercise-burpees.jpg',
-  './exercise-mountain-climbers.jpg',
-  './exercise-prancha.jpg',
-  './exercise-prancha-lateral.jpg',
-  './exercise-afundos.jpg',
-  './exercise-jump-squats.jpg',
-  './exercise-superman.jpg',
-  './exercise-hollow-hold.jpg'
 ];
 
 self.addEventListener('install', event => {
