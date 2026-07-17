@@ -263,7 +263,7 @@ input:focus,select:focus,textarea:focus{
   border-color:#555!important;
 }
 
-/* V5.8.2 GITHUB — alteração visual forçada e inequívoca */
+/* V5.8.2 DIÁRIO CORRIGIDO — alteração visual forçada e inequívoca */
 html body{
   background:#000000!important;
   background-image:none!important;
@@ -376,7 +376,7 @@ body .bar i{
   box-shadow:0 0 8px rgba(255,122,0,.35);
 }
 
-/* V5.8.2 GITHUB — calendário automático */
+/* V5.8.2 DIÁRIO CORRIGIDO — calendário automático */
 .day.today{
   position:relative;
   color:#050505!important;
@@ -403,7 +403,7 @@ body .bar i{
   font-weight:800;
 }
 
-/* V5.8.2 GITHUB — cartões premium, sem alterações funcionais */
+/* V5.8.2 DIÁRIO CORRIGIDO — cartões premium, sem alterações funcionais */
 html,body{background:#000!important;background-image:none!important}
 body .wrap{background:#000!important}
 
@@ -620,7 +620,7 @@ body .spartan-index-card .performance-sub{
   text-shadow:none!important;
 }
 
-/* V5.8.2 GITHUB — Índice apenas por dias de treino */
+/* V5.8.2 DIÁRIO CORRIGIDO — Índice apenas por dias de treino */
 body .spartan-index-card{
   position:relative!important;
   overflow:hidden!important;
@@ -659,7 +659,7 @@ body .spartan-index-card .performance-sub{
   }
 }
 
-/* V5.8.2 GITHUB — Treinos, parte 1 */
+/* V5.8.2 DIÁRIO CORRIGIDO — Treinos, parte 1 */
 @media(max-width:720px){
 
 .training-progress-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
@@ -669,12 +669,12 @@ body .spartan-index-card .performance-sub{
 .record-notice{margin-top:10px;padding:11px 12px;border-radius:15px;background:#171100;color:#ffd700;border:1.3px solid #ffd700;font-weight:1000;text-align:center}
 .trend-up{color:#4dd39a!important}.trend-flat{color:#ffd700!important}.trend-down{color:#ff8b4d!important}
 
-/* V5.8.2 GITHUB — módulos essenciais separados */
+/* V5.8.2 DIÁRIO CORRIGIDO — módulos essenciais separados */
 @media(max-width:720px){
   .nav{grid-template-columns:repeat(4,1fr)!important}
 }
 
-/* V5.8.2 GITHUB — HIIT + meta 1900 kcal */
+/* V5.8.2 DIÁRIO CORRIGIDO — HIIT + meta 1900 kcal */
 .hiit-time-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -703,7 +703,7 @@ body .spartan-index-card .performance-sub{
   .hiit-time-grid{grid-template-columns:1fr}
 }
 
-/* V5.8.2 GITHUB — HIIT essencial */
+/* V5.8.2 DIÁRIO CORRIGIDO — HIIT essencial */
 #hiitSeriesFields{margin:12px 0}
 #hiitSeriesFields .series-card{min-height:105px}
 #hiitSeriesFields .series-card b{color:#ffd700}
@@ -1498,7 +1498,7 @@ input,select,textarea{
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.8.2 GITHUB</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V5.8.2 DIÁRIO CORRIGIDO</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
@@ -1942,6 +1942,11 @@ function openPage(pageId){
     refreshV5Dashboard();
   }
 
+  if(pageId==='daily'){
+    const selected=($('dDate')&&$('dDate').value)||today();
+    loadDailyRecord(selected);
+  }
+
   if(pageId==='profile')renderProfile();
 
   window.scrollTo({top:0,behavior:'smooth'});
@@ -1965,6 +1970,38 @@ function totalDaily(){
       const field=$(id);
       return sum+(field?num(field.value):0);
     },0);
+}
+
+function loadDailyRecord(date){
+  const selectedDate=date||today();
+  const record=db.daily.find(x=>x.date===selectedDate);
+
+  if($('dDate'))$('dDate').value=selectedDate;
+
+  if(record){
+    if($('dType'))$('dType').value=record.type||'Descanso';
+    if($('dWater'))$('dWater').value=num(record.water);
+    if($('dGoal'))$('dGoal').value=num(record.goal)||1900;
+    if($('dBreakfast'))$('dBreakfast').value=num(record.breakfast);
+    if($('dLunch'))$('dLunch').value=num(record.lunch);
+    if($('dSnack'))$('dSnack').value=num(record.snack);
+    if($('dDinner'))$('dDinner').value=num(record.dinner);
+    if($('dCreatine'))$('dCreatine').checked=!!record.creatine;
+    if($('dOmega'))$('dOmega').checked=!!record.omega;
+    if($('dWhey'))$('dWhey').checked=!!record.whey;
+    if($('dCarnitine'))$('dCarnitine').checked=!!record.carnitine;
+    if($('dNotes'))$('dNotes').value=record.notes||'';
+  }else{
+    if($('dType'))$('dType').value='Descanso';
+    if($('dWater'))$('dWater').value=0;
+    if($('dGoal'))$('dGoal').value=1900;
+    ['dBreakfast','dLunch','dSnack','dDinner'].forEach(id=>{if($(id))$(id).value=0;});
+    ['dCreatine','dOmega','dWhey','dCarnitine'].forEach(id=>{if($(id))$(id).checked=false;});
+    if($('dNotes'))$('dNotes').value='';
+  }
+
+  live();
+  if(typeof refreshWaterQuick==='function')refreshWaterQuick();
 }
 
 function live(){
@@ -2102,6 +2139,9 @@ $('saveDaily').onclick=()=>{
   else db.daily.push(record);
 
   localStorage.setItem(K,JSON.stringify(db));
+
+  // Mantém o registo do dia visível no formulário depois de guardar.
+  loadDailyRecord(date);
   live();
   refreshV5Dashboard();
   renderMainCalendar();
@@ -2797,22 +2837,7 @@ function resetCalendarToToday(){
   calendar();
 }
 function openCalendarDay(date){
-  $('dDate').value=date;
-  const r=db.daily.find(x=>x.date===date);
-
-  if(r){
-    $('dType').value=r.type||'Treino';
-    $('dWater').value=r.water||0;
-    $('dGoal').value=r.goal||1900;
-    $('dBreakfast').value=r.breakfast||0;
-    $('dLunch').value=r.lunch||0;
-    $('dSnack').value=r.snack||0;
-    $('dDinner').value=r.dinner||0;
-    $('dNotes').value=r.notes||'';
-    if(typeof live==='function')live();
-    if(typeof updateWaterUI==='function')updateWaterUI();
-  }
-
+  loadDailyRecord(date);
   openPage('daily');
 }
 function calendar(){
@@ -3056,9 +3081,25 @@ function render(){
   refreshWaterQuickButton();
   renderProfile();
 }
+if($('dDate')){
+  $('dDate').addEventListener('change',()=>loadDailyRecord($('dDate').value||today()));
+}
+loadDailyRecord(today());
 renderProfile();
 render();
 refreshV5Dashboard();
+
+// Ao regressar à aplicação, volta a apresentar o registo guardado do dia selecionado.
+// Isto evita que os campos pareçam vazios depois de fechar/minimizar a PWA.
+function restoreDailyView(){
+  const date=($('dDate')&&$('dDate').value)||today();
+  loadDailyRecord(date);
+}
+window.addEventListener('pageshow',restoreDailyView);
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='visible')restoreDailyView();
+});
+
 $('exportBtn').onclick=()=>{let b=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='sandro-performance-backup.json';a.click()};
 $('importFile').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{db=JSON.parse(r.result);db.goals=db.goals||{};db.hiit=db.hiit||[];save();alert('Dados importados')}catch{alert('Ficheiro inválido')}};r.readAsText(f)};
 $('clearBtn').onclick=()=>{if(confirm('Apagar todos os dados?')){db={daily:[],training:[],hiit:[],cardio:[],weights:[],measures:[],photos:[],goals:{}};save()}};
@@ -3382,8 +3423,9 @@ if(v5SaveWeightGoal){
 
 
 
+<!-- Spartan Forge V5.8.2 Diário Persistente -->
 <script>
-window.addEventListener('load', function(){
+window.addEventListener('load',, function(){
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./service-worker.js', {scope:'./'})
       .catch(function(){});

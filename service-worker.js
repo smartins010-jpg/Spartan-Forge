@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v582-photos-indice-treino-v2';
+const CACHE='spartan-forge-v582-diario-persistente-v3';
 const APP_SHELL=[
   './',
   './index.html',
