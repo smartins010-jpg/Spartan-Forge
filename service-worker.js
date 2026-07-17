@@ -1,4 +1,4 @@
-const CACHE = 'spartan-forge-v8-20-clean';
+const CACHE = 'spartan-forge-v8-21-icons-fixed';
 const APP_SHELL=[
   './',
   './index.html',
