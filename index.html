@@ -620,7 +620,7 @@ body .spartan-index-card .performance-sub{
   text-shadow:none!important;
 }
 
-/* V5.8.2 GITHUB — correção real do Índice Spartan */
+/* V5.8.2 GITHUB — Índice apenas por dias de treino */
 body .spartan-index-card{
   position:relative!important;
   overflow:hidden!important;
@@ -2896,67 +2896,33 @@ function totalVolume(){
 function totalKm(){
   return db.cardio.reduce((s,x)=>s+(x.distance||0),0);
 }
+function uniqueWorkoutDays(){
+  return new Set([
+    ...db.training.map(x=>x.date),
+    ...(db.hiit||[]).map(x=>x.date),
+    ...db.cardio.map(x=>x.date)
+  ].filter(Boolean)).size;
+}
+
 function managerDashboard(){
-  const month=today().slice(0,7);
-  const todayRecord=db.daily.find(x=>x.date===today());
-
-  const meaningfulDaily=db.daily.some(x=>
-    num(x.water)>0 ||
-    num(x.breakfast)>0 ||
-    num(x.lunch)>0 ||
-    num(x.snack)>0 ||
-    num(x.dinner)>0
-  );
-
-  const hasRealRecords=
-    db.training.length>0 ||
-    (db.hiit||[]).length>0 ||
-    (db.cardio||[]).length>0 ||
-    db.weights.length>0 ||
-    db.measures.length>0 ||
-    meaningfulDaily;
-
-  let score=0;
-
-  if(hasRealRecords){
-    const trainGoal=num(db.goals.train)||20;
-    const waterGoal=num(db.goals.water)||3000;
-    const monthSessions=
-      db.training.filter(x=>x.date.startsWith(month)).length +
-      (db.hiit||[]).filter(x=>x.date.startsWith(month)).length +
-      (db.cardio||[]).filter(x=>x.date.startsWith(month)).length;
-
-    const trainScore=Math.min(1,monthSessions/trainGoal);
-    const waterScore=todayRecord?Math.min(1,num(todayRecord.water)/waterGoal):0;
-
-    const hasFood=todayRecord && (
-      num(todayRecord.breakfast)+num(todayRecord.lunch)+
-      num(todayRecord.snack)+num(todayRecord.dinner)
-    )>0;
-
-    const kcalScore=hasFood
-      ?Math.max(0,1-Math.abs(num(todayRecord.total)-(num(todayRecord.goal)||1900))/Math.max(num(todayRecord.goal)||1900,1))
-      :0;
-
-    const dataScore=Math.min(1,uniqueActiveDays()/14);
-    score=Math.round((trainScore*.45+waterScore*.20+kcalScore*.20+dataScore*.15)*100);
-  }
+  // O Índice Spartan conta exclusivamente dias em que existe pelo menos um treino.
+  // Água, alimentação, calorias, peso e medições não alteram este valor.
+  const score=uniqueWorkoutDays();
 
   const scoreEl=$('managerScore');
   if(scoreEl)scoreEl.textContent=score;
-  if($('managerScoreBar'))$('managerScoreBar').style.width=score+'%';
+  if($('managerScoreBar'))$('managerScoreBar').style.width=Math.min(100,score)+'%';
   if($('managerScoreText')){
     $('managerScoreText').textContent=
-      score>=85?'Nível de consistência excelente':
-      score>=65?'Boa evolução — mantém o ritmo':
-      score>=40?'Base criada — ainda há margem':
-      'Começa a registar para criar tendência';
+      score===0?'A iniciar':
+      score===1?'1 dia de treino registado':
+      `${score} dias de treino registados`;
   }
 
-  if($('streakValue'))$('streakValue').textContent=hasRealRecords?uniqueActiveDays():0;
-  if($('bestMonthValue'))$('bestMonthValue').textContent=hasRealRecords?bestMonth():0;
-  if($('totalVolumeValue'))$('totalVolumeValue').textContent=hasRealRecords?totalVolume().toLocaleString('pt-PT'):'0';
-  if($('totalKmValue'))$('totalKmValue').textContent=hasRealRecords?totalKm().toFixed(1):'0.0';
+  if($('streakValue'))$('streakValue').textContent=score;
+  if($('bestMonthValue'))$('bestMonthValue').textContent=bestMonth();
+  if($('totalVolumeValue'))$('totalVolumeValue').textContent=totalVolume().toLocaleString('pt-PT');
+  if($('totalKmValue'))$('totalKmValue').textContent=totalKm().toFixed(1);
 
   const insight=$('smartInsight');
   if(!insight)return;
