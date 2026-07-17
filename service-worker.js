@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v8-0';
+const CACHE='spartan-forge-v8-1';
 const APP_SHELL=[
   './',
   './index.html',
