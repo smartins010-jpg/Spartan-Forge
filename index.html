@@ -2625,6 +2625,180 @@ h1,h2,h3,h4,
     0 1px 1px rgba(0,0,0,.98)!important;
 }
 
+
+/* ==========================================================
+   SPARTAN FORGE V7.1 — correção final de estrutura e tipografia
+   ========================================================== */
+
+/* 1. REPOR A POSIÇÃO NORMAL DOS MENUS
+   Retira o deslocamento negativo que colocava as tabelas por baixo do menu. */
+#cardio.page.on,
+#progress.page.on,
+#history.page.on,
+#profile.page.on{
+  margin-top:0!important;
+  transform:none!important;
+}
+
+/* Todas as páginas começam logo abaixo do menu, apenas com um pequeno rebordo. */
+#daily.page,#training.page,#hiit.page,#cardio.page,
+#progress.page,#history.page,#profile.page{
+  min-height:0!important;
+  width:auto!important;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  padding:0 0 16px!important;
+  border:0!important;
+  border-radius:0!important;
+  overflow:visible!important;
+}
+
+#daily.page>.card:first-child,
+#training.page>.card:first-child,
+#hiit.page>.card:first-child,
+#cardio.page>.card:first-child,
+#progress.page>.card:first-child,
+#history.page>.card:first-child,
+#profile.page>.card:first-child{
+  margin-top:6px!important;
+}
+
+/* Mantém o formato original das tabelas e apenas reduz o intervalo entre elas. */
+#daily.page>.card,
+#training.page>.card,
+#hiit.page>.card,
+#cardio.page>.card,
+#progress.page>.card,
+#history.page>.card,
+#profile.page>.card{
+  width:auto!important;
+  max-width:none!important;
+  min-width:0!important;
+  height:auto!important;
+  transform:none!important;
+  margin-bottom:6px!important;
+  padding:13px!important;
+  border-radius:20px!important;
+}
+
+/* 2. FUNDOS SPARTAN PEQUENOS E VISÍVEIS, POR BAIXO DAS TABELAS */
+#daily.page,#training.page,#hiit.page,#cardio.page,
+#progress.page,#history.page,#profile.page{
+  background-color:#020202!important;
+  background-repeat:no-repeat!important;
+  background-position:right 14px top 18px!important;
+  background-size:46% auto!important;
+}
+
+#training.page{background-image:url("./scene-musculacao.jpg")!important}
+#hiit.page{background-image:url("./scene-hiit.jpg")!important}
+#cardio.page{background-image:url("./scene-cardio.jpg")!important}
+#daily.page{background-image:url("./scene-diario.jpg")!important}
+#progress.page{background-image:url("./scene-evolucao.jpg")!important}
+#history.page{background-image:url("./scene-historico.jpg")!important}
+#profile.page{background-image:url("./scene-perfil.jpg")!important}
+
+/* As tabelas permanecem originais, mas permitem ver a imagem que está por baixo. */
+#daily.page>.card,
+#training.page>.card,
+#hiit.page>.card,
+#cardio.page>.card,
+#progress.page>.card,
+#history.page>.card,
+#profile.page>.card{
+  background:rgba(5,6,7,.72)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+
+/* 3. TIPOGRAFIA SPARTAN EM TODA A APLICAÇÃO, SEM EXCEÇÕES */
+:root{
+  --sf-spartan-font:Georgia,"Times New Roman",Times,serif;
+  --sf-ice:#f5fcff;
+  --sf-old-gold:#c69a2d;
+  --sf-blood:#760811;
+}
+
+.app,
+.app *,
+.nav,
+.nav *,
+#dashboard,
+#dashboard *,
+#daily,
+#daily *,
+#training,
+#training *,
+#hiit,
+#hiit *,
+#cardio,
+#cardio *,
+#progress,
+#progress *,
+#history,
+#history *,
+#profile,
+#profile *{
+  font-family:var(--sf-spartan-font)!important;
+}
+
+/* Títulos, botões e nomes dos menus com presença Spartan. */
+h1,h2,h3,h4,
+.v5-brand,.dash-panel-title,.performance-title,.calendar-title,
+.nav button,.btn,.quick-action,.v5-actions button,
+.card h2,.card h3{
+  font-family:var(--sf-spartan-font)!important;
+  font-weight:900!important;
+  font-variant:small-caps!important;
+  letter-spacing:1px!important;
+}
+
+/* Texto branco em branco-gelo. */
+.app p,.app label,.app small,.app span,
+.app input,.app select,.app textarea,
+.app .small,.app .item,.app .goal,
+.app .calendar-auto-note{
+  color:var(--sf-ice)!important;
+  text-shadow:
+    0 0 2px rgba(231,249,255,.88),
+    0 0 5px rgba(177,224,248,.32),
+    0 1px 1px rgba(0,0,0,.98)!important;
+}
+
+/* Dourados envelhecidos com traço vermelho-sangue muito fino. */
+h1,h2,h3,h4,
+.v5-brand,.dash-panel-title,.performance-title,.calendar-title,
+.card h2,.card h3,
+.nav button,.btn,
+.v5-actions strong{
+  color:var(--sf-old-gold)!important;
+  -webkit-text-stroke:.20px var(--sf-blood)!important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.98),
+    0 0 3px rgba(198,154,45,.34)!important;
+}
+
+/* Campos mantêm texto branco-gelo e formato original. */
+.app input,.app select,.app textarea{
+  background:rgba(3,4,5,.84)!important;
+  color:var(--sf-ice)!important;
+}
+
+/* Botões ativos continuam legíveis sobre o dourado. */
+.nav button.on,.btn.gold{
+  color:#090704!important;
+  -webkit-text-stroke:0 transparent!important;
+  text-shadow:none!important;
+}
+
+/* Não alterar o calendário aprovado. */
+#v5CalendarCard .day.train,
+#v5CalendarCard .day.cardio,
+#v5CalendarCard .day.both{
+  -webkit-text-stroke:0 transparent!important;
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -2633,7 +2807,7 @@ h1,h2,h3,h4,
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V7.0</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V7.1</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
