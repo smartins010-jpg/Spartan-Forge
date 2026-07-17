@@ -3,7 +3,7 @@
   "name": "Spartan Forge",
   "short_name": "Spartan Forge",
   "description": "Aplicação de treino, alimentação, água, cardio e evolução de peso.",
-  "start_url": "./?v=860",
+  "start_url": "./?v=880",
   "scope": "./",
   "display": "standalone",
   "display_override": [
