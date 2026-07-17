@@ -2475,6 +2475,156 @@ h1,h2,h3,h4,.calendar-title,.performance-title,
   -webkit-text-stroke:0 transparent!important;
 }
 
+
+/* ==========================================================
+   SPARTAN FORGE V7.0
+   - Tipografia Spartan serifada
+   - Branco-gelo luminoso
+   - Dourado envelhecido com traço vermelho-sangue muito fino
+   - Fundos menores e perceptíveis por baixo dos cartões
+   - Últimos quatro menus puxados para cima sem redimensionar tabelas
+   ========================================================== */
+
+/* TIPOGRAFIA */
+:root{
+  --spartan-serif: Georgia, "Times New Roman", Times, serif;
+  --ice-white:#f5fcff;
+  --old-gold:#c89a2b;
+  --blood:#720811;
+}
+
+html,body,.app,section.page,.card,
+button,input,select,textarea,label,p,span,strong,small{
+  font-family:var(--spartan-serif)!important;
+}
+
+h1,h2,h3,h4,
+.v5-brand,.dash-panel-title,.performance-title,.calendar-title,
+.nav button,.btn,.quick-action,.v5-actions button{
+  font-family:var(--spartan-serif)!important;
+  font-weight:900!important;
+  letter-spacing:1.05px!important;
+  text-transform:uppercase!important;
+  font-variant:small-caps!important;
+}
+
+/* BRANCO-GELO */
+body,p,label,.small,
+input,select,textarea,
+#training p,#hiit p,#cardio p,#daily p,
+#progress p,#history p,#profile p,
+#training label,#hiit label,#cardio label,#daily label,
+#progress label,#history label,#profile label{
+  color:var(--ice-white)!important;
+  text-shadow:
+    0 0 2px rgba(225,247,255,.90),
+    0 0 5px rgba(183,227,248,.34),
+    0 1px 1px rgba(0,0,0,.98)!important;
+}
+
+/* DOURADO ENVELHECIDO COM CONTORNO VERMELHO-SANGUE FINÍSSIMO */
+h1,h2,h3,h4,
+.v5-brand,.dash-panel-title,.performance-title,.calendar-title,
+.card h2,.card h3,
+.nav button,.btn,
+.v5-actions strong,
+.gold-text{
+  color:var(--old-gold)!important;
+  -webkit-text-stroke:.22px var(--blood)!important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.98),
+    0 0 3px rgba(200,154,43,.32)!important;
+}
+
+/* Botão/menu ativo continua dourado com texto escuro */
+.nav button.on,.btn.gold{
+  color:#090704!important;
+  -webkit-text-stroke:0 transparent!important;
+  text-shadow:none!important;
+}
+
+/* FUNDOS: menores, nítidos e sempre por baixo dos cartões */
+#training.page,#hiit.page,#cardio.page,#daily.page,
+#progress.page,#history.page,#profile.page{
+  background-color:#020202!important;
+  background-repeat:no-repeat!important;
+  background-size:42% auto!important;
+  background-position:right 10px bottom 24px!important;
+}
+
+#training.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.24),rgba(0,0,0,.04)),url("./scene-musculacao.jpg")!important;
+}
+#hiit.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.24),rgba(0,0,0,.04)),url("./scene-hiit.jpg")!important;
+}
+#cardio.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,.03)),url("./scene-cardio.jpg")!important;
+}
+#daily.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,.03)),url("./scene-diario.jpg")!important;
+}
+#progress.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,.03)),url("./scene-evolucao.jpg")!important;
+}
+#history.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,.03)),url("./scene-historico.jpg")!important;
+}
+#profile.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,.03)),url("./scene-perfil.jpg")!important;
+}
+
+/* Cartões originais: não alterar largura, altura, grids ou campos */
+#training.page>.card,#hiit.page>.card,#cardio.page>.card,#daily.page>.card,
+#progress.page>.card,#history.page>.card,#profile.page>.card{
+  width:auto!important;
+  max-width:none!important;
+  min-width:0!important;
+  transform:none!important;
+  background:rgba(4,5,6,.58)!important;
+}
+
+/* ELIMINAR O BLOCO PRETO: puxar a secção inteira para cima.
+   Não comprime nem estica nenhum cartão. */
+#cardio.page.on,
+#progress.page.on,
+#history.page.on,
+#profile.page.on{
+  margin-top:-218px!important;
+  padding-top:0!important;
+}
+
+#cardio.page.on>.card:first-child,
+#progress.page.on>.card:first-child,
+#history.page.on>.card:first-child,
+#profile.page.on>.card:first-child{
+  margin-top:6px!important;
+}
+
+/* Rebordo mínimo entre cartões, mantendo o formato original */
+#cardio.page>.card + .card,
+#progress.page>.card + .card,
+#history.page>.card + .card,
+#profile.page>.card + .card{
+  margin-top:6px!important;
+}
+
+/* Não tocar nos dias de treino já aprovados */
+#v5CalendarCard .day.train,
+#v5CalendarCard .day.cardio,
+#v5CalendarCard .day.both{
+  -webkit-text-stroke:0 transparent!important;
+}
+
+/* Dias sem registo: linha dourada fina apenas no número */
+#v5CalendarCard .day:not(.train):not(.cardio):not(.both){
+  color:var(--ice-white)!important;
+  -webkit-text-stroke:.34px #e8bd3f!important;
+  text-shadow:
+    0 0 2px rgba(255,211,82,.72),
+    0 1px 1px rgba(0,0,0,.98)!important;
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -2483,7 +2633,7 @@ h1,h2,h3,h4,.calendar-title,.performance-title,
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.9</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V7.0</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
