@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v8-1';
+const CACHE='spartan-forge-v8-2';
 const APP_SHELL=[
   './',
   './index.html',
@@ -7,6 +7,14 @@ const APP_SHELL=[
   './icon-512.png',
   './icon-maskable-512.png',
   './hero-top-v8.jpg',
+  './premium-icons/painel.png',
+  './premium-icons/diario.png',
+  './premium-icons/musculacao.png',
+  './premium-icons/hiit.png',
+  './premium-icons/cardio.png',
+  './premium-icons/evolucao.png',
+  './premium-icons/historico.png',
+  './premium-icons/perfil.png',
   './scene-musculacao.jpg',
   './scene-hiit.jpg',
   './scene-cardio.jpg',

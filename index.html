@@ -3059,6 +3059,55 @@ body .nav button{font-size:10px!important;letter-spacing:0!important;}
   .v8-focus strong{font-size:8.6px!important;}
 }
 
+
+/* ==========================================================
+   SPARTAN FORGE V8.2 — ÍCONES PREMIUM SÓLIDOS
+   ========================================================== */
+body .nav button svg{display:none!important;}
+body .nav button .premium-nav-icon{
+  display:block!important;
+  width:58px!important;
+  height:58px!important;
+  object-fit:contain!important;
+  flex:none!important;
+  filter:drop-shadow(0 5px 6px rgba(0,0,0,.62)) drop-shadow(0 0 5px rgba(217,157,49,.16));
+  transform:translateZ(0);
+  transition:transform .16s ease,filter .16s ease;
+}
+body .nav button{
+  min-height:126px!important;
+  padding:13px 6px 10px!important;
+  gap:7px!important;
+  background:#080808!important;
+  border:1px solid rgba(217,157,49,.18)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025),0 7px 17px rgba(0,0,0,.38)!important;
+}
+body .nav button:not(.on){border-color:rgba(176,14,34,.72)!important;}
+body .nav button span{
+  font-family:'Roboto Condensed',Arial,sans-serif!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  letter-spacing:.02em!important;
+  color:#f3f0ea!important;
+  text-shadow:none!important;
+  line-height:1.05!important;
+}
+body .nav button:active .premium-nav-icon{transform:scale(.94) translateY(2px)!important;}
+body .nav button.on .premium-nav-icon{
+  transform:scale(1.06);
+  filter:drop-shadow(0 6px 7px rgba(0,0,0,.68)) drop-shadow(0 0 8px rgba(237,183,70,.25));
+}
+@media(max-width:720px){
+  body .nav button{min-height:115px!important;padding:11px 3px 9px!important;gap:6px!important;}
+  body .nav button .premium-nav-icon{width:51px!important;height:51px!important;}
+  body .nav button span{font-size:9.2px!important;}
+}
+@media(max-width:390px){
+  body .nav button{min-height:108px!important;}
+  body .nav button .premium-nav-icon{width:47px!important;height:47px!important;}
+  body .nav button span{font-size:8.5px!important;}
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -3067,7 +3116,7 @@ body .nav button{font-size:10px!important;letter-spacing:0!important;}
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="v8-hero"><img src="./hero-top-v8.jpg" alt="Spartan Forge V8"></div>
+<div class="v8-hero"><img src="./hero-top-v8.jpg" alt="Spartan Forge V8.2"></div>
 <div class="v8-welcome">
   <div class="v8-welcome-main">
     <h2>Bem-vindo, Guerreiro!</h2>
@@ -3080,14 +3129,14 @@ body .nav button{font-size:10px!important;letter-spacing:0!important;}
   </div>
 </div>
 <div class="nav">
-<button class="on" data-p="dash"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.8 12 3l9 7.8"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg><span>Painel</span></button>
-<button data-p="daily"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M8 9h8M8 13l2 2 4-4M8 18h8"/></svg><span>Diário</span></button>
-<button data-p="training"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4M6 8v8M9 12h6M18 8v8M21 10v4"/></svg><span>Musculação</span></button>
-<button data-p="hiit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 2.5c.3 3-1 4.2-2.5 5.7-1.7 1.7-2.7 3.7-2.3 6.2.5 3.3 3.2 5.6 6.4 5.1 3.3-.5 5.3-3.5 4.4-6.7-.5-1.8-1.7-3.2-3.3-4.3.1 2.4-1.2 3.8-2.4 4.7.4-4.2-1.1-7.5-.3-10.7Z"/><path d="M11.2 18.7c-.4-1.8.4-3.2 1.6-4.3.1 1.5 1.2 2.2 2 3.1"/></svg><span>HIIT</span></button>
-<button data-p="cardio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 5.8a5 5 0 0 0-7.1 0L12 7.5l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21l8.8-8.1a5 5 0 0 0 0-7.1Z"/><path d="M4.5 13h4l1.5-3.5 2.6 7 1.8-4H20"/></svg><span>Cardio</span></button>
-<button data-p="progress"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V13h4v7M10 20V8h4v12M16 20V4h4v16M3 20h18"/></svg><span>Evolução</span></button>
-<button data-p="history"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11a8.5 8.5 0 1 0 2.4-5.9L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg><span>Histórico</span></button>
-<button data-p="profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5 12 2l5 2.5 2 5-1.2 7.3L12 22l-5.8-5.2L5 9.5l2-5Z"/><path d="m8 10 3 1.5-3 1.5m8-3-3 1.5 3 1.5M10 17h4"/></svg><span>Perfil</span></button>
+<button class="on" data-p="dash"><img class="premium-nav-icon" src="./premium-icons/painel.png" alt="" aria-hidden="true"><span>Painel</span></button>
+<button data-p="daily"><img class="premium-nav-icon" src="./premium-icons/diario.png" alt="" aria-hidden="true"><span>Diário</span></button>
+<button data-p="training"><img class="premium-nav-icon" src="./premium-icons/musculacao.png" alt="" aria-hidden="true"><span>Musculação</span></button>
+<button data-p="hiit"><img class="premium-nav-icon" src="./premium-icons/hiit.png" alt="" aria-hidden="true"><span>HIIT</span></button>
+<button data-p="cardio"><img class="premium-nav-icon" src="./premium-icons/cardio.png" alt="" aria-hidden="true"><span>Cardio</span></button>
+<button data-p="progress"><img class="premium-nav-icon" src="./premium-icons/evolucao.png" alt="" aria-hidden="true"><span>Evolução</span></button>
+<button data-p="history"><img class="premium-nav-icon" src="./premium-icons/historico.png" alt="" aria-hidden="true"><span>Histórico</span></button>
+<button data-p="profile"><img class="premium-nav-icon" src="./premium-icons/perfil.png" alt="" aria-hidden="true"><span>Perfil</span></button>
 </div>
 
 <section id="dash" class="page on">
