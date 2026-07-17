@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v7-5';
+const CACHE='spartan-forge-v7-6';
 const APP_SHELL=[
   './',
   './index.html',
@@ -6,6 +6,7 @@ const APP_SHELL=[
   './icon-192.png',
   './icon-512.png',
   './icon-maskable-512.png',
+  './hero-top-v76.jpg',
   './scene-musculacao.jpg',
   './scene-hiit.jpg',
   './scene-cardio.jpg',
