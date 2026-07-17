@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v6-4';
+const CACHE='spartan-forge-v6-5';
 const APP_SHELL=[
   './',
   './index.html',
@@ -6,6 +6,13 @@ const APP_SHELL=[
   './icon-192.png',
   './icon-512.png',
   './icon-maskable-512.png',
+  './bg-musculacao.jpg',
+  './bg-hiit.jpg',
+  './bg-cardio.jpg',
+  './bg-diario.jpg',
+  './bg-evolucao.jpg',
+  './bg-historico.jpg',
+  './bg-perfil.jpg',
 ];
 
 self.addEventListener('install', event => {
