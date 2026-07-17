@@ -1640,7 +1640,7 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 #history .record-hall h3{margin:10px 0 6px!important}
 
 
-/* SPARTAN FORGE V6.4 — fundos espartanos, vermelho sangue e compactação final */
+/* SPARTAN FORGE V6.5 — fundos espartanos, vermelho sangue e compactação final */
 #v5CalendarCard .day.train,
 #v5CalendarCard .day.cardio,
 #v5CalendarCard .day.both{
@@ -1683,6 +1683,393 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
  #training::before,#hiit::before,#cardio::before,#daily::before,#progress::before,#history::before,#profile::before{background-size:220px auto;background-position:right -38px top 38px;opacity:.085}
 }
 
+
+/* SPARTAN FORGE V6.5 — fundos temáticos, vermelho sangue e compactação visual */
+#training,#hiit,#cardio,#daily,#progress,#history,#profile{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  border-radius:18px;
+}
+#training::before,#hiit::before,#cardio::before,#daily::before,
+#progress::before,#history::before,#profile::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-position:center top;
+  background-size:cover;
+  background-repeat:no-repeat;
+  opacity:.14;
+  filter:saturate(.85) contrast(1.06);
+  pointer-events:none;
+}
+#training::after,#hiit::after,#cardio::after,#daily::after,
+#progress::after,#history::after,#profile::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(180deg,rgba(4,5,6,.70),rgba(4,5,6,.90) 58%,rgba(4,5,6,.97));
+  pointer-events:none;
+}
+#training::before{background-image:url("./bg-musculacao.jpg")}
+#hiit::before{background-image:url("./bg-hiit.jpg")}
+#cardio::before{background-image:url("./bg-cardio.jpg")}
+#daily::before{background-image:url("./bg-diario.jpg")}
+#progress::before{background-image:url("./bg-evolucao.jpg")}
+#history::before{background-image:url("./bg-historico.jpg")}
+#profile::before{background-image:url("./bg-perfil.jpg")}
+
+#training>.card,#hiit>.card,#cardio>.card,#daily>.card,
+#progress>.card,#history>.card,#profile>.card{
+  background:rgba(13,14,16,.88)!important;
+  backdrop-filter:blur(1.5px);
+}
+
+/* Compactação específica dos quatro últimos menus */
+#cardio,#progress,#history,#profile{padding-top:4px!important}
+#cardio>.card,#progress>.card,#history>.card,#profile>.card{
+  margin-top:6px!important;
+  margin-bottom:6px!important;
+}
+#cardio .grid2,#progress .grid2,#profile .grid2{gap:7px!important}
+#cardio label,#progress label,#profile label{
+  margin-top:6px!important;
+  margin-bottom:3px!important;
+}
+#cardio .rowbtn,#progress .rowbtn,#history .rowbtn,#profile .rowbtn{
+  margin-top:7px!important;
+  gap:7px!important;
+}
+#history .record-section,#history .record-group,#history .history-month-nav,
+#history .canvas,#profile .profile-weight-grid{
+  margin-top:7px!important;
+  margin-bottom:7px!important;
+}
+#history p.small,#profile p.small{
+  margin-top:6px!important;
+  margin-bottom:4px!important;
+}
+
+/* Número do dia de treino: vermelho sangue sólido e legível */
+#v5CalendarCard .day.train,
+#v5CalendarCard .day.cardio,
+#v5CalendarCard .day.both{
+  color:#8f0712!important;
+  font-weight:1000!important;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.98),
+    0 0 2px rgba(0,0,0,.95),
+    0 0 5px rgba(110,0,10,.50)!important;
+}
+
+
+/* SPARTAN FORGE V6.5 — correção real dos fundos e dos espaçamentos */
+#training.page,#hiit.page,#cardio.page,#daily.page,#progress.page,#history.page,#profile.page{
+  position:relative!important;
+  overflow:hidden!important;
+  border-radius:18px!important;
+  background-color:#020202!important;
+  background-repeat:no-repeat!important;
+  background-position:center top!important;
+  background-size:cover!important;
+}
+#training.page{background-image:linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.92)),url('./bg-musculacao.jpg')!important}
+#hiit.page{background-image:linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.92)),url('./bg-hiit.jpg')!important}
+#cardio.page{background-image:linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.92)),url('./bg-cardio.jpg')!important}
+#daily.page{background-image:linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.93)),url('./bg-diario.jpg')!important}
+#progress.page{background-image:linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.93)),url('./bg-evolucao.jpg')!important}
+#history.page{background-image:linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.93)),url('./bg-historico.jpg')!important}
+#profile.page{background-image:linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.93)),url('./bg-perfil.jpg')!important}
+#training.page>.card,#hiit.page>.card,#cardio.page>.card,#daily.page>.card,
+#progress.page>.card,#history.page>.card,#profile.page>.card{
+  background:rgba(5,5,5,.78)!important;
+  backdrop-filter:blur(1px)!important;
+  -webkit-backdrop-filter:blur(1px)!important;
+}
+/* remover o pseudo-fundo anterior que estava escondido atrás da página */
+#training::before,#hiit::before,#cardio::before,#daily::before,#progress::before,#history::before,#profile::before{content:none!important;display:none!important}
+
+/* compactação visível e específica nos quatro menus pedidos */
+#cardio.page,#progress.page,#history.page,#profile.page{
+  padding:4px 0 6px!important;
+}
+#cardio.page>.card,#progress.page>.card,#history.page>.card,#profile.page>.card{
+  margin:0 0 4px!important;
+  padding:8px!important;
+  border-radius:14px!important;
+}
+#cardio h2,#progress h2,#history h2,#profile h2{
+  margin:0 0 5px!important;
+  line-height:1.15!important;
+}
+#cardio label,#progress label,#history label,#profile label{
+  display:block!important;
+  margin:3px 0 2px!important;
+  line-height:1.1!important;
+}
+#cardio .grid2,#progress .grid2,#history .grid2,#profile .grid2,
+#cardio .rowbtn,#progress .rowbtn,#history .rowbtn,#profile .rowbtn,
+#profile .profile-weight-grid,#history .history-month-nav{
+  gap:4px!important;
+  margin-top:4px!important;
+  margin-bottom:4px!important;
+}
+#cardio input,#cardio select,#cardio textarea,#progress input,#progress select,#progress textarea,
+#history input,#history select,#history textarea,#profile input,#profile select,#profile textarea{
+  margin:0!important;
+}
+#cardio textarea{min-height:54px!important}
+#progress .canvas,#history .canvas{
+  margin:4px 0!important;
+  padding:5px!important;
+}
+#history .record-hall>div{margin:3px 0!important}
+#history .record-row{padding:6px 0!important}
+#history .record-hall h3{margin:5px 0 3px!important}
+#history p.small,#profile p.small,#progress .small,#cardio .small{
+  margin:4px 0!important;
+  line-height:1.2!important;
+}
+#profile .btn.full,#progress .btn.full{margin-top:5px!important}
+@media(max-width:720px){
+  #training.page,#hiit.page,#cardio.page,#daily.page,#progress.page,#history.page,#profile.page{
+    background-position:center top!important;
+    background-size:auto 100%!important;
+  }
+}
+
+
+/* ==========================================================
+   SPARTAN FORGE V6.6 — skin visual fiel ao mockup aprovado
+   Mantém toda a lógica e todos os IDs funcionais existentes.
+   ========================================================== */
+:root{
+  --sf-gold:#c99a28;
+  --sf-gold2:#f2bd37;
+  --sf-blood:#8b0712;
+  --sf-panel:rgba(7,8,9,.74);
+}
+
+/* As páginas deixam de ser simples cartões e passam a ser painéis cinematográficos */
+#training,#hiit,#cardio,#daily,#progress,#history,#profile{
+  position:relative!important;
+  isolation:isolate!important;
+  min-height:calc(100vh - 128px)!important;
+  padding:10px 10px 86px!important;
+  overflow:hidden!important;
+  border:1px solid rgba(201,154,40,.72)!important;
+  border-radius:18px!important;
+  background:
+    radial-gradient(circle at 78% 32%,rgba(201,154,40,.12),transparent 34%),
+    linear-gradient(180deg,#050606 0%,#090a0b 55%,#030404 100%)!important;
+  box-shadow:inset 0 0 35px rgba(201,154,40,.05),0 0 0 1px rgba(0,0,0,.75)!important;
+}
+
+/* Arte lateral — exatamente como no conceito: guerreiro grande à direita */
+#training::before,#hiit::before,#cardio::before,#daily::before,
+#progress::before,#history::before,#profile::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  z-index:0!important;
+  top:0!important;
+  right:-4%!important;
+  bottom:58px!important;
+  width:64%!important;
+  background-position:right top!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  opacity:.92!important;
+  filter:contrast(1.08) saturate(.9)!important;
+  pointer-events:none!important;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.32) 18%,#000 48%,#000 100%)!important;
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.32) 18%,#000 48%,#000 100%)!important;
+}
+#training::before{background-image:url("./skin-musculacao.jpg")!important}
+#hiit::before{background-image:url("./skin-hiit.jpg")!important}
+#cardio::before{background-image:url("./skin-cardio.jpg")!important}
+#daily::before{background-image:url("./skin-diario.jpg")!important}
+#progress::before{background-image:url("./skin-evolucao.jpg")!important}
+#history::before{background-image:url("./skin-historico.jpg")!important}
+#profile::before{background-image:url("./skin-perfil.jpg")!important}
+
+/* Sombra para garantir leitura sem apagar a imagem */
+#training::after,#hiit::after,#cardio::after,#daily::after,
+#progress::after,#history::after,#profile::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  background:
+    linear-gradient(90deg,rgba(2,3,3,.98) 0%,rgba(3,4,4,.94) 43%,rgba(3,4,4,.45) 72%,rgba(3,4,4,.18) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.62) 82%,rgba(0,0,0,.92))!important;
+  pointer-events:none!important;
+}
+#training>*,
+#hiit>*,
+#cardio>*,
+#daily>*,
+#progress>*,
+#history>*,
+#profile>*{
+  position:relative!important;
+  z-index:2!important;
+}
+
+/* Cartões transparentes: a arte deixa de ficar escondida */
+#training>.card,#hiit>.card,#cardio>.card,#daily>.card,
+#progress>.card,#history>.card,#profile>.card{
+  width:63%!important;
+  max-width:63%!important;
+  margin:0 0 8px!important;
+  padding:10px!important;
+  border:0!important;
+  border-radius:10px!important;
+  background:linear-gradient(180deg,rgba(10,11,12,.79),rgba(5,6,7,.67))!important;
+  box-shadow:none!important;
+  backdrop-filter:blur(1px)!important;
+}
+#hiit>.card:nth-of-type(2),
+#cardio>.card:nth-of-type(2),
+#progress>.card:nth-of-type(n+2),
+#history>.card:nth-of-type(n+2),
+#profile>.card:nth-of-type(n+2){
+  background:rgba(5,6,7,.76)!important;
+}
+
+/* Títulos centrados e dourados, iguais ao mockup */
+#training h2,#hiit h2,#cardio h2,#daily h2,
+#progress h2,#history h2,#profile h2{
+  margin:0 0 10px!important;
+  padding-bottom:7px!important;
+  color:var(--sf-gold2)!important;
+  text-align:center!important;
+  text-transform:uppercase!important;
+  letter-spacing:.8px!important;
+  font-size:18px!important;
+  border-bottom:1px solid rgba(201,154,40,.22)!important;
+  text-shadow:0 0 9px rgba(201,154,40,.22)!important;
+}
+
+/* Campos e cartões com acabamento metálico escuro */
+#training input,#training select,#training textarea,
+#hiit input,#hiit select,#hiit textarea,
+#cardio input,#cardio select,#cardio textarea,
+#daily input,#daily select,#daily textarea,
+#progress input,#progress select,#progress textarea,
+#history input,#history select,#history textarea,
+#profile input,#profile select,#profile textarea{
+  background:rgba(6,7,8,.86)!important;
+  border:1px solid rgba(201,154,40,.38)!important;
+  border-radius:7px!important;
+  min-height:38px!important;
+  box-shadow:inset 0 0 10px rgba(0,0,0,.45)!important;
+}
+#training label,#hiit label,#cardio label,#daily label,
+#progress label,#history label,#profile label{
+  color:#e8dfca!important;
+  font-size:11px!important;
+  letter-spacing:.25px!important;
+  text-transform:uppercase!important;
+}
+
+/* Botões dourados com o aspeto do conceito */
+#training .btn.gold,#hiit .btn.gold,#cardio .btn.gold,#daily .btn.gold,
+#progress .btn.gold,#history .btn.gold,#profile .btn.gold{
+  background:linear-gradient(100deg,#9a6d11,#e1b43b,#a67816)!important;
+  color:#090909!important;
+  border:1px solid #d7a929!important;
+  box-shadow:0 3px 13px rgba(201,154,40,.18)!important;
+  font-weight:900!important;
+  text-transform:uppercase!important;
+}
+
+/* Séries e blocos internos */
+#training .series-card,#hiit .series-card,
+#training .last-session,#training #trainingMusclesCard,
+#daily .water-main,#daily .coffee-main,
+#profile .profile-weight-grid>div,
+#history .record-group,#history .record-section{
+  background:rgba(4,5,6,.72)!important;
+  border:1px solid rgba(201,154,40,.25)!important;
+  border-radius:8px!important;
+}
+
+/* Compactação real dos quatro menus indicados */
+#cardio,#progress,#history,#profile{gap:0!important}
+#cardio>.card,#progress>.card,#history>.card,#profile>.card{
+  padding-top:8px!important;
+  padding-bottom:8px!important;
+  margin-top:0!important;
+  margin-bottom:5px!important;
+}
+#cardio .grid2,#progress .grid2,#profile .grid2{
+  gap:5px 7px!important;
+}
+#cardio label,#progress label,#profile label{
+  margin-top:3px!important;
+  margin-bottom:2px!important;
+}
+#cardio textarea,#progress textarea,#profile textarea{
+  min-height:54px!important;
+}
+#cardio .rowbtn,#progress .rowbtn,#history .rowbtn,#profile .rowbtn{
+  margin-top:5px!important;
+  margin-bottom:2px!important;
+  gap:6px!important;
+}
+#history .history-month-nav,
+#history .canvas,
+#history p.small,
+#profile .profile-weight-grid,
+#profile p.small{
+  margin-top:5px!important;
+  margin-bottom:5px!important;
+}
+#history .card h2,#profile .card h2,#progress .card h2,#cardio .card h2{
+  margin-bottom:6px!important;
+}
+
+/* No progresso, as medições ganham a segunda arte do mockup */
+#progress>.card:nth-of-type(2)::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:-1!important;
+  border-radius:10px!important;
+  background:
+    linear-gradient(90deg,rgba(4,5,6,.96),rgba(4,5,6,.78) 60%,rgba(4,5,6,.25)),
+    url("./skin-medicoes.jpg") right center/58% auto no-repeat!important;
+  opacity:.9!important;
+  pointer-events:none!important;
+}
+
+/* Calendário: mantém os raios e reforça apenas a legibilidade */
+#v5CalendarCard .day.train,
+#v5CalendarCard .day.cardio,
+#v5CalendarCard .day.both{
+  color:#8b0712!important;
+  font-weight:1000!important;
+  -webkit-text-stroke:.25px rgba(35,0,0,.82)!important;
+  text-shadow:0 1px 0 #000,0 0 2px #000,0 0 5px rgba(125,0,10,.58)!important;
+}
+
+/* Telemóveis muito estreitos: mantém o mesmo look sem esmagar os controlos */
+@media(max-width:390px){
+  #training>.card,#hiit>.card,#cardio>.card,#daily>.card,
+  #progress>.card,#history>.card,#profile>.card{
+    width:68%!important;
+    max-width:68%!important;
+  }
+  #training::before,#hiit::before,#cardio::before,#daily::before,
+  #progress::before,#history::before,#profile::before{
+    width:67%!important;
+    right:-9%!important;
+  }
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1691,7 +2078,7 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.4</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.6</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
