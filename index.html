@@ -1589,6 +1589,56 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
   .v5-card{padding:10px!important}
   .v5-dashboard{gap:7px!important}
 }
+
+
+/* SPARTAN FORGE V6.3 — calendário dourado, eliminação real de registos e compactação final */
+#v5CalendarCard .day,
+#v5CalendarCard .day.train,
+#v5CalendarCard .day.cardio,
+#v5CalendarCard .day.both{
+  position:relative!important;
+  overflow:visible!important;
+}
+#v5CalendarCard .day::before,
+#v5CalendarCard .day::after,
+#v5CalendarCard .day.train::before,
+#v5CalendarCard .day.train::after,
+#v5CalendarCard .day.cardio::before,
+#v5CalendarCard .day.cardio::after,
+#v5CalendarCard .day.both::before,
+#v5CalendarCard .day.both::after{
+  content:none!important;
+  display:none!important;
+}
+#v5CalendarCard .day.train,
+#v5CalendarCard .day.cardio,
+#v5CalendarCard .day.both{
+  background:linear-gradient(145deg,#f7c52d 0%,#c77b00 48%,#6e3a00 100%)!important;
+  border:2px solid #ffe36a!important;
+  border-bottom:2px solid #ffe36a!important;
+  color:#ff1738!important;
+  font-weight:1000!important;
+  text-shadow:0 0 4px #ffb000,0 0 8px #ff311f,0 0 12px rgba(255,23,56,.9)!important;
+  box-shadow:0 0 5px #fff0a3,0 0 12px #ffd84a,0 0 22px rgba(255,171,0,.92),inset 0 0 12px rgba(255,246,181,.45)!important;
+}
+#v5CalendarCard .day:not(.train):not(.cardio):not(.both){
+  background:#151515!important;
+  border:1px solid #3d3d3d!important;
+  color:#777!important;
+  box-shadow:none!important;
+}
+#v5CalendarCard .day.today{outline:1px solid rgba(255,255,255,.9)!important;outline-offset:3px!important}
+
+/* Espaçamento uniforme em todos os separadores */
+.page{gap:6px!important}
+.page .card{margin:0 0 6px!important;padding:10px!important}
+.page .card + .card{margin-top:0!important}
+.page h2,.page h3{margin-top:0!important;margin-bottom:7px!important}
+.page .grid2,.page .grid3,.page .series-grid,.page .rowbtn,.page .row,.page .stats{gap:6px!important}
+.page label{margin-top:6px!important;margin-bottom:3px!important}
+.page .last-session,.page .goal,.page .item,.page .series-card,.page .canvas,.page .table-wrap{margin-top:6px!important;margin-bottom:6px!important}
+#history .record-hall h3{margin:10px 0 6px!important}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1597,7 +1647,7 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.2</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.3</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
@@ -1835,7 +1885,7 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 
 <div class="rowbtn" style="margin-top:10px">
   <button class="btn gold" id="saveTraining" type="button">Guardar exercício</button>
-  <button class="btn dark" id="resetTraining" type="button">Limpar valores</button>
+  <button class="btn danger" id="resetTraining" type="button">Apagar registo deste exercício</button>
 </div>
 </div>
 </section>
@@ -1896,7 +1946,7 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 <label>Notas</label><textarea id="hNotes"></textarea>
 <div class="rowbtn" style="margin-top:10px">
   <button class="btn gold" id="saveHiit" type="button">Guardar exercício HIIT</button>
-  <button class="btn dark" id="resetHiit" type="button">Limpar valores</button>
+  <button class="btn danger" id="resetHiit" type="button">Apagar registo deste exercício</button>
 </div>
 </div>
 
@@ -1947,7 +1997,7 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 <label>Notas</label><textarea id="cNotes"></textarea>
 <div class="rowbtn" style="margin-top:10px">
   <button class="btn gold" id="saveCardio" type="button">Guardar cardio</button>
-  <button class="btn dark" id="resetCardio" type="button">Limpar valores</button>
+  <button class="btn danger" id="resetCardio" type="button">Apagar registo desta modalidade</button>
 </div>
 </div>
 <div class="card"><h2>Estatísticas cardio</h2><div id="cardioStats" class="small"></div></div>
@@ -2364,11 +2414,14 @@ updateCurrentExerciseVolume();
 
 $('saveTraining').onclick=()=>{
   const reps=[$('r1'),$('r2'),$('r3'),$('r4')].map(x=>num(x.value));
+  const date=$('tDate').value;
+  const exercise=$('tExercise').value;
+  const existing=db.training.find(x=>x.date===date&&x.exercise===exercise);
   const record={
-    id:crypto.randomUUID(),
-    date:$('tDate').value,
+    id:existing?.id||crypto.randomUUID(),
+    date,
     group:$('tGroup').value,
-    exercise:$('tExercise').value,
+    exercise,
     load:num($('tLoad').value),
     sets:4,
     work:0,
@@ -2378,19 +2431,30 @@ $('saveTraining').onclick=()=>{
     failure:true,
     notes:$('tNotes').value
   };
+  db.training=db.training.filter(x=>!(x.date===date&&x.exercise===exercise));
   db.training.push(record);
   save();
   showLastExercise();
   exerciseAnalysis();
-  alert('Exercício guardado. A 4.ª série ficou registada até à fadiga.');
+  alert(existing?'Registo corrigido e atualizado.':'Exercício guardado. A 4.ª série ficou registada até à fadiga.');
 };
 
 $('resetTraining').onclick=()=>{
+  const date=$('tDate').value;
+  const exercise=$('tExercise').value;
+  const matches=db.training.filter(x=>x.date===date&&x.exercise===exercise);
+  if(matches.length&&confirm(`Apagar o registo de ${exercise} em ${date}?`)){
+    db.training=db.training.filter(x=>!(x.date===date&&x.exercise===exercise));
+    save();
+    showLastExercise();
+    exerciseAnalysis();
+  }
   $('tLoad').value='';
   $('tRest').value=60;
   ['r1','r2','r3','r4'].forEach(id=>$(id).value='');
   $('tNotes').value='';
   updateCurrentExerciseVolume();
+  if(!matches.length)alert('Não existe nenhum registo deste exercício nesta data.');
 };
 
 
@@ -2753,26 +2817,41 @@ $('saveHiit').onclick=()=>{
     return;
   }
 
-  db.hiit.push({
-    id:crypto.randomUUID(),
-    date:$('hDate').value,
-    exercise:$('hExercise').value,
+  const date=$('hDate').value;
+  const exercise=$('hExercise').value;
+  const existing=(db.hiit||[]).find(x=>x.date===date&&x.exercise===exercise);
+  const record={
+    id:existing?.id||crypto.randomUUID(),
+    date,
+    exercise,
     mode:isTime?'seconds':'reps',
     seriesCount:num($('hRounds').value)||4,
     values,
     total:values.reduce((a,b)=>a+b,0),
     calories:num($('hCalories').value),
     notes:$('hNotes').value
-  });
+  };
+  db.hiit=(db.hiit||[]).filter(x=>!(x.date===date&&x.exercise===exercise));
+  db.hiit.push(record);
 
   save();
-  alert('Exercício HIIT guardado');
+  hiitStats();
+  alert(existing?'Registo HIIT corrigido e atualizado.':'Exercício HIIT guardado');
 };
 
 $('resetHiit').onclick=()=>{
+  const date=$('hDate').value;
+  const exercise=$('hExercise').value;
+  const matches=(db.hiit||[]).filter(x=>x.date===date&&x.exercise===exercise);
+  if(matches.length&&confirm(`Apagar o registo de ${exercise} em ${date}?`)){
+    db.hiit=(db.hiit||[]).filter(x=>!(x.date===date&&x.exercise===exercise));
+    save();
+    hiitStats();
+  }
   renderHiitSeries();
   $('hCalories').value='';
   $('hNotes').value='';
+  if(!matches.length)alert('Não existe nenhum registo deste exercício nesta data.');
 };
 
 function hiitStats(){
@@ -2812,13 +2891,30 @@ function hiitStats(){
   );
 }
 
-$('saveCardio').onclick=()=>{db.cardio.push({id:crypto.randomUUID(),date:$('cDate').value,type:$('cType').value,distance:num($('cDistance').value),duration:num($('cDuration').value),calories:num($('cCalories').value),intensity:$('cIntensity').value,notes:$('cNotes').value});save();alert('Cardio guardado')};
+$('saveCardio').onclick=()=>{
+  const date=$('cDate').value;
+  const type=$('cType').value;
+  const existing=db.cardio.find(x=>x.date===date&&x.type===type);
+  const record={id:existing?.id||crypto.randomUUID(),date,type,distance:num($('cDistance').value),duration:num($('cDuration').value),calories:num($('cCalories').value),intensity:$('cIntensity').value,notes:$('cNotes').value};
+  db.cardio=db.cardio.filter(x=>!(x.date===date&&x.type===type));
+  db.cardio.push(record);
+  save();
+  alert(existing?'Registo de cardio corrigido e atualizado.':'Cardio guardado');
+};
 $('resetCardio').onclick=()=>{
+  const date=$('cDate').value;
+  const type=$('cType').value;
+  const matches=db.cardio.filter(x=>x.date===date&&x.type===type);
+  if(matches.length&&confirm(`Apagar o registo de ${type} em ${date}?`)){
+    db.cardio=db.cardio.filter(x=>!(x.date===date&&x.type===type));
+    save();
+  }
   $('cDistance').value='';
   $('cDuration').value='';
   $('cCalories').value='';
   $('cIntensity').value='Moderada';
   $('cNotes').value='';
+  if(!matches.length)alert('Não existe nenhum registo desta modalidade nesta data.');
 };
 $('saveWeight').onclick=()=>{
   const date=$('pDate').value||today();
@@ -2999,8 +3095,10 @@ function calendar(){
   for(let i=0;i<(first+6)%7;i++)html+='<div></div>';
   for(let d=1;d<=days;d++){
     let date=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`,
-        r=db.daily.find(x=>x.date===date),
-        typeClass=r?(r.type==='Treino'?'train':r.type==='Cardio'?'cardio':r.type==='Treino + Cardio'?'both':'rest'):'',
+        hasStrength=db.training.some(x=>x.date===date),
+        hasHiit=(db.hiit||[]).some(x=>x.date===date),
+        hasCardio=db.cardio.some(x=>x.date===date),
+        typeClass=(hasStrength||hasHiit||hasCardio)?'train':'',
         todayClass=date===today?' today':'',
         cls='day '+typeClass+todayClass;
     html+=`<button class="${cls}" data-date="${date}" aria-label="${date===today?'Hoje, ':''}abrir ${date}">${d}</button>`;
