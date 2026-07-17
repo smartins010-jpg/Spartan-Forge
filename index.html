@@ -2383,6 +2383,98 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
   text-shadow:0 1px 0 #000,0 0 2px #000,0 0 4px rgba(105,0,8,.42)!important;
 }
 
+
+/* ==========================================================
+   SPARTAN FORGE V6.9
+   Ajustes exclusivamente visuais pedidos:
+   tipografia Spartan, imagens mais claras, cartões apenas
+   subidos e contorno dourado nos dias sem registo.
+   ========================================================== */
+
+/* Recuperar e preservar a tipografia Spartan original. */
+:root{
+  --spartan-font:"Copperplate","Copperplate Gothic Light","Bank Gothic","Arial Narrow","Trebuchet MS",sans-serif!important;
+}
+html,body,.app,section.page,.card,
+button,input,select,textarea,label,
+h1,h2,h3,h4,.small,.item,.goal,.badge{
+  font-family:var(--spartan-font)!important;
+}
+h1,h2,h3,h4,.calendar-title,.performance-title,
+.v5-brand,.dash-panel-title{
+  font-weight:900!important;
+  letter-spacing:.65px!important;
+}
+
+/* Imagens bastante mais visíveis, sempre por baixo dos conteúdos. */
+#training.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.48) 0%,rgba(0,0,0,.20) 46%,rgba(0,0,0,0) 100%),url("./scene-musculacao.jpg")!important;
+}
+#hiit.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.48) 0%,rgba(0,0,0,.18) 46%,rgba(0,0,0,0) 100%),url("./scene-hiit.jpg")!important;
+}
+#cardio.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.46) 0%,rgba(0,0,0,.16) 44%,rgba(0,0,0,0) 100%),url("./scene-cardio.jpg")!important;
+}
+#daily.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.12) 54%,rgba(0,0,0,0) 100%),url("./scene-diario.jpg")!important;
+}
+#progress.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.46) 0%,rgba(0,0,0,.14) 46%,rgba(0,0,0,0) 100%),url("./scene-evolucao.jpg")!important;
+}
+#history.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.46) 0%,rgba(0,0,0,.13) 48%,rgba(0,0,0,0) 100%),url("./scene-historico.jpg")!important;
+}
+#profile.page{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.47) 0%,rgba(0,0,0,.15) 45%,rgba(0,0,0,0) 100%),url("./scene-perfil.jpg")!important;
+}
+
+/* A imagem vê-se através das tabelas, sem alterar tamanho ou formato. */
+#training.page>.card,#hiit.page>.card,#cardio.page>.card,#daily.page>.card,
+#progress.page>.card,#history.page>.card,#profile.page>.card{
+  background:rgba(4,5,6,.54)!important;
+}
+
+/* Branco-gelo mais limpo e brilhante onde é necessário. */
+#training.page label,#hiit.page label,#cardio.page label,#daily.page label,
+#progress.page label,#history.page label,#profile.page label,
+#training.page p,#hiit.page p,#cardio.page p,#daily.page p,
+#progress.page p,#history.page p,#profile.page p,
+#training.page .small,#hiit.page .small,#cardio.page .small,#daily.page .small,
+#progress.page .small,#history.page .small,#profile.page .small{
+  color:#f5fcff!important;
+  text-shadow:0 0 3px rgba(212,242,255,.58),0 1px 1px rgba(0,0,0,.98)!important;
+}
+
+/* Nos quatro menus: apenas subir os cartões; dimensões internas intactas. */
+#cardio.page,#progress.page,#history.page,#profile.page{
+  padding-top:1px!important;
+}
+#cardio.page>.card:first-child,
+#progress.page>.card:first-child,
+#history.page>.card:first-child,
+#profile.page>.card:first-child{
+  margin-top:1px!important;
+}
+/* Não modificar alturas, larguras, grids, campos ou gráficos. */
+
+/* Dias sem qualquer registo: contorno dourado fino só no algarismo. */
+#v5CalendarCard .day:not(.train):not(.cardio):not(.both){
+  color:#eef6fa!important;
+  -webkit-text-stroke:.38px #e8bd3f!important;
+  text-shadow:
+    0 0 2px rgba(255,211,82,.82),
+    0 1px 1px rgba(0,0,0,.98)!important;
+  font-weight:800!important;
+}
+
+/* Dias com treino permanecem exatamente no estilo já aprovado. */
+#v5CalendarCard .day.train,
+#v5CalendarCard .day.cardio,
+#v5CalendarCard .day.both{
+  -webkit-text-stroke:0 transparent!important;
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -2391,7 +2483,7 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.8</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.9</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
