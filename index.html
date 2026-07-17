@@ -3306,6 +3306,86 @@ body .nav button:active .premium-nav-icon{transform:scale(.96) translateY(2px)!i
   .v5-ring strong{font-size:25px!important;}
   .v5-summary-stats>div{min-height:37px!important;}
 }
+
+/* ==========================================================
+   SPARTAN FORGE V8.11 — MISSÃO DE PESO PREMIUM
+   Fundo limpo + componentes HTML dinâmicos
+   ========================================================== */
+.mission-weight-card{
+  position:relative!important;
+  overflow:hidden!important;
+  padding:14px!important;
+  border:1px solid rgba(216,166,57,.62)!important;
+  border-radius:24px!important;
+  background:
+    linear-gradient(180deg,rgba(1,3,4,.20) 0%,rgba(1,3,4,.68) 22%,rgba(1,3,4,.96) 52%),
+    url("./scene-evolucao.jpg") center top/cover no-repeat!important;
+  box-shadow:0 20px 45px rgba(0,0,0,.56),inset 0 1px 0 rgba(255,255,255,.035)!important;
+}
+.mission-weight-card>*{position:relative;z-index:1}
+.mission-weight-hero{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;min-height:132px;padding:4px 4px 0}
+.mission-weight-title{display:flex;align-items:flex-start;gap:10px}
+.mission-helmet{font-size:46px;filter:sepia(1) saturate(1.6);text-shadow:0 0 16px rgba(220,157,38,.48)}
+.mission-weight-title h3{margin:4px 0 2px;color:#e5b24a;font-size:30px;letter-spacing:.06em;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.mission-weight-title p{margin:0;color:#eadfc8;font-size:10px;letter-spacing:.22em}
+.mission-final-badge{display:flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid rgba(227,175,66,.72);border-radius:18px;background:rgba(1,3,4,.72);box-shadow:inset 0 0 18px rgba(217,154,39,.08)}
+.mission-final-badge>span{font-size:27px}.mission-final-badge small{display:block;color:#e7bd64;font-size:9px;letter-spacing:.1em}
+.mission-final-badge strong{display:block;color:#e9ba53;font-size:19px;margin-top:2px}
+
+.mission-weight-summary{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;margin:0!important}
+.mission-stat{display:flex!important;align-items:center!important;gap:11px!important;min-height:91px!important;padding:10px 12px!important;border:1px solid rgba(208,157,49,.42)!important;border-radius:17px!important;background:linear-gradient(145deg,rgba(11,14,17,.92),rgba(4,5,7,.88))!important}
+.mission-stat .mission-icon{font-size:34px;min-width:40px;text-align:center;filter:drop-shadow(0 0 8px rgba(229,170,48,.28))}
+.mission-stat small{display:block;color:#eee5d4;font-size:10px;letter-spacing:.08em}
+.mission-stat strong{display:block;font-size:26px!important;color:#fff!important;margin-top:3px;line-height:1!important}
+.mission-stat em{display:block;margin-top:5px;color:#d4b060;font-size:9px;font-style:normal}
+.mission-stat.remaining strong{color:#ef7f3b!important}.mission-stat.target strong{color:#e7b84e!important}
+
+.mission-progress-panel{margin-top:10px;padding:11px 13px;border:1px solid rgba(209,157,48,.42);border-radius:17px;background:rgba(3,5,7,.88)}
+.mission-progress-head{display:flex;justify-content:space-between;align-items:center;color:#dfb55b;font-size:12px;letter-spacing:.08em}
+.mission-progress-head strong{font-size:25px;color:#e8b84e}
+.mission-progress-labels{display:flex;justify-content:space-between;color:#ddd4c4;font-size:9px;margin-top:3px}
+.mission-progress-track{height:12px;margin-top:5px;border-radius:999px;background:#111820;border:1px solid rgba(255,255,255,.10);overflow:hidden}
+.mission-progress-track i{display:block;width:0%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#c47813,#ffd95b,#fff0a4);box-shadow:0 0 13px rgba(255,195,42,.64);transition:width .45s ease}
+.mission-progress-panel p{margin:8px 0 0;text-align:center;color:#d8d0c2;font-size:10px}.mission-progress-panel p span span{color:#e7b54d}
+
+.mission-goal-editor{display:grid!important;grid-template-columns:62px minmax(0,1fr) 160px!important;align-items:center!important;gap:10px!important;margin-top:10px!important;padding:10px!important;border:1px solid rgba(207,153,47,.42)!important;border-radius:17px!important;background:rgba(4,6,8,.90)!important}
+.mission-target-icon{font-size:44px;text-align:center}
+.mission-goal-main label{display:block;margin:0 0 6px!important;color:#e6b85d!important;font-size:12px!important;letter-spacing:.05em}
+.mission-stepper{display:flex;align-items:center;max-width:280px;border:1px solid rgba(209,155,44,.42);border-radius:12px;overflow:hidden;background:#020304}
+.mission-stepper button{width:48px;height:48px;border:0;background:#12161b;color:#e9b64b;font-size:27px;cursor:pointer}
+.mission-stepper input{width:105px!important;height:48px!important;border:0!important;background:transparent!important;color:#fff!important;text-align:right!important;font-size:25px!important;font-weight:800!important;padding:0 4px!important}
+.mission-stepper span{color:#e8d8bd;font-size:11px;padding-right:7px}.mission-goal-main>small{display:block;color:#d6a746;text-align:center;max-width:280px;margin-top:4px}
+.mission-goal-tip{padding:9px;border:1px solid rgba(200,151,51,.28);border-radius:12px;color:#d2cbc0;font-size:10px;line-height:1.45;background:rgba(255,255,255,.018)}
+.mission-save-goal{width:100%!important;margin-top:10px!important;min-height:54px!important;font-size:18px!important;letter-spacing:.08em!important;border-radius:15px!important;box-shadow:0 0 20px rgba(255,190,28,.25)!important}
+
+.mission-path-panel{display:grid;grid-template-columns:1fr 1.1fr;gap:10px;margin-top:10px;padding:12px;border:1px solid rgba(206,154,48,.42);border-radius:17px;background:rgba(3,5,7,.90)}
+.mission-path-info h4{margin:0 0 9px;color:#dfb45b;font-size:14px;letter-spacing:.08em}
+.mission-path-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mission-path-grid>div{display:grid;grid-template-columns:26px 1fr;column-gap:5px;align-items:center}
+.mission-path-grid>div>span{grid-row:1/4;font-size:21px}
+.mission-path-grid small{color:#d9b15e;font-size:8px;letter-spacing:.06em}
+.mission-path-grid strong{font-size:17px;color:#fff}
+.mission-path-grid em{font-style:normal;color:#c9bdab;font-size:8px}
+.mission-chart{min-height:190px!important;margin:0!important;border:0!important;background:transparent!important}.mission-chart canvas{height:190px!important}
+.mission-quote{margin-top:10px;padding:10px;border:1px solid rgba(207,155,48,.38);border-radius:14px;text-align:center;color:#e4b75d;font-size:12px;letter-spacing:.12em;background:rgba(4,6,8,.88)}
+
+@media(max-width:720px){
+  .mission-weight-card{padding:10px!important;background-position:58% top!important}
+  .mission-weight-hero{min-height:112px;padding:1px}
+  .mission-helmet{font-size:34px}.mission-weight-title h3{font-size:23px}.mission-weight-title p{font-size:8px;letter-spacing:.13em}
+  .mission-final-badge{padding:6px 8px}.mission-final-badge>span{font-size:22px}.mission-final-badge strong{font-size:16px}
+  .mission-stat{min-height:77px!important;padding:8px!important;gap:7px!important}.mission-stat .mission-icon{font-size:27px;min-width:31px}
+  .mission-stat strong{font-size:20px!important}.mission-stat small{font-size:8px}.mission-stat em{font-size:7px}
+  .mission-goal-editor{grid-template-columns:45px minmax(0,1fr)!important}.mission-goal-tip{display:none}.mission-target-icon{font-size:34px}
+  .mission-path-panel{grid-template-columns:1fr}.mission-chart{min-height:170px!important}.mission-chart canvas{height:170px!important}
+}
+@media(max-width:400px){
+  .mission-weight-title h3{font-size:20px}.mission-final-badge>span{display:none}
+  .mission-weight-summary{gap:6px!important}.mission-stat{min-height:72px!important}
+  .mission-stat .mission-icon{font-size:23px;min-width:26px}.mission-stat strong{font-size:18px!important}
+  .mission-path-grid{gap:6px}
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -3438,28 +3518,72 @@ body .nav button:active .premium-nav-icon{transform:scale(.96) translateY(2px)!i
       </div>
     </article>
 
-    <article class="v5-card v5-goal-progress-card">
-      <div class="v5-title-row">
-        <h3>EVOLUÇÃO ATÉ AO OBJETIVO</h3>
-        <span id="v5GoalProgressText">Objetivo: 75,0 kg</span>
-      </div>
-
-      <div class="v5-weight-summary">
-        <div><span>PESO INICIAL</span><strong id="v5StartWeight">—</strong></div>
-        <div><span>PESO ATUAL</span><strong id="v5CurrentWeight">—</strong></div>
-        <div><span>OBJETIVO</span><strong id="v5TargetWeight">75,0 kg</strong></div>
-        <div><span>FALTAM</span><strong id="v5WeightRemaining">—</strong></div>
-      </div>
-
-      <div class="v5-weight-goal-edit">
-        <label for="v5GoalWeightInput">Alterar objetivo de peso</label>
-        <div class="v5-goal-row">
-          <input id="v5GoalWeightInput" type="number" step="0.1" value="75">
-          <button type="button" class="btn gold" id="v5SaveWeightGoal">Guardar objetivo</button>
+    <article class="v5-card v5-goal-progress-card mission-weight-card">
+      <div class="mission-weight-hero">
+        <div class="mission-weight-title">
+          <span class="mission-helmet">♜</span>
+          <div>
+            <h3>MISSÃO: <span id="v5MissionGoalTitle">75 KG</span></h3>
+            <p>DISCIPLINA • FOCO • SUPERAÇÃO</p>
+          </div>
+        </div>
+        <div class="mission-final-badge">
+          <span>🏆</span>
+          <div><small>META FINAL</small><strong id="v5GoalProgressText">75,0 kg</strong></div>
         </div>
       </div>
 
-      <div class="canvas"><canvas id="v5GoalProgressChart"></canvas></div>
+      <div class="v5-weight-summary mission-weight-summary">
+        <div class="mission-stat start"><span class="mission-icon">🛡️</span><div><small>PESO INICIAL</small><strong id="v5StartWeight">—</strong><em id="v5StartDate">Sem registo</em></div></div>
+        <div class="mission-stat current"><span class="mission-icon">⚡</span><div><small>PESO ATUAL</small><strong id="v5CurrentWeight">—</strong><em id="v5CurrentDate">Sem registo</em></div></div>
+        <div class="mission-stat target"><span class="mission-icon">🎯</span><div><small>OBJETIVO</small><strong id="v5TargetWeight">75,0 kg</strong><em>Meta final</em></div></div>
+        <div class="mission-stat remaining"><span class="mission-icon">⚔️</span><div><small>RESTAM</small><strong id="v5WeightRemaining">—</strong><em>Para cumprir a missão</em></div></div>
+      </div>
+
+      <div class="mission-progress-panel">
+        <div class="mission-progress-head">
+          <span>PROGRESSO DA MISSÃO</span>
+          <strong id="v5MissionPercent">0%</strong>
+        </div>
+        <div class="mission-progress-labels">
+          <span id="v5ProgressStartLabel">—</span>
+          <span id="v5ProgressGoalLabel">75,0 kg</span>
+        </div>
+        <div class="mission-progress-track"><i id="v5MissionProgressBar"></i></div>
+        <p>🪖 <span id="v5MissionMessage">Regista a primeira pesagem para iniciar a missão.</span></p>
+      </div>
+
+      <div class="v5-weight-goal-edit mission-goal-editor">
+        <div class="mission-target-icon">🎯</div>
+        <div class="mission-goal-main">
+          <label for="v5GoalWeightInput">ALTERAR OBJETIVO DE PESO</label>
+          <div class="mission-stepper">
+            <button type="button" id="v5GoalMinus" aria-label="Diminuir objetivo">−</button>
+            <input id="v5GoalWeightInput" type="number" step="0.5" value="75">
+            <span>kg</span>
+            <button type="button" id="v5GoalPlus" aria-label="Aumentar objetivo">+</button>
+          </div>
+          <small>Ajuste em 0,5 kg</small>
+        </div>
+        <div class="mission-goal-tip">ⓘ Define o peso que queres atingir e mantém o foco.</div>
+      </div>
+
+      <button type="button" class="btn gold mission-save-goal" id="v5SaveWeightGoal">🪖 DEFINIR MISSÃO</button>
+
+      <div class="mission-path-panel">
+        <div class="mission-path-info">
+          <h4>O TEU CAMINHO</h4>
+          <div class="mission-path-grid">
+            <div><span>🏅</span><small>MELHOR PESO</small><strong id="v5BestWeight">—</strong><em id="v5BestWeightDate">—</em></div>
+            <div><span>📅</span><small>DIAS DE REGISTO</small><strong id="v5WeightDays">0</strong><em>Dias registados</em></div>
+            <div><span>📈</span><small>EVOLUÇÃO</small><strong id="v5WeightEvolution">—</strong><em>Desde o início</em></div>
+            <div><span>🚩</span><small>PRÓXIMA META</small><strong id="v5NextMilestone">—</strong><em>Intermédia</em></div>
+          </div>
+        </div>
+        <div class="canvas mission-chart"><canvas id="v5GoalProgressChart"></canvas></div>
+      </div>
+
+      <div class="mission-quote">“ O CORPO ALCANÇA O QUE A MENTE ACREDITA! ”</div>
     </article>
 
   </div>
@@ -5165,12 +5289,25 @@ function drawGoalProgressChart(){
 
   if($('v5GoalWeightInput'))$('v5GoalWeightInput').value=goal;
   if($('v5TargetWeight'))$('v5TargetWeight').textContent=`${goal.toFixed(1)} kg`;
+  if($('v5MissionGoalTitle'))$('v5MissionGoalTitle').textContent=`${goal.toFixed(0)} KG`;
+  if($('v5ProgressGoalLabel'))$('v5ProgressGoalLabel').textContent=`${goal.toFixed(1)} kg`;
 
   if(!weights.length){
     if($('v5StartWeight'))$('v5StartWeight').textContent='—';
     if($('v5CurrentWeight'))$('v5CurrentWeight').textContent='—';
     if($('v5WeightRemaining'))$('v5WeightRemaining').textContent='—';
-    if($('v5GoalProgressText'))$('v5GoalProgressText').textContent=`Objetivo: ${goal.toFixed(1)} kg`;
+    if($('v5GoalProgressText'))$('v5GoalProgressText').textContent=`${goal.toFixed(1)} kg`;
+    if($('v5MissionPercent'))$('v5MissionPercent').textContent='0%';
+    if($('v5MissionProgressBar'))$('v5MissionProgressBar').style.width='0%';
+    if($('v5ProgressStartLabel'))$('v5ProgressStartLabel').textContent='—';
+    if($('v5MissionMessage'))$('v5MissionMessage').textContent='Regista a primeira pesagem para iniciar a missão.';
+    if($('v5StartDate'))$('v5StartDate').textContent='Sem registo';
+    if($('v5CurrentDate'))$('v5CurrentDate').textContent='Sem registo';
+    if($('v5BestWeight'))$('v5BestWeight').textContent='—';
+    if($('v5BestWeightDate'))$('v5BestWeightDate').textContent='—';
+    if($('v5WeightDays'))$('v5WeightDays').textContent='0';
+    if($('v5WeightEvolution'))$('v5WeightEvolution').textContent='—';
+    if($('v5NextMilestone'))$('v5NextMilestone').textContent='—';
 
     ctx.fillStyle='#aaa';
     ctx.font='14px sans-serif';
@@ -5193,10 +5330,38 @@ function drawGoalProgressChart(){
   if($('v5WeightRemaining'))$('v5WeightRemaining').textContent=
     remaining<0.05?'Objetivo atingido':`${remaining.toFixed(1)} kg`;
 
-  if($('v5GoalProgressText')){
-    $('v5GoalProgressText').textContent=
-      `${latest.toFixed(1)} kg → ${goal.toFixed(1)} kg · ${Math.round(progress)}%`;
+  if($('v5GoalProgressText'))$('v5GoalProgressText').textContent=`${goal.toFixed(1)} kg`;
+  if($('v5MissionPercent'))$('v5MissionPercent').textContent=`${Math.round(progress)}%`;
+  if($('v5MissionProgressBar'))$('v5MissionProgressBar').style.width=`${progress}%`;
+  if($('v5ProgressStartLabel'))$('v5ProgressStartLabel').textContent=`${first.toFixed(1)} kg`;
+  if($('v5MissionMessage'))$('v5MissionMessage').innerHTML=
+    remaining<0.05
+      ?'<span>Missão cumprida. Objetivo alcançado!</span>'
+      :`Faltam <span>${remaining.toFixed(1)} kg</span> para cumprir a missão.`;
+
+  const formatDate=s=>{
+    if(!s)return '—';
+    const p=s.split('-');
+    return p.length===3?`${p[2]}/${p[1]}/${p[0]}`:s;
+  };
+  if($('v5StartDate'))$('v5StartDate').textContent=`Registado em ${formatDate(weights[0].date)}`;
+  if($('v5CurrentDate'))$('v5CurrentDate').textContent=`Atualizado em ${formatDate(weights[weights.length-1].date)}`;
+
+  const best=weights.reduce((a,b)=>num(b.weight)<num(a.weight)?b:a,weights[0]);
+  if($('v5BestWeight'))$('v5BestWeight').textContent=`${num(best.weight).toFixed(1)} kg`;
+  if($('v5BestWeightDate'))$('v5BestWeightDate').textContent=formatDate(best.date);
+  if($('v5WeightDays'))$('v5WeightDays').textContent=String(new Set(weights.map(x=>x.date)).size);
+  if($('v5WeightEvolution'))$('v5WeightEvolution').textContent=`${(first-latest).toFixed(1)} kg`;
+
+  let milestone=goal;
+  if(latest>goal){
+    const candidate=Math.max(goal,Math.floor((latest-0.01)/5)*5);
+    milestone=candidate>=latest?Math.max(goal,candidate-5):candidate;
+  }else if(latest<goal){
+    const candidate=Math.min(goal,Math.ceil((latest+0.01)/5)*5);
+    milestone=candidate<=latest?Math.min(goal,candidate+5):candidate;
   }
+  if($('v5NextMilestone'))$('v5NextMilestone').textContent=`${milestone.toFixed(1)} kg`;
 
   const values=weights.map(x=>num(x.weight)).concat([goal]);
   let min=Math.min(...values)-1;
@@ -5430,6 +5595,17 @@ function renderMainCalendar(){
   });
 }
 
+
+const v5GoalMinus=$('v5GoalMinus');
+const v5GoalPlus=$('v5GoalPlus');
+function changeMissionGoal(delta){
+  const input=$('v5GoalWeightInput');
+  if(!input)return;
+  const current=num(input.value)||num(db.goals.weight)||75;
+  input.value=Math.max(30,Math.min(250,current+delta)).toFixed(1);
+}
+if(v5GoalMinus)v5GoalMinus.onclick=()=>changeMissionGoal(-0.5);
+if(v5GoalPlus)v5GoalPlus.onclick=()=>changeMissionGoal(0.5);
 
 const v5SaveWeightGoal=$('v5SaveWeightGoal');
 if(v5SaveWeightGoal){
