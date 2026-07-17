@@ -3415,6 +3415,136 @@ body .nav button:active .premium-nav-icon{transform:scale(.96) translateY(2px)!i
 .mission-path-panel{grid-template-columns:1fr 1fr!important;margin-top:7px!important;padding:8px!important;border-radius:14px!important;gap:6px!important;background:rgba(2,4,6,.82)!important}.mission-path-info h4{font-size:10px!important;margin-bottom:6px!important}.mission-path-grid{gap:5px!important}.mission-path-grid>div{grid-template-columns:20px 1fr!important;column-gap:4px!important}.mission-path-grid>div>span{width:17px!important;height:17px!important}.mission-path-grid small{font-size:6px!important}.mission-path-grid strong{font-size:13px!important}.mission-path-grid em{font-size:6px!important}.mission-chart{min-height:125px!important}.mission-chart canvas{height:125px!important}.mission-quote{margin-top:7px!important;padding:7px!important;font-size:8px!important;border-radius:12px!important}
 @media(max-width:420px){.mission-weight-card{padding:8px!important;background-position:center 12%!important}.mission-weight-hero{min-height:82px!important}.mission-weight-title h3{font-size:19px!important}.mission-final-badge{padding:4px 6px!important}.mission-weight-summary{gap:5px!important}.mission-stat{min-height:58px!important;padding:5px 6px!important}.mission-stat .mission-icon{width:24px!important;height:24px!important;min-width:24px!important}.mission-stat strong{font-size:16px!important}.mission-path-panel{grid-template-columns:1fr!important}.mission-chart{min-height:115px!important}.mission-chart canvas{height:115px!important}}
 
+
+/* ==========================================================
+   SPARTAN FORGE V8.13 — BRONZE ENVELHECIDO E FUNDO NÍTIDO
+   ========================================================== */
+:root{
+  --mission-bronze:#b57a32;
+  --mission-bronze-light:#d5a45c;
+  --mission-bronze-dark:#68401e;
+}
+.mission-weight-card{
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.46) 27%,rgba(0,0,0,.72) 64%,rgba(0,0,0,.82) 100%),
+    url("./mission-weight-clean-v813.jpg") center top/cover no-repeat!important;
+  border-color:rgba(181,122,50,.68)!important;
+}
+.sf-icon{
+  background:
+    linear-gradient(115deg,
+      #5c3518 0%,
+      #a86d2d 18%,
+      #f0c985 35%,
+      #9b6027 53%,
+      #e1b06a 70%,
+      #6a3e1b 100%)!important;
+  filter:
+    drop-shadow(0 1px 0 rgba(255,225,170,.25))
+    drop-shadow(0 3px 5px rgba(0,0,0,.75))
+    drop-shadow(0 0 4px rgba(181,122,50,.28))!important;
+}
+.mission-stat,.mission-progress-panel,.mission-goal-editor,.mission-path-panel{
+  border-color:rgba(181,122,50,.48)!important;
+}
+.mission-weight-title h3,
+.mission-final-badge strong,
+.mission-stat.target strong,
+.mission-progress-head strong,
+.mission-goal-main label,
+.mission-path-info h4,
+.mission-quote{
+  color:#c9944d!important;
+}
+.mission-final-badge{
+  border-color:rgba(181,122,50,.66)!important;
+}
+.mission-progress-track i{
+  background:linear-gradient(90deg,#70401c,#b77931,#d4a35a,#8a5224)!important;
+  box-shadow:0 0 9px rgba(181,122,50,.42)!important;
+}
+.mission-stepper{
+  border-color:rgba(181,122,50,.52)!important;
+}
+.mission-stepper button{
+  color:#c28a43!important;
+}
+.mission-save-goal{
+  width:74%!important;
+  min-height:37px!important;
+  margin:7px auto 0!important;
+  display:block!important;
+  padding:7px 14px!important;
+  font-size:12px!important;
+  letter-spacing:.07em!important;
+  border-radius:11px!important;
+  color:#140d08!important;
+  border:1px solid #d3a15d!important;
+  background:
+    linear-gradient(180deg,#bd8440 0%,#9b612a 45%,#75421e 100%)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,231,183,.45),
+    inset 0 -2px 5px rgba(62,31,12,.5),
+    0 5px 13px rgba(0,0,0,.38),
+    0 0 9px rgba(181,122,50,.22)!important;
+}
+.mission-save-goal:active{
+  transform:translateY(1px)!important;
+}
+.mission-path-panel{
+  position:relative!important;
+  overflow:hidden!important;
+  background:
+    linear-gradient(90deg,rgba(2,4,6,.94) 0%,rgba(2,4,6,.88) 48%,rgba(2,4,6,.20) 100%)!important;
+  min-height:154px!important;
+}
+.mission-path-panel::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0 0 0 48%!important;
+  background:url("./mission-weight-clean-v813.jpg") center 78%/cover no-repeat!important;
+  opacity:.72!important;
+  z-index:0!important;
+  pointer-events:none!important;
+}
+.mission-path-panel::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  background:linear-gradient(90deg,rgba(2,4,6,.98) 0%,rgba(2,4,6,.90) 46%,rgba(2,4,6,.28) 76%,rgba(2,4,6,.08) 100%)!important;
+  z-index:1!important;
+  pointer-events:none!important;
+}
+.mission-path-panel>*{
+  position:relative!important;
+  z-index:2!important;
+}
+.mission-chart{
+  background:transparent!important;
+}
+@media(max-width:420px){
+  .mission-weight-card{
+    background-position:center top!important;
+    background-size:cover!important;
+  }
+  .mission-save-goal{
+    width:68%!important;
+    min-height:35px!important;
+    font-size:11px!important;
+  }
+  .mission-path-panel{
+    min-height:148px!important;
+  }
+  .mission-path-panel::after{
+    inset:44% 0 0 0!important;
+    background-position:center 80%!important;
+    opacity:.62!important;
+  }
+  .mission-path-panel::before{
+    background:linear-gradient(180deg,rgba(2,4,6,.98) 0%,rgba(2,4,6,.92) 46%,rgba(2,4,6,.32) 75%,rgba(2,4,6,.12) 100%)!important;
+  }
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
