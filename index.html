@@ -2627,7 +2627,7 @@ h1,h2,h3,h4,
 
 
 /* ==========================================================
-   SPARTAN FORGE V7.1 — correção final de estrutura e tipografia
+   SPARTAN FORGE V7.2 — correção final de estrutura e tipografia
    ========================================================== */
 
 /* 1. REPOR A POSIÇÃO NORMAL DOS MENUS
@@ -2799,6 +2799,44 @@ h1,h2,h3,h4,
   -webkit-text-stroke:0 transparent!important;
 }
 
+
+/* V7.2 visual patch */
+@import url('https://fonts.cdnfonts.com/css/dalek');
+:root{
+ --ice:#f5fcff;
+ --gold:#c79a32;
+ --blood:#6f0812;
+}
+html,body,.app,*{
+ font-family:'Dalek',sans-serif!important;
+}
+input,textarea,select{
+ font-family:system-ui,sans-serif!important;
+}
+h1,h2,h3,h4,.btn,.nav button,.card-title,.section-title{
+ color:var(--gold)!important;
+ -webkit-text-stroke:.2px var(--blood)!important;
+ text-shadow:0 0 3px rgba(199,154,50,.35)!important;
+}
+label,p,span,small,td,th,li{
+ color:var(--ice)!important;
+ text-shadow:0 0 2px rgba(220,245,255,.6)!important;
+}
+#training,#hiit,#cardio,#daily,#progress,#history,#profile{
+ background-size:100% 100%!important;
+ background-position:center center!important;
+}
+#training{background-image:url('./bg-musculacao.jpg')!important;}
+#hiit{background-image:url('./bg-hiit.jpg')!important;}
+#cardio{background-image:url('./bg-cardio.jpg')!important;}
+#daily{background-image:url('./bg-diario.jpg')!important;}
+#progress{background-image:url('./bg-evolucao.jpg')!important;}
+#history{background-image:url('./bg-historico.jpg')!important;}
+#profile{background-image:url('./bg-perfil.jpg')!important;}
+#training>.card,#hiit>.card,#cardio>.card,#daily>.card,#progress>.card,#history>.card,#profile>.card{
+ background:rgba(0,0,0,.42)!important;
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -2807,7 +2845,7 @@ h1,h2,h3,h4,
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V7.1</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V7.2</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
