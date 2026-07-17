@@ -2930,7 +2930,7 @@ html,body,.app,
 }
 
 /* ==========================================================
-   SPARTAN FORGE V7.6 — TOPO CINEMATOGRÁFICO APROVADO
+   SPARTAN FORGE V8.0 — TOPO CINEMATOGRÁFICO APROVADO
    Mantém toda a lógica V7.4 e substitui apenas o topo.
    ========================================================== */
 html,body,.app{background:#000!important;}
@@ -2943,6 +2943,80 @@ html,body,.app{background:#000!important;}
   .v76-top img{width:100%;height:auto;}
   .nav{margin-top:8px!important;}
 }
+
+/* ==========================================================
+   SPARTAN FORGE V8 — VISUAL 2026 APROVADO
+   Apenas visual: topo cinematográfico, data dinâmica, ícones
+   modernos e scroll natural. Toda a lógica existente mantém-se.
+   ========================================================== */
+html,body,.app{background:#000!important;}
+body{overflow-x:hidden!important;}
+.app{padding-top:0!important;}
+
+.v8-hero{
+  width:100%; margin:0; padding:0; overflow:hidden; background:#000;
+  opacity:0; transform:translateY(-8px) scale(1.015);
+  animation:v8HeroReveal .95s cubic-bezier(.22,.8,.22,1) forwards;
+}
+.v8-hero img{display:block;width:100%;height:auto;object-fit:cover;background:#000;}
+@keyframes v8HeroReveal{to{opacity:1;transform:translateY(0) scale(1)}}
+
+.v8-welcome{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.42fr);
+  gap:16px;align-items:stretch;margin:0 0 14px;padding:18px 20px;
+  background:#070707;border:1px solid rgba(202,157,52,.40);
+  border-radius:0 0 22px 22px;box-shadow:none;
+}
+.v8-welcome-main{display:flex;flex-direction:column;justify-content:center;min-width:0;}
+.v8-welcome h2{margin:0 0 7px;color:#d8a842!important;font-family:Arial,sans-serif!important;font-size:21px!important;font-weight:800!important;letter-spacing:.3px!important;text-transform:uppercase!important;-webkit-text-stroke:0!important;text-shadow:none!important;}
+.v8-welcome p{margin:0 0 12px;color:#f0f0f0!important;font-family:Arial,sans-serif!important;font-size:16px!important;text-shadow:none!important;}
+.v8-date{display:flex;align-items:center;gap:9px;color:#cfcfcf;font:500 14px/1.3 Arial,sans-serif!important;text-shadow:none!important;}
+.v8-date svg{width:18px;height:18px;stroke:#d8a842;flex:none;}
+.v8-focus{display:flex;align-items:center;gap:13px;padding:14px 16px;border:1px solid rgba(216,168,66,.60);border-radius:15px;background:#050505;}
+.v8-focus svg{width:42px;height:42px;fill:#d8a842;flex:none;}
+.v8-focus small{display:block;margin-bottom:5px;color:#d8a842!important;font:700 14px/1 Arial,sans-serif!important;text-transform:uppercase;text-shadow:none!important;}
+.v8-focus strong{display:block;color:#fff!important;font:700 15px/1.35 Arial,sans-serif!important;text-transform:uppercase;letter-spacing:.2px;text-shadow:none!important;-webkit-text-stroke:0!important;}
+
+/* O menu faz parte da página: sobe com o scroll e nunca passa por cima do topo. */
+body .nav{
+  position:static!important;left:auto!important;right:auto!important;bottom:auto!important;
+  z-index:auto!important;margin:0 0 16px!important;padding:0!important;
+  display:grid!important;grid-template-columns:repeat(8,minmax(92px,1fr))!important;
+  gap:9px!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+  overflow-x:auto!important;scrollbar-width:none;
+}
+body .nav::-webkit-scrollbar{display:none;}
+body .nav button{
+  min-width:92px!important;min-height:116px!important;padding:15px 8px 11px!important;
+  display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:9px!important;
+  background:#070707!important;border:1px solid #252525!important;border-radius:18px!important;
+  color:#f2f2f2!important;font-family:Arial,sans-serif!important;font-size:11px!important;font-weight:700!important;
+  font-variant:normal!important;letter-spacing:.1px!important;text-transform:uppercase!important;
+  -webkit-text-stroke:0!important;text-shadow:none!important;box-shadow:none!important;
+  transition:transform .15s ease,border-color .15s ease,background .15s ease;
+}
+body .nav button:active{transform:scale(.97)!important;}
+body .nav button.on{background:#0a0a0a!important;color:#fff!important;border-color:#3b3020!important;box-shadow:none!important;}
+body .nav button::after{content:"";display:block;width:66%;height:3px;margin-top:2px;border-radius:999px;background:#b10e22;opacity:.95;}
+body .nav button svg{width:35px;height:35px;stroke:#d8a842;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;}
+body .nav button.on svg{stroke:#f0bb50;}
+
+@media(max-width:720px){
+  .v8-hero img{width:100%;height:auto;}
+  .v8-welcome{grid-template-columns:1fr;gap:12px;padding:16px;border-radius:0 0 18px 18px;}
+  .v8-welcome h2{font-size:19px!important;}
+  .v8-welcome p{font-size:15px!important;}
+  .v8-focus{padding:13px 14px;}
+  body .nav{grid-template-columns:repeat(4,1fr)!important;overflow:visible!important;gap:8px!important;margin:0 0 14px!important;}
+  body .nav button{min-width:0!important;min-height:103px!important;padding:11px 4px 9px!important;font-size:10px!important;border-radius:16px!important;}
+  body .nav button svg{width:31px;height:31px;}
+}
+@media(max-width:390px){
+  body .nav button{font-size:9px!important;}
+  .v8-welcome{padding:14px 13px;}
+}
+@media(prefers-reduced-motion:reduce){.v8-hero{animation:none;opacity:1;transform:none;}}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -2951,8 +3025,19 @@ html,body,.app{background:#000!important;}
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top v76-top"><img src="./hero-top-v76.jpg" alt="Spartan Forge V7.4 — Bem-vindo Guerreiro e Foco do Dia"></div>
-<div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
+<div class="v8-hero"><img src="./hero-top-v8.jpg" alt="Spartan Forge V8"></div>
+<div class="v8-welcome">
+  <div class="v8-welcome-main">
+    <h2>Bem-vindo, Guerreiro!</h2>
+    <p>Disciplina hoje, resultado amanhã.</p>
+    <div class="v8-date"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span id="v8CurrentDate"></span></div>
+  </div>
+  <div class="v8-focus">
+    <svg viewBox="0 0 24 24"><path d="M13 2s1 4-2 6c-2 2-3 4-2 7 1 4 5 6 8 4 4-3 2-8-1-10 0 3-2 4-2 4 1-5-1-8-1-11z"/></svg>
+    <div><small>Foco do dia</small><strong>Ser 1% melhor<br>a cada dia.</strong></div>
+  </div>
+</div>
+<div class="nav"><button class="on" data-p="dash"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 2v4M16 2v4M7 10h10M8 14h2M14 14h2M8 18h2M14 18h2"/></svg><span>Painel</span></button><button class="" data-p="daily"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M8 9h8M8 13l2 2 4-4M8 18h8"/></svg><span>Diário</span></button><button class="" data-p="training"><svg viewBox="0 0 24 24"><path d="M6 8v8M3 9v6M18 8v8M21 9v6M6 12h12"/></svg><span>Musculação</span></button><button class="" data-p="hiit"><svg viewBox="0 0 24 24"><path d="M13 2s1 4-2 6c-2 2-3 4-2 7 1 4 5 6 8 4 4-3 2-8-1-10 0 3-2 4-2 4 1-5-1-8-1-11z"/><path d="M10 18c0-2 1-3 2-4 0 2 2 2 2 4"/></svg><span>HIIT</span></button><button class="" data-p="cardio"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 3 10 2-5h7"/><path d="M20.8 5.8a5 5 0 0 0-7.1 0L12 7.5l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21l8.8-8.1a5 5 0 0 0 0-7.1z"/></svg><span>Cardio</span></button><button class="" data-p="progress"><svg viewBox="0 0 24 24"><path d="M4 20V10h4v10M10 20V5h4v15M16 20V2h4v18M3 20h18"/></svg><span>Evolução</span></button><button class="" data-p="history"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg><span>Histórico</span></button><button class="" data-p="profile"><svg viewBox="0 0 24 24"><path d="M7 4l5-2 5 2 2 5-1 8-6 5-6-5-1-8z"/><path d="M8 10l3 2-3 1M16 10l-3 2 3 1M10 17h4"/></svg><span>Perfil</span></button></div>
 
 <section id="dash" class="page on">
   <div class="v5-dashboard">
@@ -5078,6 +5163,22 @@ window.addEventListener('load', function(){
       .catch(function(){});
   }
 });
+</script>
+
+
+<script>
+(function(){
+  function updateV8Date(){
+    var el=document.getElementById('v8CurrentDate');
+    if(!el)return;
+    var now=new Date();
+    var text=new Intl.DateTimeFormat('pt-PT',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);
+    el.textContent=text.charAt(0).toUpperCase()+text.slice(1);
+  }
+  updateV8Date();
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)updateV8Date();});
+  setInterval(updateV8Date,60000);
+})();
 </script>
 
 </body></html>
