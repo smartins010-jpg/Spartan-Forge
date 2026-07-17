@@ -1639,6 +1639,50 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 .page .last-session,.page .goal,.page .item,.page .series-card,.page .canvas,.page .table-wrap{margin-top:6px!important;margin-bottom:6px!important}
 #history .record-hall h3{margin:10px 0 6px!important}
 
+
+/* SPARTAN FORGE V6.4 — fundos espartanos, vermelho sangue e compactação final */
+#v5CalendarCard .day.train,
+#v5CalendarCard .day.cardio,
+#v5CalendarCard .day.both{
+  color:#7a0008!important;
+  font-weight:1000!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.18),0 0 2px rgba(0,0,0,.95),0 0 5px rgba(90,0,0,.55)!important;
+}
+
+/* fundos temáticos discretos — sempre atrás do conteúdo */
+#training,#hiit,#cardio,#daily,#progress,#history,#profile{position:relative!important;isolation:isolate!important}
+#training::before,#hiit::before,#cardio::before,#daily::before,#progress::before,#history::before,#profile::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-repeat:no-repeat;background-position:right 8% top 26px;background-size:min(48vw,330px) auto;
+  opacity:.105;filter:grayscale(1) sepia(.7) saturate(1.4) contrast(1.15);
+}
+/* musculação — guerreiro robusto */
+#training::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 520'%3E%3Cg fill='none' stroke='%23d6a51e' stroke-width='13' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M150 42l-38 22 14 48h48l14-48z'/%3E%3Cpath d='M118 121c-28 18-45 50-45 87v91m109-178c28 18 45 50 45 87v91M93 175l-45 66m159-66 45 66M100 194l50 42 50-42M112 236l-20 114m96-114 20 114M92 350l-22 118m138-118 22 118M105 151c12 20 78 20 90 0'/%3E%3Cpath d='M48 241l-20 20m224-20 20 20'/%3E%3C/g%3E%3C/svg%3E")}
+/* HIIT — guerreiro definido e em ataque */
+#hiit::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 500'%3E%3Cg fill='none' stroke='%23d6a51e' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M166 48l-34 21 12 43h44l13-43z'/%3E%3Cpath d='M142 122l-55 76 39 42 58-51 66 40 43-48M126 240l-20 97-66 96m144-244 23 132 94 62M85 198l-45-18m253 1 33-42M116 150c21 16 66 16 87-3'/%3E%3C/g%3E%3C/svg%3E")}
+/* cardio — corrida/esforço */
+#cardio::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 480'%3E%3Cg fill='none' stroke='%23d6a51e' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M180 46l-31 20 11 39h41l12-39z'/%3E%3Cpath d='M163 116l-70 74 48 52 71-62 69 34M141 242l-37 93-88 58m196-213 5 116 112 74M95 190l-56-23m243 47 65-4'/%3E%3Cpath d='M248 112c18 20 24 44 18 71' stroke-width='7'/%3E%3C/g%3E%3C/svg%3E")}
+/* diário — repouso junto à fogueira */
+#daily::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 380 500'%3E%3Cg fill='none' stroke='%23d6a51e' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M140 69l-30 19 11 39h40l12-39z'/%3E%3Cpath d='M123 137l-37 93 76 42 57-74M163 272l-18 79-82 55m82-55 96 43M252 360c-17 28-13 62 9 85 24-15 39-48 22-78-7-12-20-24-19-44-15 13-17 27-12 37z'/%3E%3Cpath d='M223 447h90M60 406h120'/%3E%3C/g%3E%3C/svg%3E")}
+/* evolução — escudo e lança */
+#progress::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 520'%3E%3Cg fill='none' stroke='%23d6a51e' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M174 44l-34 21 12 44h44l13-44z'/%3E%3Cpath d='M151 120l-38 63 41 61 53-61-11-63M154 244l-14 112-42 112m84-224 18 112 45 112M109 179L55 255M208 178l94-102M302 76l22-30M80 226c-45 8-65 35-65 76 0 70 49 108 94 122 45-14 94-52 94-122 0-41-20-68-65-76z'/%3E%3C/g%3E%3C/svg%3E")}
+/* histórico — elmo espartano */
+#history::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 440'%3E%3Cg fill='none' stroke='%23d6a51e' stroke-width='12' stroke-linejoin='round'%3E%3Cpath d='M180 36c-73 0-121 53-121 130v43l48 31v122l73 42 73-42V240l48-31v-43C301 89 253 36 180 36z'/%3E%3Cpath d='M106 143h148M180 72v298M109 240l71 42 71-42M180 282l-43 74m43-74 43 74'/%3E%3C/g%3E%3C/svg%3E")}
+/* perfil — guerreiro totalmente equipado */
+#profile::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 390 540'%3E%3Cg fill='none' stroke='%23d6a51e' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M180 38l-38 23 13 48h50l14-48z'/%3E%3Cpath d='M151 120l-55 79 40 49 44-33 48 33 40-49-55-79M136 248l-8 111-48 120m128-231 8 111 48 120M95 196L31 316M269 196l80-116M54 270c-30 8-44 31-44 67 0 61 35 95 78 111 43-16 78-50 78-111 0-36-14-59-44-67zM349 80l19-27'/%3E%3C/g%3E%3C/svg%3E")}
+
+/* compactação específica dos quatro últimos menus */
+#cardio,#progress,#history,#profile{gap:3px!important;padding-top:4px!important}
+#cardio .card,#progress .card,#history .card,#profile .card{margin:0 0 4px!important;padding:8px!important}
+#cardio .grid2,#progress .grid2,#profile .grid2,#history .rowbtn,#history .history-month-nav{gap:4px!important}
+#cardio label,#progress label,#profile label,#history label{margin-top:3px!important;margin-bottom:2px!important}
+#cardio .rowbtn,#progress .rowbtn,#profile .profile-weight-grid,#history .canvas{margin-top:4px!important;margin-bottom:4px!important}
+#history .record-hall h3{margin:6px 0 4px!important}
+#history .small,#profile .small{margin-top:4px!important;margin-bottom:4px!important}
+@media(max-width:720px){
+ #training::before,#hiit::before,#cardio::before,#daily::before,#progress::before,#history::before,#profile::before{background-size:220px auto;background-position:right -38px top 38px;opacity:.085}
+}
+
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1647,7 +1691,7 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.3</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.4</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
