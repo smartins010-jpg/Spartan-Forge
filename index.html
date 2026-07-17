@@ -1521,20 +1521,21 @@ input,select,textarea{
 #v5CalendarCard .day.today{outline:1px solid #fff;outline-offset:2px}
 
 
-/* V6 — chama dourada real e recordes Spartan */
-#v5CalendarCard .day{position:relative;isolation:isolate;overflow:visible}
-#v5CalendarCard .day.train::before{
-  content:"";position:absolute;z-index:-2;inset:-7px;border-radius:15px;
-  background:conic-gradient(from 0deg,#ff7a00,#ffd84a 12%,#ff3d00 23%,#ffd84a 37%,#ff8a00 51%,#fff1a0 62%,#ff5100 76%,#ffd84a 89%,#ff7a00);
-  clip-path:polygon(50% 0%,58% 12%,68% 3%,73% 17%,87% 10%,86% 25%,100% 27%,90% 40%,100% 50%,89% 59%,98% 73%,82% 74%,84% 91%,69% 83%,61% 100%,50% 88%,39% 100%,31% 83%,16% 92%,18% 74%,2% 72%,11% 59%,0% 50%,10% 39%,0% 27%,15% 24%,13% 9%,28% 17%,33% 3%,42% 12%);
-  filter:blur(1.2px) drop-shadow(0 0 5px #ffd84a) drop-shadow(0 0 11px #ff8a00);
-  animation:spartanFlame 1.8s ease-in-out infinite alternate;
+/* SPARTAN FORGE V6.2 — marcação discreta dos dias de treino */
+#v5CalendarCard .day{position:relative;overflow:hidden}
+#v5CalendarCard .day.train::before,
+#v5CalendarCard .day.train::after{content:none!important;display:none!important;animation:none!important}
+#v5CalendarCard .day.train,#v5CalendarCard .day.cardio,#v5CalendarCard .day.both{
+  background:#111!important;
+  border:1px solid #3d3d3d!important;
+  border-bottom:3px solid #ffd84a!important;
+  color:#ff263f!important;
+  font-weight:1000!important;
+  text-shadow:0 0 5px rgba(255,38,63,.7)!important;
+  box-shadow:0 3px 8px -4px rgba(255,216,74,.9)!important;
 }
-#v5CalendarCard .day.train::after{
-  content:"";position:absolute;z-index:-1;inset:-3px;border-radius:13px;border:2px solid #ffd84a;
-  box-shadow:0 0 8px #ffd84a,0 0 17px #ff8a00,inset 0 0 9px rgba(255,180,0,.3);
-}
-@keyframes spartanFlame{0%{transform:scale(.96) rotate(-1deg);opacity:.78}100%{transform:scale(1.05) rotate(1deg);opacity:1}}
+#v5CalendarCard .day.today{outline:1px solid #fff;outline-offset:2px}
+
 .record-hall h3{margin:20px 0 8px;color:#ffd84a;text-shadow:0 0 9px rgba(255,180,0,.5)}
 .record-row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #292929}
 .record-row>div{min-width:0}.record-row strong{display:block;color:#f2f2f2}.record-row span{display:block;color:#ffd84a;font-weight:900;margin-top:3px;text-shadow:0 0 8px rgba(255,180,0,.4)}
@@ -1596,7 +1597,7 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 <link rel="apple-touch-icon" href="./icon-192.png">
 </head>
 <body><div class="app">
-<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.1</span></div><div class="logo">SP</div></div></div>
+<div class="top"><div class="hero"><div><h1>SPARTAN FORGE</h1><p>Disciplina · foco · força · todos os dias</p><span class="version-chip">V6.2</span></div><div class="logo">SP</div></div></div>
 <div class="nav"><button class="on" data-p="dash">Painel</button><button data-p="daily">Diário</button><button data-p="training">Musculação</button><button data-p="hiit">HIIT</button><button data-p="cardio">Cardio</button><button data-p="progress">Evolução</button><button data-p="history">Histórico</button><button data-p="profile">⚔ Perfil Spartan</button></div>
 
 <section id="dash" class="page on">
@@ -1832,7 +1833,10 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 <label>Notas</label>
 <textarea id="tNotes"></textarea>
 
-<button class="btn gold full" id="saveTraining">Guardar exercício</button>
+<div class="rowbtn" style="margin-top:10px">
+  <button class="btn gold" id="saveTraining" type="button">Guardar exercício</button>
+  <button class="btn dark" id="resetTraining" type="button">Limpar valores</button>
+</div>
 </div>
 </section>
 
@@ -1890,7 +1894,10 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
 </div>
 
 <label>Notas</label><textarea id="hNotes"></textarea>
-<button class="btn gold full" id="saveHiit">Guardar exercício HIIT</button>
+<div class="rowbtn" style="margin-top:10px">
+  <button class="btn gold" id="saveHiit" type="button">Guardar exercício HIIT</button>
+  <button class="btn dark" id="resetHiit" type="button">Limpar valores</button>
+</div>
 </div>
 
 <div class="card"><h2>Evolução HIIT</h2>
@@ -1938,7 +1945,10 @@ section.page{padding-top:8px!important;padding-bottom:10px!important}
   </div>
 </div>
 <label>Notas</label><textarea id="cNotes"></textarea>
-<button class="btn gold full" id="saveCardio">Guardar cardio</button>
+<div class="rowbtn" style="margin-top:10px">
+  <button class="btn gold" id="saveCardio" type="button">Guardar cardio</button>
+  <button class="btn dark" id="resetCardio" type="button">Limpar valores</button>
+</div>
 </div>
 <div class="card"><h2>Estatísticas cardio</h2><div id="cardioStats" class="small"></div></div>
 </section>
@@ -2375,7 +2385,13 @@ $('saveTraining').onclick=()=>{
   alert('Exercício guardado. A 4.ª série ficou registada até à fadiga.');
 };
 
-
+$('resetTraining').onclick=()=>{
+  $('tLoad').value='';
+  $('tRest').value=60;
+  ['r1','r2','r3','r4'].forEach(id=>$(id).value='');
+  $('tNotes').value='';
+  updateCurrentExerciseVolume();
+};
 
 
 
@@ -2753,6 +2769,12 @@ $('saveHiit').onclick=()=>{
   alert('Exercício HIIT guardado');
 };
 
+$('resetHiit').onclick=()=>{
+  renderHiitSeries();
+  $('hCalories').value='';
+  $('hNotes').value='';
+};
+
 function hiitStats(){
   const exercise=$('hExercise').value;
   const records=getHiitExerciseRecords();
@@ -2791,6 +2813,13 @@ function hiitStats(){
 }
 
 $('saveCardio').onclick=()=>{db.cardio.push({id:crypto.randomUUID(),date:$('cDate').value,type:$('cType').value,distance:num($('cDistance').value),duration:num($('cDuration').value),calories:num($('cCalories').value),intensity:$('cIntensity').value,notes:$('cNotes').value});save();alert('Cardio guardado')};
+$('resetCardio').onclick=()=>{
+  $('cDistance').value='';
+  $('cDuration').value='';
+  $('cCalories').value='';
+  $('cIntensity').value='Moderada';
+  $('cNotes').value='';
+};
 $('saveWeight').onclick=()=>{
   const date=$('pDate').value||today();
   const weight=num($('pWeight').value);
