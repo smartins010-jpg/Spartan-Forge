@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v8-15';
+const CACHE='spartan-forge-v8-16';
 const APP_SHELL=[
   './',
   './index.html',
@@ -7,6 +7,16 @@ const APP_SHELL=[
   './icon-512.png',
   './icon-maskable-512.png',
   './hero-top-v8.jpg',
+  './mission-icons/trophy.png',
+  './mission-icons/target.png',
+  './mission-icons/swords.png',
+  './mission-icons/shield.png',
+  './mission-icons/medal.png',
+  './mission-icons/helmet.png',
+  './mission-icons/flag.png',
+  './mission-icons/chart.png',
+  './mission-icons/calendar.png',
+  './mission-icons/bolt.png',
   './mission-icons/helmet.svg',
   './mission-icons/trophy.svg',
   './mission-icons/shield.svg',
