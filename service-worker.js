@@ -1,7 +1,7 @@
-const CACHE = 'spartan-forge-v8-36-daily-screen-fix';
+const CACHE = 'spartan-forge-v8-38-remaining-menus-screen-fix';
 const APP_SHELL = [
   './','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./icon-maskable-512.png',
-  './hero-top-v8.jpg','./bg-diario.jpg','./scene-diario.jpg','./skin-diario.jpg'
+  './hero-top-v8.jpg'
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(APP_SHELL)));
