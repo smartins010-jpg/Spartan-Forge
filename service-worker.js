@@ -1,4 +1,4 @@
-const CACHE = 'spartan-forge-v8-24-profile-premium';
+const CACHE = 'spartan-forge-v8-28-profile-button';
 const APP_SHELL=[
   './',
   './index.html',
