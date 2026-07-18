@@ -1,4 +1,4 @@
-const CACHE = 'spartan-forge-v8-38-remaining-menus-screen-fix';
+const CACHE = 'spartan-forge-v8-39-dalek-titulos';
 const APP_SHELL = [
   './','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./icon-maskable-512.png',
   './hero-top-v8.jpg'
