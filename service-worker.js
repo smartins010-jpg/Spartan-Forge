@@ -1,7 +1,7 @@
-const CACHE = 'spartan-forge-v8-39-dalek-titulos';
+const CACHE = 'spartan-forge-v8-40-icones-consistentes';
 const APP_SHELL = [
   './','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./icon-maskable-512.png',
-  './hero-top-v8.jpg'
+  './hero-top-v8.jpg','./premium-icons/agua.png','./premium-icons/cafe.png','./premium-icons/musculacao.png','./premium-icons/hiit.png','./premium-icons/cardio.png','./premium-icons/evolucao.png'
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(APP_SHELL)));
