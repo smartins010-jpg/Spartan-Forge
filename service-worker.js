@@ -1,4 +1,4 @@
-const CACHE = 'spartan-forge-v8-34-daily-premium-final';
+const CACHE = 'spartan-forge-v8-36-daily-screen-fix';
 const APP_SHELL = [
   './','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./icon-maskable-512.png',
   './hero-top-v8.jpg','./bg-diario.jpg','./scene-diario.jpg','./skin-diario.jpg'
