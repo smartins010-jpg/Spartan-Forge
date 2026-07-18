@@ -3,15 +3,15 @@
   "name": "Spartan Forge",
   "short_name": "Spartan Forge",
   "description": "Aplicação de treino, alimentação, água, cardio e evolução de peso.",
-  "start_url": "./?v=10200",
+  "start_url": "./?v=10300",
   "scope": "./",
   "display": "standalone",
   "display_override": [
     "standalone",
     "minimal-ui"
   ],
-  "background_color": "#050505",
-  "theme_color": "#050505",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "orientation": "portrait",
   "icons": [
     {
