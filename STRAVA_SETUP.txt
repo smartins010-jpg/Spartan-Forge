@@ -1,0 +1,19 @@
+SPARTAN FORGE — ATIVAÇÃO DO STRAVA
+
+A aplicação já inclui:
+- botão Ligar ao Strava;
+- retorno OAuth;
+- sincronização automática ao abrir a aplicação;
+- importação de BTT, corrida e caminhada;
+- deteção de duplicados.
+
+Para funcionar oficialmente, o Strava exige uma aplicação criada em https://www.strava.com/settings/api e um pequeno backend HTTPS.
+O Client Secret e os Refresh Tokens NÃO podem ficar no index.html nem no GitHub Pages.
+
+O backend deve disponibilizar:
+GET  /authorize?return=<url_da_app>
+GET  /callback
+GET  /activities
+POST /logout
+
+Depois de o backend estar publicado, podes configurar o endereço diretamente no botão “Configurar acesso Strava” dentro da Spartan Forge, ou em strava-config.js.
