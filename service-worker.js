@@ -1,4 +1,4 @@
-const CACHE='spartan-forge-v10.29-sem-anatomia';
+const CACHE='spartan-forge-v10.33-hiit-backup-fotos';
 const APP_SHELL=[
   './','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./icon-maskable-512.png',
   './hero-top-v8.jpg','./splash-helmet-v108.png','./strava-config.js'

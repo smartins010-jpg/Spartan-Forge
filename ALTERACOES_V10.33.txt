@@ -1,0 +1,7 @@
+SPARTAN FORGE V10.33
+
+- Fichas HIIT completas: músculos, execução, benefícios, erros comuns, respiração, dificuldade e equipamento.
+- Fotografias de comparação redimensionadas e comprimidas automaticamente em WebP, com boa qualidade e menor ocupação.
+- Cópia de segurança automática diária dos registos, mantendo apenas as duas mais recentes.
+- O histórico principal de peso, medições, recordes e treinos não é apagado.
+- Atualização do cache da PWA para forçar a instalação da nova versão.
