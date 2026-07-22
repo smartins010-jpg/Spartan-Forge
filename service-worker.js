@@ -1,4 +1,4 @@
-const CACHE = 'spartan-forge-v10.46-colour-audio-deezer';
+const CACHE = 'spartan-forge-v13-recriacao-fiel';
 const APP_SHELL = [
   './', './index.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './icon-maskable-512.png',
