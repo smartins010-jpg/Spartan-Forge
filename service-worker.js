@@ -1,4 +1,4 @@
-const CACHE = 'spartan-forge-v13-recriacao-fiel';
+const CACHE = 'spartan-forge-v10.45-generator-separado';
 const APP_SHELL = [
   './', './index.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './icon-maskable-512.png',
