@@ -1,8 +1,9 @@
-const CACHE = 'spartan-forge-v10.39-auto-update';
+const CACHE = 'spartan-forge-v10.42-deezer-music';
 const APP_SHELL = [
   './', './index.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './icon-maskable-512.png',
-  './hero-top-v8.jpg', './splash-helmet-v108.png', './strava-config.js'
+  './hero-top-v8.jpg', './splash-helmet-v108.png', './strava-config.js', './music-deezer-icon.svg',
+  './audio/three.mp3','./audio/two.mp3','./audio/one.mp3','./audio/go.mp3','./audio/ready.mp3','./audio/rest.mp3','./audio/complete.mp3','./audio/halfway.mp3','./audio/last10.mp3','./audio/go-impact.mp3','./audio/rest-signal.mp3'
 ];
 
 self.addEventListener('install', event => {
