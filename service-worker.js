@@ -1,4 +1,4 @@
-const CACHE = 'spartan-forge-v10.47-forged-typography';
+const CACHE = 'spartan-forge-v10.50-forged-letter-finish';
 const APP_SHELL = [
   './', './index.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './icon-maskable-512.png',
