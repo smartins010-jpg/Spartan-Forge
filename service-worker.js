@@ -1,8 +1,8 @@
-const CACHE = 'spartan-forge-v11.00-profile-ironman';
+const CACHE = 'spartan-forge-v11.01-profile-ironman';
 const APP_SHELL = [
   './', './index.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './icon-maskable-512.png',
-  './hero-top-v8.jpg', './splash-helmet-v108.png', './strava-config.js', './music-deezer-icon.svg', './gerador-spartan-banner.png',
+  './hero-top-v8.jpg', './perfil-spartan-v11.jpg', './splash-helmet-v108.png', './strava-config.js', './music-deezer-icon.svg', './gerador-spartan-banner.png',
   './audio/three.mp3','./audio/two.mp3','./audio/one.mp3','./audio/go.mp3','./audio/ready.mp3','./audio/rest.mp3','./audio/complete.mp3','./audio/halfway.mp3','./audio/last10.mp3','./audio/go-impact.mp3','./audio/rest-signal.mp3'
 ];
 
