@@ -1,4 +1,4 @@
-const CACHE = 'spartan-forge-v11.03-save-profile-red-border';
+const CACHE = 'spartan-forge-v12.01-main-menu-ironman';
 const APP_SHELL = [
   './', './index.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './icon-maskable-512.png',
