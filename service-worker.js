@@ -1,4 +1,4 @@
-const CACHE = 'spartan-forge-v11.02-profile-clean';
+const CACHE = 'spartan-forge-v11.03-save-profile-red-border';
 const APP_SHELL = [
   './', './index.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './icon-maskable-512.png',
