@@ -1,10 +1,7 @@
-const CACHE = 'spartan-forge-v14.00-history-memorial';
 const APP_SHELL = [
-  './', './index.html', './manifest.webmanifest',
-  './icon-192.png', './icon-512.png', './icon-maskable-512.png',
-  './hero-top-v8.jpg', './memorial-historico-v14.jpg', './perfil-spartan-v11.jpg', './splash-helmet-v108.png', './strava-config.js', './music-deezer-icon.svg', './gerador-spartan-banner.png',
-  './audio/three.mp3','./audio/two.mp3','./audio/one.mp3','./audio/go.mp3','./audio/ready.mp3','./audio/rest.mp3','./audio/complete.mp3','./audio/halfway.mp3','./audio/last10.mp3','./audio/go-impact.mp3','./audio/rest-signal.mp3'
-];
+  './','./index.html','./manifest.webmanifest',
+  './icon-192.png','./icon-512.png','./icon-maskable-512.png'
+]
 
 self.addEventListener('install', event => {
   event.waitUntil(
