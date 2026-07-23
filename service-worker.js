@@ -1,4 +1,4 @@
-const CACHE = 'spartan-forge-v10.49';
+const CACHE = 'spartan-forge-v10.51-menu-palette';
 const APP_SHELL = [
   './', './index.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './icon-maskable-512.png',
